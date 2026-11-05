@@ -40,5 +40,8 @@ Achado com cara de vulnerabilidade **não** vira issue pública. CPython vai por
 
 ## Plano
 
-O plano completo, com sessões e checklists, está em [PLANO-CACA-BUGS.md](PLANO-CACA-BUGS.md).
-O glossário dos termos de cada projeto está em [GLOSSARIO.md](GLOSSARIO.md).
+| Arquivo | Para que |
+|---|---|
+| [PLANO-CACA-BUGS.md](PLANO-CACA-BUGS.md) | O plano completo, com sessões, checklists e critérios de sucesso. |
+| [PROCESSO.md](PROCESSO.md) | Checklist operacional de cada projeto: comandos pré-PR, formato de commit, canal de segurança. |
+| [GLOSSARIO.md](GLOSSARIO.md) | O vocabulário de cada projeto. Palavra errada no primeiro contato custa caro. |
