@@ -346,10 +346,14 @@ faz outra coisa. É aqui que mora a chance de bug novo e relevante.
 **Checklist**
 
 - [ ] **S3.1** Build free-threaded
-  - [ ] `./configure --help | grep -i gil` para pegar a flag exata
-        **[CONFIRMAR — eu espero `--disable-gil`, mas não confirmei na doc]**
+  - [ ] flag confirmada em 2026-11-05 no `./configure --help` da árvore:
+        **`--disable-gil`** — *"enable support for running without the GIL (default is no)"*
   - [ ] build em diretório próprio, sem destruir o build do S0
   - [ ] `sys._is_gil_enabled()` retorna `False`
+  - [ ] **segundo baseline, obrigatório.** O baseline do S0 foi capturado com GIL e lá os
+        **62 testes `test_free_threading.*` ficam todos skipados** — ou seja, ele não valida
+        nada de free-threading. Sem um baseline próprio deste build, não há como distinguir
+        "eu quebrei" de "já estava quebrado" na única área que importa aqui.
 - [ ] **S3.2** Build com ThreadSanitizer
   - [ ] `export CC=clang CXX=clang++`
   - [ ] `./configure --with-pydebug --with-thread-sanitizer` + a flag de free-threading
@@ -358,7 +362,10 @@ faz outra coisa. É aqui que mora a chance de bug novo e relevante.
 - [ ] **S3.3** Rodar a suíte sob TSan e separar sinal de ruído
   - [ ] `./python -m test --tsan`
   - [ ] `./python -m test --tsan-parallel --parallel-threads=4`
-  - [ ] **baseline de TSan**: catalogar o que já reporta hoje, para não reportar coisa conhecida
+  - [ ] **terceiro baseline**: o que o TSan já reporta hoje, sem culpa sua. O TSan muda o que
+        falha e o que estoura timeout, então o baseline do build free-threaded puro não serve
+        aqui. São **três** baselines no total: GIL (feito em S0), free-threaded, free-threaded
+        sob TSan.
   - [ ] cruzar cada achado contra as 127 issues `topic-free-threading` antes de abrir nada
 - [ ] **S3.4** Escrever stress tests próprios — é aqui que está o diferencial
   - [ ] escolher módulos de stdlib sem teste de concorrência decente
