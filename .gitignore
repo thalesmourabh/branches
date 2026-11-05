@@ -1,0 +1,27 @@
+# Clones upstream nunca entram aqui. Eles vivem no WSL, em ~/src/.
+cpython/
+go/
+
+# Artefatos de build e de execução
+*.o
+*.so
+*.pyc
+__pycache__/
+.pytest_cache/
+*.core
+core.*
+
+# Corpus de fuzzing cresce sem limite. Só o corpus mínimo é versionado,
+# em tools/fuzz/*/corpus-min/.
+tools/fuzz/*/corpus/
+tools/fuzz/*/crashes-raw/
+
+# Relatórios brutos de sanitizer. Só o achado triado vira arquivo em hunts/.
+tools/stress/runs/
+*.tsan.log
+*.asan.log
+
+# Ambiente local
+.venv/
+venv/
+.env
