@@ -1,0 +1,8 @@
+# Tudo em LF. Este repo guarda diffs, logs de bisect e reproducoes que vao
+# para projetos upstream Unix; CRLF corromperia um patch.diff.
+* text=auto eol=lf
+
+# Binarios e corpus de fuzzing nunca sofrem conversao.
+*.png binary
+*.bin binary
+tools/fuzz/**/corpus-min/* binary
