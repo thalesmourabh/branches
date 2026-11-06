@@ -340,8 +340,13 @@ observação 1. E reproduziu **com o purge ligado**, o que faz do meu "não
 confirmou" uma conclusão tirada de duas amostras, logo antes de a terceira
 contradizer.
 
-Somando as quatro execuções com purge no `test_generators`: **1 assertion em
-~13 min**, contra **0 em 2 h 28** de tudo o que eu tentei antes.
+Somando as quatro execuções com purge no `test_generators`: 1 assertion em
+~13 min, contra 0 em 2 h 28 de tudo o que eu tentei antes.
+
+> **Sexto erro, e é o mesmo do primeiro.** Essa frase era taxa tirada de **uma**
+> ocorrência outra vez. O experimento controlado que rodei em seguida — 5
+> execuções por braço, 55 min — deu **zero** assertions do mimalloc nos dois
+> braços. Ver seção 11.
 
 ### E o quinto erro, que é o maior dos cinco
 
@@ -468,3 +473,88 @@ pequeno e verificável.
 **Nada reportado.** A hipótese precisa de confirmação direta primeiro — e o
 registro desta caçada já mostra o que acontece quando eu reporto antes de
 medir.
+
+---
+
+## 11. Experimento controlado do purge — e a sexta correção
+
+5 execuções por braço no `test_free_threading.test_generators`, build FT, mesmo
+comando, 55 min no total:
+
+| Braço | mimalloc | `gi_frame` | limpo | tempo |
+|---|---|---|---|---|
+| A — `PURGE_DELAY=0` + `ARENA_PURGE_MULT=1` | **0** | 2 | 3 | 28 min |
+| B — default | **0** | 3 | 2 | 27 min |
+
+Dois resultados, e os dois contra mim:
+
+**1. A hipótese do purge não tem suporte.** Zero assertions nos dois braços.
+O purge não ajuda a reproduzir, e a diferença entre os braços (2 vs. 3
+`gi_frame`) é ruído.
+
+**2. A assertion do mimalloc segue não reprodutível.** Eu disse, na mensagem
+anterior, "1 assertion em ~13 min". Era taxa tirada de **uma** ocorrência —
+exatamente o erro do item 4 desta mesma ficha, repetido. Dez execuções
+seguintes, 55 min, deram zero.
+
+### Placar honesto da assertion do mimalloc
+
+| | |
+|---|---|
+| Observações, ao todo | **3** (baseline FT; loop sob TSan; rodada 1 da investigação) |
+| Tempo de caça deliberada | **~3 h 23** |
+| Reproduções sob comando | **0** |
+
+Três ocorrências reais, nenhuma provocável. A assertion existe — assertion não
+dispara do nada, e três ocorrências em dois compiladores e três testes
+diferentes não são coincidência. Mas eu não sei provocá-la, e **isso não é
+reportável**.
+
+**Padrão que eu preciso parar de repetir:** toda vez que uma ocorrência
+aparece, eu converto em taxa antes de medir. Aconteceu no item 4 e aconteceu de
+novo aqui, depois de eu ter escrito a regra no plano. A regra no plano não
+bastou; o que falta é não escrever número de frequência nenhum antes de ter
+duas medições independentes.
+
+## 12. O `gi_frame` é o achado reprodutível — e minha explicação está errada
+
+Taxa sólida, e indiferente ao purge:
+
+| | |
+|---|---|
+| Reproduções | **5 de 10** execuções |
+| Tempos até falhar | 126 s, 160 s, 320 s, 368 s, 391 s |
+| Com purge / sem purge | 2 de 5 / 3 de 5 — sem diferença |
+
+Isso é rate de verdade, medido, nos dois braços.
+
+### A hipótese de inanição está refutada
+
+Eu propus que o `reader` nunca rodava o corpo do laço. Medido:
+
+| Condição | Tentativas | `frames` vazio | reader com 0 voltas | menor nº de voltas |
+|---|---|---|---|---|
+| processo isolado | 300 | 0 | 0 | 271 |
+| **24 cópias simultâneas, 10 núcleos** | **1440** | **0** | **0** | **196** |
+
+Sob 24× de sobrecarga o `reader` ainda roda no mínimo 196 voltas e **sempre**
+vê um frame. A inanição não acontece. **Hipótese morta.**
+
+### Então sobra uma possibilidade incômoda
+
+`len(frames) == 0` com o `reader` rodando só pode significar que
+`g.gi_frame` devolveu **None em todas as voltas**, enquanto o `runner` estava
+no meio dos 10.000 yields. Se for isso, não é teste frouxo — é
+`gi_frame` mentindo sobre um gerador vivo, que é precisamente o assunto da
+[gh-144446](https://github.com/python/cpython/issues/144446), ainda aberta.
+
+Mas eu **não vou afirmar isso**, porque é a terceira hipótese desta ficha e as
+duas anteriores morreram. Em vez de chutar, instrumentei o próprio teste no
+worktree de build (patch local, com restauração automática) para gravar, na
+falha, quantas voltas o reader deu e quantas vezes `gi_frame` veio não-None.
+Isso separa as duas explicações sem margem:
+
+- `voltas == 0` → era inanição afinal, e minhas medições estavam erradas;
+- `voltas > 0` e `nao_none == 0` → `gi_frame` devolveu None para gerador vivo.
+
+Rodando. **Nada reportado.**
