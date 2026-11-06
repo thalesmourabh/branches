@@ -132,7 +132,18 @@ Por isso são **dois** testes, e a tabela mostra por quê: o determinístico
 fix no CI padrão; o concorrente cobre o sintoma original da issue, que só
 aparece no free-threaded. Nenhum dos dois é redundante.
 
-## 7. O que falta, e é só isto
+## 7. Identidade de commit — ponta solta da S0, agora fechada
+
+Desde a S0 ficou em aberto se `thalesmoura13@gmail.com`, o email configurado
+para commit, está vinculado à conta do GitHub. Importa agora porque **o CLA
+casa por email**: assinado com uma identidade e commitado com outra, o
+`python-cla-bot` barra o PR mesmo depois da assinatura.
+
+Verificado: dos 20 commits mais recentes do repo, **zero** ficaram sem
+atribuição — todos aparecem como `thalesmourabh`. O email está vinculado e o
+CLA vai casar.
+
+## 8. O que falta, e é só isto
 
 **O CLA.** O Thales tem 0 PRs no CPython e o
 [Contributor License Agreement](https://cla.python.org/) não está assinado.
