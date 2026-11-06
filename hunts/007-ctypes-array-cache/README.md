@@ -5,7 +5,7 @@
 | **Projeto** | python/cpython |
 | **Issue upstream** | [gh-160978](https://github.com/python/cpython/issues/160978), aberta por `ngoldbaum` em 2026-10-30 |
 | **Escada** | **E2 — fix dirigido**, primeiro desta série |
-| **Status** | **PR aberto: [gh-161494](https://github.com/python/cpython/pull/161494)**. Bloqueado no check do CLA |
+| **Status** | **PR aberto: [gh-161494](https://github.com/python/cpython/pull/161494)**, CLA assinado, 40 checks passando, aguardando review |
 | **Data** | 2026-11-06 |
 
 ---
@@ -157,7 +157,7 @@ O `patchcheck` só acusou o blurb como ausente **antes** do commit local, porque
 ele olha o diff contra `upstream/main` e arquivo untracked não entra. Depois do
 commit, passou.
 
-## 9. PR aberto, e o CLA ainda barra
+## 9. PR aberto, CLA resolvido
 
 [python/cpython#161494](https://github.com/python/cpython/pull/161494), aberto em
 2026-11-06 com aprovação explícita.
@@ -168,26 +168,32 @@ commit, passou.
 | autor | `thalesmourabh` |
 | diff | +122 −3, exatamente os 3 arquivos |
 | CI | rodando |
-| **check `CLA Signing`** | **fail** — *"Please sign our Contributor License Agreement"* |
+| **check `CLA Signing`** | **success** — *"The Contributor License Agreement is signed"* |
+| checks | **40 passando, 0 falhando**, 15 em andamento |
 
 O `python-cla-bot` comentou nomeando o email que falta:
 
 > The following commit authors need to sign the Contributor License Agreement:
 > * `thalesmoura13@gmail.com`
 
+### Resolvido, e vale guardar a lição
+
 **O bot casa pelo email do autor do commit**, não pela conta do GitHub. O commit
-foi autorado com `thalesmoura13@gmail.com`, então a assinatura precisa estar
-registrada para **esse** email. Três explicações possíveis, em ordem de
-probabilidade:
+foi autorado com `thalesmoura13@gmail.com`, que é o `user.email` global. A
+complicação: o email primário da conta Google tinha mudado para
+`thalesmoura.ti@gmail.com`, deixando o antigo como secundário — e os dois lados
+ficaram em identidades diferentes.
 
-1. o CLA foi assinado com outro email;
-2. a assinatura ainda não propagou (o bot re-checa por webhook);
-3. o email não está na lista de emails da conta em `cla.python.org`.
+Resolvido **do lado do `cla.python.org`**, não por force-push. Isso importa:
+force-push num PR do CPython dispara mais de cinquenta jobs de CI na
+infraestrutura deles, e teria sido tentativa e erro, porque eu não tinha como
+descobrir daqui sob qual email a assinatura estava registrada — o token do `gh`
+não tem o escopo `user`, e o bot só informa o email do commit, não o registrado.
 
-Se for o caso 1, há duas saídas: assinar também com `thalesmoura13@gmail.com`,
-ou re-autorar o commit com o email que foi usado na assinatura e force-pushar o
-branch. A segunda é permitida aqui — a regra R2 proíbe force-push **durante
-review**, e a review não começou.
+**Regra para as próximas:** o email do `git config user.email` tem que ser o
+mesmo registrado no CLA. Trocar email primário de conta Google quebra isso sem
+aviso. Conferir antes de abrir PR custa um comando; descobrir depois custa um
+ciclo de CI.
 
 ## 10. O que falta
 

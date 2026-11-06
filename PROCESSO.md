@@ -72,6 +72,25 @@ usuário, e revert do que não saiu em release. Typo **não** está na lista de 
 
 Mudança interessante também ganha entrada em `Doc/whatsnew/3.X.rst`.
 
+### CLA — a armadilha do email
+
+O `python-cla-bot` casa pelo **email do autor do commit**, não pela conta do
+GitHub. Então `git config user.email` tem que ser exatamente o email registrado
+no [cla.python.org](https://cla.python.org/).
+
+Aconteceu no [PR gh-161494](https://github.com/python/cpython/pull/161494): o
+email primário da conta Google tinha mudado, o commit saiu com o antigo, e o
+bot barrou o PR mesmo com o CLA assinado.
+
+**Conferir antes de abrir PR:**
+
+```bash
+git config user.email      # tem que bater com o registrado no CLA
+```
+
+Se não bater, corrigir **no cla.python.org**, não por force-push — force-push
+num PR do CPython dispara mais de cinquenta jobs de CI na infraestrutura deles.
+
 ### Remotos (já configurados)
 
 ```
