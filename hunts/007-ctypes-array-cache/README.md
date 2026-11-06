@@ -203,3 +203,32 @@ ciclo de CI.
 fazer por ele**. O `python-cla-bot` barra o PR até lá.
 
 Depois disso: `make patchcheck`, branch, PR referenciando a gh-160978.
+
+---
+
+## 11. CI: o Emscripten pegou um erro meu
+
+O Auto-fix acusou `Emscripten / build and test` falhando. Primeira verificação,
+antes de assumir que era meu: o job passa no `main` deles? **4 de 4 runs
+recentes, sim.** Então era meu.
+
+O step que falhou foi **`Test`**, não o build — logo não era erro de compilação.
+
+**A causa.** `can_start_thread`, em `Lib/test/support/threading_helper.py`,
+devolve `sys._emscripten_info.pthreads` naquela plataforma, e o build padrão do
+Emscripten **não tem pthreads**. Meu segundo teste tinha
+`@threading_helper.requires_working_threading()` e pulava. O primeiro **não
+tinha** — e usa `ThreadPoolExecutor` e `threading.Barrier`.
+
+Eu tinha tirado o guard **de propósito**, para o teste rodar no build com GIL e
+assim proteger o fix no CI padrão. O erro foi confundir **"tem GIL"** com
+**"tem thread"**. Emscripten é build com GIL e sem threads.
+
+**A correção não custa o propósito:** build com GIL normal tem threads, então o
+teste continua rodando e continua sendo o único que protege o fix no CI padrão.
+Conferido depois do guard: os dois testes **rodam** e passam nos dois builds, não
+pulam. Suíte completa segue SUCCESS (650 testes).
+
+Commit `183e57d8314`, empurrado como commit novo — **sem force-push**. O CPython
+faz squash no merge, então commit de correção é barato; force-push custaria
+re-rodar os ~55 jobs.
