@@ -1,0 +1,95 @@
+gh-129139 — localizacao dos commits culpados
+=============================================
+
+Metodo: arqueologia com `git log -L` sobre o corpo das funcoes, com a fronteira
+de versao confirmada empiricamente antes de olhar o historico. Nao usei
+`git bisect run` porque cada passo exigiria um build completo (~5 min) sobre um
+intervalo de ~4 anos; a fronteira por release reduziu o espaco de busca a
+quatro commits, e o diff decidiu entre eles.
+
+Fronteira empirica (ver README, item 3)
+---------------------------------------
+reversed(list), build com GIL:   3.12.16 ok  ->  3.13.18 RESSUSCITA
+iter(tuple), free-threaded:      3.13.18t ok ->  3.14.10t RESSUSCITA
+iter(list), free-threaded:       3.12 n/a    ->  3.13.18t RESSUSCITA
+
+
+CASO 1: reversed(list) no build com GIL
+=======================================
+
+Commits que tocaram listreviter_next entre v3.12.0 e v3.13.0:
+
+    $ git log --oneline --reverse \
+        -L "/^listreviter_next/,/^}/:Objects/listobject.c" v3.12.0..v3.13.0
+
+    5d36a95e64e  gh-111178: Avoid calling functions from incompatible pointer types
+    a2d4281415e  gh-112087: Make __sizeof__ and listiter_{len, next} to be threadsafe
+    520403ed4cd  gh-115733: Fix crash involving exhausted list iterator (#115740)
+    259730bbb5b  gh-112087: Make list_{concat, repeat, inplace_repeat, ass_item} threadsafe
+
+Descartados pelo diff:
+
+  259730bbb5b  so renomeia macros: LOAD_SSIZE -> FT_ATOMIC_LOAD_SSIZE_RELAXED.
+               O `return` antecipado em `index < 0` ja existia antes dele.
+
+  520403ed4cd  apesar do titulo ("Fix crash involving exhausted list iterator"),
+               so move a carga de `seq` para depois do check de indice. O
+               `if (index < 0) return NULL;` tambem ja estava la.
+
+  5d36a95e64e  mudanca de assinatura de ponteiro de funcao, sem efeito semantico.
+
+CULPADO:
+
+    SHA:          a2d4281415e67c62f91363376db97eb66a9fb716
+    Autor:        Donghee Na
+    Data:         2024-02-15 02:00:50 +0900
+    Assunto:      gh-112087: Make __sizeof__ and listiter_{len, next} to be
+                  threadsafe (gh-114843)
+    primeira tag: v3.13.0a4
+
+Diff relevante em listreviter_next (- removido, + adicionado):
+
+    -    seq = it->it_seq;
+    -    if (seq == NULL) {
+    -        return NULL;
+    -    }
+    +    PyListObject *seq = it->it_seq;
+    +    Py_ssize_t index = LOAD_SSIZE(it->it_index);
+    +    if (index < 0) {
+    +        return NULL;
+    +    }
+
+A sentinela de exaustao mudou de `it_seq == NULL` para `it_index < 0`.
+`listreviter_setstate` continuou testando `it_seq != NULL` e nunca foi
+atualizado.
+
+
+CASO 2: iter(tuple) no build free-threaded
+==========================================
+
+    $ git log --oneline --all --grep="128637" -- Objects/tupleobject.c
+
+CULPADO:
+
+    SHA:          388e1ca9f08ee5caefd1dd946dc6e236ce73d46f
+    Autor:        T. Wouters
+    Data:         2025-02-18 16:52:46 -0800
+    Assunto:      gh-115999: Make list and tuple iteration more thread-safe.
+                  (#128637)
+    primeira tag: v3.14.0a6
+
+Confere com a previsao de eendebakpt no primeiro comentario da issue
+(2025-01-21), que apontou justamente o PR 128637 como provavel causa de
+comportamento equivalente em iteradores de tupla.
+
+
+VERIFICACAO DO AMBIENTE
+=======================
+
+Os dois builds de `main` sao o mesmo commit, diferindo apenas no --disable-gil:
+
+    ~/src/cpython      Python 3.16.0a1+dev (heads/main:534605904df)
+    ~/src/cpython-ft   Python 3.16.0a1+dev free-threading build (heads/main:534605904df)
+
+O segundo e um `git worktree` detached no mesmo SHA, para que a comparacao nao
+carregue nenhuma outra diferenca de arvore.
