@@ -3,10 +3,10 @@
 | Campo | Valor |
 |---|---|
 | **Projeto** | python/cpython |
-| **Issue upstream** | nenhuma. **Não reportado** — aguardando aprovação |
+| **Issue upstream** | [gh-161489](https://github.com/python/cpython/issues/161489) — **aberta por mim em 2026-11-06** |
 | **Escada** | E3 achado por aparato |
 | **Como apareceu** | Efeito colateral da caçada [005](../005-mimalloc-arena-abandon/), ao investigar por que uma fatia de caça terminava cedo |
-| **Status** | **mecanismo confirmado por instrumentação direta** |
+| **Status** | **reportada.** Mecanismo confirmado por instrumentação direta e por repro autônomo |
 | **Data** | 2026-11-06 |
 
 ---
@@ -192,5 +192,16 @@ Comparado com a caçada 005, que consumiu horas e não rendeu reporte:
 correção é de teste — risco baixo para quem revisa. É melhor primeira
 contribuição de código do que qualquer coisa que a caçada 005 produziu.
 
-**Nada foi reportado.** Comentário e issue upstream são públicos e
-irreversíveis.
+## 10. Reportado
+
+[gh-161489](https://github.com/python/cpython/issues/161489), aberta em 2026-11-06 com
+aprovação explícita. Conferido antes de abrir que não havia duplicata, e depois
+que tabela e blocos de código renderizaram.
+
+Precedente que sustentou a escolha de issue própria em vez de comentário na
+gh-144446: a [gh-136692](https://github.com/python/cpython/issues/136692)
+(`test_free_threading.test_monitoring` flaky) mostra que teste instável de
+free-threading ganha issue própria no projeto.
+
+Sem label — labels de triagem são aplicadas por quem tem permissão, não por
+quem reporta. Não cobrar, não fazer bump.

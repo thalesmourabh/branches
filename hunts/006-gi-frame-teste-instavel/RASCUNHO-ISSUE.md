@@ -1,6 +1,7 @@
-# Rascunho da issue — aguardando sua aprovação
+# Issue aberta — registro do texto
 
-**Nada disto foi postado.** Issue upstream é pública e irreversível.
+**Postada em 2026-11-06 como [gh-161489](https://github.com/python/cpython/issues/161489)**,
+com aprovação explícita. O texto abaixo é o que foi enviado.
 
 Decisões de redação, seguindo o que ficou valendo em
 [PROCESSO.md](../../PROCESSO.md#ferramentas-de-ia--o-que-a-política-realmente-exige):

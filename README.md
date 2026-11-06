@@ -19,10 +19,11 @@ honesto.
 | [003](hunts/003-list-sort-empty/) | [gh-126559](https://github.com/python/cpython/issues/126559) lista vazia durante `sort()` | **documentado** | recomendei fechar. Eu entrei achando que era bug de atomicidade. Não era. [Comentado](https://github.com/python/cpython/issues/126559#issuecomment-6679280566) |
 | [004](hunts/004-decimal-context-compartilhado/) | contexto do `decimal` compartilhado entre threads | **já reportado** | corrida real, mas com 3 PRs abertos. E o que parecia bug no `contextvars` está no What's New 3.14. Nada reportado |
 | [005](hunts/005-mimalloc-arena-abandon/) | assertion do mimalloc ao abandonar segmento de arena | **lead aberto** | 3 observações reais, **0 reproduções** em ~3h23 de caça. Sem repro não é reporte. Nada reportado |
-| [006](hunts/006-gi-frame-teste-instavel/) | `test_concurrent_gi_frame` instável sob `--parallel-threads` | **teste instável** | reproduz **5/10**, mecanismo confirmado por instrumentação e por repro autônomo. Nada reportado ainda |
+| [006](hunts/006-gi-frame-teste-instavel/) | [gh-161489](https://github.com/python/cpython/issues/161489) `test_concurrent_gi_frame` instável sob `--parallel-threads` | **teste instável** | reproduz **5/10**, mecanismo confirmado por instrumentação e por repro autônomo. **Issue aberta por mim** |
 
-Duas das quatro não renderam reporte, e as fichas delas estão aqui pelo mesmo motivo que as outras:
-veredito negativo documentado evita que a próxima pessoa refaça o caminho.
+Das seis, três renderam contribuição pública e três não. As fichas das que não renderam estão aqui
+pelo mesmo motivo que as outras: veredito negativo documentado evita que a próxima pessoa refaça o
+caminho.
 
 ## Estrutura
 
