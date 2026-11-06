@@ -393,6 +393,17 @@ faz outra coisa. É aqui que mora a chance de bug novo e relevante.
   - [ ] script que roda os stress tests em loop sob TSan e arquiva relatórios
   - [ ] revisar os achados uma vez por dia, não ficar olhando
 - [ ] **S3.6** Triar cada achado
+  - [ ] **uma ocorrência não é taxa** — corrigido em 2026-11-06 depois da
+        [caçada 005](hunts/005-mimalloc-arena-abandon/), onde eu chamei de "reproduzido" o que
+        era amostra única, dei um número de 66 s como se fosse taxa, e no dia seguinte deu
+        **0/12** na verificação. Antes de dizer que reproduz: medir.
+  - [ ] **para corrida rara, sequência de trials curtos limpos NÃO é evidência de ausência.** A
+        unidade é **tempo acumulado**, não número de tentativas. Uma corrida de ~1 a cada 30 min
+        passa limpa em doze trials de 4 min sem nenhuma contradição. Usar o
+        [`cacador-longo.sh`](tools/stress/cacador-longo.sh), que acumula tally entre execuções.
+  - [ ] **bisect sem oráculo confiável não conclui nada** — "limpo nos dois lados" seria lido
+        como "não é este commit" quando na verdade é "o gatilho é fraco". Taxa primeiro, bisect
+        depois.
   - [ ] race de verdade ou falso positivo do TSan?
   - [ ] reproduz sem TSan, com repetição suficiente?
   - [ ] **PARADA OBRIGATÓRIA:** se é corrupção de memória ou crash alcançável a partir de entrada

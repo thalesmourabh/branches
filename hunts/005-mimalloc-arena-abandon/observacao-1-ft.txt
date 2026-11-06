@@ -1,0 +1,9 @@
+test_concurrent_gi_yieldfrom (test.test_free_threading.test_generators.TestFTGenerators.test_concurrent_gi_yieldfrom) ... ok
+test_concurrent_send (test.test_free_threading.test_generators.TestFTGenerators.test_concurrent_send) ... ok
+test_concurrent_write (test.test_free_threading.test_generators.TestFTGenerators.test_concurrent_write) ... mimalloc: assertion failed: at "Objects/mimalloc/arena-abandon.c":162, _mi_arena_segment_mark_abandoned
+  assertion: "_mi_bitmap_is_claimed(arena->blocks_inuse, arena->field_count, 1, bitmap_idx)"
+Fatal Python error: Aborted
+
+
+Current thread's C stack trace (most recent call first):
+  Binary file "/home/thales/src/cpython-ft/python", at _Py_DumpStack+0x46 [0x6238a686c259]

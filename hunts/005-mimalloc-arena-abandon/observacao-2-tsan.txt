@@ -1,0 +1,4 @@
+test_intern_unowned_string (test.test_free_threading.test_str.TestStr.test_intern_unowned_string) [threads=4] ... mimalloc: assertion failed: at "Objects/mimalloc/arena-abandon.c":162, _mi_arena_segment_mark_abandoned
+  assertion: "_mi_bitmap_is_claimed(arena->blocks_inuse, arena->field_count, 1, bitmap_idx)"
+Fatal Python error: Aborted
+
