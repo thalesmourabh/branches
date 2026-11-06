@@ -71,7 +71,17 @@ while [ "$(date +%s)" -lt "$FIM" ]; do
   # Fatia maior (20 min) porque uma passada da suite leva 7 min no FT e 17 no
   # TSan -- fatia de 10 min cortaria a passada no meio.
   if [ "$TEST" = "SUITE" ]; then
-    OUT=$(timeout 1800s ./python -m test -F -j10 -W --timeout=600 2>&1)
+    # -x test_perf_profiler e OBRIGATORIO aqui, e a primeira versao deste
+    # script errou por nao ter: -F implica --failfast, e test_perf_profiler
+    # falha por limitacao do ambiente (o perf do kernel do WSL nao aceita a
+    # flag -j que o CPython passa para `perf inject`). Resultado: toda passada
+    # parava nele em ~250s, bem antes de a suite terminar os 7 min. Foram 9
+    # passadas truncadas no mesmo ponto, zero passadas completas, e o script
+    # reportou "0 ocorrencias em 37 min" como se tivesse testado algo.
+    #
+    # test_free_threading.test_generators NAO entra na exclusao: o crash dele
+    # e justamente o que se procura, e parar nele e o comportamento correto.
+    OUT=$(timeout 1800s ./python -m test -F -j10 -W --timeout=600 -x test_perf_profiler 2>&1)
   else
     OUT=$(timeout 600s ./python -m test "$TEST" -F --parallel-threads="$PTHREADS" -j10 -W 2>&1)
   fi

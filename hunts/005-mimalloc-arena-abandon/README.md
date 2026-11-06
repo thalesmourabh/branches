@@ -86,7 +86,34 @@ como se fosse taxa. **Estava errado.** Fui medir:
 **0 de 12.** Mesmo comando da observação 2, mesmo build, mesmo teste: limpo.
 
 Depois disso, mais uma fatia de 10 min com o caçador longo: também limpa.
-Acumulado de caça deliberada: **~58 min, 0 ocorrências.**
+Acumulado de caça deliberada por teste único: **~58 min, 0 ocorrências.**
+
+### Segundo erro: 37 min de caça que não mediram nada
+
+A primeira tentativa de caçar com a suíte inteira reportou **0 ocorrências em
+37 min, em 9 passadas**. Esse número é **inválido**, e o motivo é bug do meu
+aparato.
+
+Cada passada durou ~250 s, quando uma passada completa da suíte leva ~7 min
+(426 s). O sinal estava ali e eu quase não olhei: `-F` implica `--failfast`, e
+o build FT tem a falha ambiental do `test_perf_profiler` (o `perf` do kernel do
+WSL não aceita a flag `-j` que o CPython passa para `perf inject`). Então toda
+passada parava **no mesmo ponto**, em ~250 s, antes de a suíte terminar.
+
+Foram **9 passadas truncadas no mesmo lugar, zero passadas completas.** O
+script reportou "limpo" nas nove, e eu teria registrado isso como evidência
+contra a hipótese — quando a hipótese não foi testada nem uma vez.
+
+Corrigido com `-x test_perf_profiler` no modo `SUITE`. O
+`test_free_threading.test_generators` **não** entra na exclusão: o crash dele é
+o que se procura, e parar nele é o comportamento certo. O tally antigo foi
+renomeado para `tally-ft-SUITE.INVALIDO.tsv` em vez de apagado, para o erro
+ficar no registro.
+
+A lição é parente da anterior, mas não é a mesma: antes eu confundi **amostra
+pequena** com taxa; aqui eu não conferi se o aparato **estava medindo o que eu
+pensava**. Nove resultados idênticos com duração quase igual deveriam ter me
+feito desconfiar na hora.
 
 ### Hipótese sobre o gatilho, não provada
 

@@ -404,6 +404,13 @@ faz outra coisa. É aqui que mora a chance de bug novo e relevante.
   - [ ] **bisect sem oráculo confiável não conclui nada** — "limpo nos dois lados" seria lido
         como "não é este commit" quando na verdade é "o gatilho é fraco". Taxa primeiro, bisect
         depois.
+  - [ ] **conferir se o aparato está medindo o que você pensa, antes de acreditar no número.**
+        Na caçada 005 eu rodei 37 min de caça que não mediram nada: `-F` implica `--failfast`,
+        e a falha ambiental do `test_perf_profiler` truncava toda passada da suíte no mesmo
+        ponto, aos ~250 s de 426. Nove passadas idênticas, zero completas, e o relatório dizia
+        "0 ocorrências em 37 min". **Resultado repetido com duração quase igual é sinal de
+        aparato travado, não de ausência do bug.** Conferir duração esperada vs. medida antes de
+        tirar conclusão.
   - [ ] race de verdade ou falso positivo do TSan?
   - [ ] reproduz sem TSan, com repetição suficiente?
   - [ ] **PARADA OBRIGATÓRIA:** se é corrupção de memória ou crash alcançável a partir de entrada

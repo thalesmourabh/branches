@@ -25,3 +25,8 @@ tools/stress/runs/
 .venv/
 venv/
 .env
+
+# tally do cacador: dado de maquina, nao de repo. O .INVALIDO fica versionado
+# de proposito, como registro do aparato travado.
+tools/stress/runs/
+!tools/stress/runs/cacador/tally-*.INVALIDO.tsv
