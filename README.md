@@ -10,6 +10,18 @@ Registro **todas** as investigações, inclusive as que terminam em "comportamen
 entendi errado". Essas são as que ensinam mais, e um caderno onde tudo dá certo não é um caderno
 honesto.
 
+## Caçadas até agora
+
+| # | Alvo | Veredito | Resultado |
+|---|---|---|---|
+| [001](hunts/001-tracemalloc-start-race/) | [gh-126315](https://github.com/python/cpython/issues/126315) `tracemalloc` aborta com `start()` concorrente | **bug** | confirmado em 3.16 sem sanitizer, com adendo: a janela desprotegida é maior que a assertion. [Comentado](https://github.com/python/cpython/issues/126315#issuecomment-6679277526) |
+| [002](hunts/002-list-iter-setstate/) | [gh-129139](https://github.com/python/cpython/issues/129139) `__setstate__` ressuscita iterador exaurido | **bug, mais amplo** | são 3 iteradores e não 1, e o `reversed()` quebra no build com GIL desde 3.13. Dois commits culpados localizados. [Comentado](https://github.com/python/cpython/issues/129139#issuecomment-6679279206) |
+| [003](hunts/003-list-sort-empty/) | [gh-126559](https://github.com/python/cpython/issues/126559) lista vazia durante `sort()` | **documentado** | recomendei fechar. Eu entrei achando que era bug de atomicidade. Não era. [Comentado](https://github.com/python/cpython/issues/126559#issuecomment-6679280566) |
+| [004](hunts/004-decimal-context-compartilhado/) | contexto do `decimal` compartilhado entre threads | **já reportado** | corrida real, mas com 3 PRs abertos. E o que parecia bug no `contextvars` está no What's New 3.14. Nada reportado |
+
+Duas das quatro não renderam reporte, e as fichas delas estão aqui pelo mesmo motivo que as outras:
+veredito negativo documentado evita que a próxima pessoa refaça o caminho.
+
 ## Estrutura
 
 | Pasta | O que tem |
