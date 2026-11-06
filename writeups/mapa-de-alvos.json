@@ -1,0 +1,480 @@
+[
+  {
+    "repo": "curl/curl",
+    "tipo": "C",
+    "merged": 2,
+    "bots": 0,
+    "fora_humanos": 1,
+    "pessoas_distintas": 1,
+    "top1": 1,
+    "mediana_dias": 0.05081018518518519,
+    "top5": [
+      [
+        "cmeister2",
+        1
+      ]
+    ],
+    "fechados_sem_merge": 98
+  },
+  {
+    "repo": "llvm/llvm-project",
+    "tipo": "C++",
+    "merged": 77,
+    "bots": 1,
+    "fora_humanos": 65,
+    "pessoas_distintas": 49,
+    "top1": 5,
+    "mediana_dias": 1.761226851851852,
+    "top5": [
+      [
+        "aobolensk",
+        5
+      ],
+      [
+        "tbaederr",
+        4
+      ],
+      [
+        "jayfoad",
+        4
+      ],
+      [
+        "paulwalker-arm",
+        2
+      ],
+      [
+        "lucas-rami",
+        2
+      ]
+    ],
+    "fechados_sem_merge": 23
+  },
+  {
+    "repo": "nodejs/node",
+    "tipo": "C++",
+    "merged": 69,
+    "bots": 9,
+    "fora_humanos": 30,
+    "pessoas_distintas": 21,
+    "top1": 5,
+    "mediana_dias": 7.572760416666666,
+    "top5": [
+      [
+        "inoway46",
+        5
+      ],
+      [
+        "MikeMcC399",
+        3
+      ],
+      [
+        "aduh95",
+        2
+      ],
+      [
+        "rozzilla",
+        2
+      ],
+      [
+        "antonioduran",
+        2
+      ]
+    ],
+    "fechados_sem_merge": 31
+  },
+  {
+    "repo": "microsoft/mimalloc",
+    "tipo": "C",
+    "merged": 58,
+    "bots": 7,
+    "fora_humanos": 38,
+    "pessoas_distintas": 20,
+    "top1": 11,
+    "mediana_dias": 0.752800925925926,
+    "top5": [
+      [
+        "DinoV",
+        11
+      ],
+      [
+        "Techcable",
+        5
+      ],
+      [
+        "res2k",
+        3
+      ],
+      [
+        "fmeum",
+        2
+      ],
+      [
+        "devnexen",
+        2
+      ]
+    ],
+    "fechados_sem_merge": 42
+  },
+  {
+    "repo": "facebook/zstd",
+    "tipo": "C",
+    "merged": 55,
+    "bots": 21,
+    "fora_humanos": 34,
+    "pessoas_distintas": 16,
+    "top1": 13,
+    "mediana_dias": 2.678287037037037,
+    "top5": [
+      [
+        "Cyan4973",
+        13
+      ],
+      [
+        "uarif1",
+        3
+      ],
+      [
+        "terrelln",
+        3
+      ],
+      [
+        "jlee303",
+        3
+      ],
+      [
+        "thiru-mcw",
+        1
+      ]
+    ],
+    "fechados_sem_merge": 45
+  },
+  {
+    "repo": "valkey-io/valkey",
+    "tipo": "C",
+    "merged": 89,
+    "bots": 5,
+    "fora_humanos": 35,
+    "pessoas_distintas": 16,
+    "top1": 9,
+    "mediana_dias": 3.021145833333333,
+    "top5": [
+      [
+        "sarthakaggarwal97",
+        9
+      ],
+      [
+        "yangbodong22011",
+        7
+      ],
+      [
+        "Baraa-Hasheesh",
+        3
+      ],
+      [
+        "rainsupreme",
+        3
+      ],
+      [
+        "nitaicaro",
+        2
+      ]
+    ],
+    "fechados_sem_merge": 11
+  },
+  {
+    "repo": "openssl/openssl",
+    "tipo": "C",
+    "merged": 0,
+    "bots": 0,
+    "fora_humanos": 0,
+    "pessoas_distintas": 0,
+    "top1": 0,
+    "mediana_dias": null,
+    "top5": [],
+    "fechados_sem_merge": 100
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "tipo": "C++ / IA",
+    "merged": 64,
+    "bots": 0,
+    "fora_humanos": 38,
+    "pessoas_distintas": 30,
+    "top1": 4,
+    "mediana_dias": 2.083454861111111,
+    "top5": [
+      [
+        "ServeurpersoCom",
+        4
+      ],
+      [
+        "shaofeiqi",
+        3
+      ],
+      [
+        "netrunnereve",
+        2
+      ],
+      [
+        "JohannesGaessler",
+        2
+      ],
+      [
+        "Alex-JP-93",
+        2
+      ]
+    ],
+    "fechados_sem_merge": 36
+  },
+  {
+    "repo": "python/cpython",
+    "tipo": "C / Python",
+    "merged": 76,
+    "bots": 33,
+    "fora_humanos": 24,
+    "pessoas_distintas": 16,
+    "top1": 4,
+    "mediana_dias": 5.152083333333334,
+    "top5": [
+      [
+        "vasiliyk",
+        4
+      ],
+      [
+        "sethmlarson",
+        3
+      ],
+      [
+        "cmaloney",
+        3
+      ],
+      [
+        "deadlovelll",
+        2
+      ],
+      [
+        "eendebakpt",
+        1
+      ]
+    ],
+    "fechados_sem_merge": 24
+  },
+  {
+    "repo": "protocolbuffers/protobuf",
+    "tipo": "C++ / Google",
+    "merged": 44,
+    "bots": 41,
+    "fora_humanos": 0,
+    "pessoas_distintas": 0,
+    "top1": 0,
+    "mediana_dias": null,
+    "top5": [],
+    "fechados_sem_merge": 56
+  },
+  {
+    "repo": "google/jax",
+    "tipo": "IA / Google",
+    "merged": 94,
+    "bots": 87,
+    "fora_humanos": 7,
+    "pessoas_distintas": 7,
+    "top1": 1,
+    "mediana_dias": 5.6434953703703705,
+    "top5": [
+      [
+        "bhaskargurram-ai",
+        1
+      ],
+      [
+        "AshishKumar4",
+        1
+      ],
+      [
+        "BlazeSR10hawk",
+        1
+      ],
+      [
+        "magaonka-amd",
+        1
+      ],
+      [
+        "pelumi1163",
+        1
+      ]
+    ],
+    "fechados_sem_merge": 6
+  },
+  {
+    "repo": "google/gemma.cpp",
+    "tipo": "C++ / IA / Google",
+    "merged": 84,
+    "bots": 64,
+    "fora_humanos": 19,
+    "pessoas_distintas": 9,
+    "top1": 6,
+    "mediana_dias": 3.0102314814814815,
+    "top5": [
+      [
+        "Mikyx-1",
+        6
+      ],
+      [
+        "RaviTriv",
+        5
+      ],
+      [
+        "Magnushst",
+        2
+      ],
+      [
+        "Subhan1794",
+        1
+      ],
+      [
+        "JasonYeYuhe",
+        1
+      ]
+    ],
+    "fechados_sem_merge": 16
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "tipo": "C++ / IA",
+    "merged": 0,
+    "bots": 0,
+    "fora_humanos": 0,
+    "pessoas_distintas": 0,
+    "top1": 0,
+    "mediana_dias": null,
+    "top5": [],
+    "fechados_sem_merge": 100
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "tipo": "C++ / IA",
+    "merged": 65,
+    "bots": 0,
+    "fora_humanos": 50,
+    "pessoas_distintas": 42,
+    "top1": 3,
+    "mediana_dias": 2.548425925925926,
+    "top5": [
+      [
+        "subhashpolisetti",
+        3
+      ],
+      [
+        "Thangnguyenvn98",
+        2
+      ],
+      [
+        "gau-nernst",
+        2
+      ],
+      [
+        "paulpak58",
+        2
+      ],
+      [
+        "xsxszab",
+        2
+      ]
+    ],
+    "fechados_sem_merge": 35
+  },
+  {
+    "repo": "modelcontextprotocol/python-sdk",
+    "tipo": "IA / Anthropic",
+    "merged": 19,
+    "bots": 4,
+    "fora_humanos": 1,
+    "pessoas_distintas": 1,
+    "top1": 1,
+    "mediana_dias": 31.86314814814815,
+    "top5": [
+      [
+        "vijaydeepsinha",
+        1
+      ]
+    ],
+    "fechados_sem_merge": 81
+  },
+  {
+    "repo": "modelcontextprotocol/servers",
+    "tipo": "IA / Anthropic",
+    "merged": 80,
+    "bots": 3,
+    "fora_humanos": 0,
+    "pessoas_distintas": 0,
+    "top1": 0,
+    "mediana_dias": null,
+    "top5": [],
+    "fechados_sem_merge": 20
+  },
+  {
+    "repo": "modelcontextprotocol/rust-sdk",
+    "tipo": "Rust / Anthropic",
+    "merged": 84,
+    "bots": 18,
+    "fora_humanos": 42,
+    "pessoas_distintas": 38,
+    "top1": 3,
+    "mediana_dias": 7.159270833333333,
+    "top5": [
+      [
+        "alexhancock",
+        3
+      ],
+      [
+        "talhayme",
+        2
+      ],
+      [
+        "ragen1337",
+        2
+      ],
+      [
+        "howardjohn",
+        1
+      ],
+      [
+        "monody0007",
+        1
+      ]
+    ],
+    "fechados_sem_merge": 16
+  },
+  {
+    "repo": "huggingface/transformers",
+    "tipo": "IA",
+    "merged": 75,
+    "bots": 0,
+    "fora_humanos": 23,
+    "pessoas_distintas": 18,
+    "top1": 4,
+    "mediana_dias": 5.699120370370371,
+    "top5": [
+      [
+        "BlazeSR10hawk",
+        4
+      ],
+      [
+        "harshaljanjani",
+        2
+      ],
+      [
+        "paulpak58",
+        2
+      ],
+      [
+        "Isalia20",
+        1
+      ],
+      [
+        "scyyh11",
+        1
+      ]
+    ],
+    "fechados_sem_merge": 25
+  }
+]
