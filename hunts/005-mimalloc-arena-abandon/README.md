@@ -275,6 +275,71 @@ build de release corrompe — tenho uma assertion de build de debug, que é
 evidência de invariante violada, não prova de corrupção explorável. Dizer mais
 que isso seria exagero.
 
+## 8b. Tempo de caça válido, e o veredito de esforço
+
+Com o instrumento consertado, o que conta como caça de verdade:
+
+| Regime | Tempo válido | Ocorrências |
+|---|---|---|
+| suíte completa, fatia inteira | 90 min | 0 |
+| teste único, `-F --parallel-threads=4` | 58 min | 0 |
+| **total** | **~2 h 28 min** | **0** |
+
+Mais tudo o que foi descartado por fatia truncada, que não entra na conta.
+
+Isso derruba minha própria estimativa inicial. Eu tinha calculado "~1 a cada
+30 min" a partir das duas observações; duas horas e meia de caça dirigida com
+zero ocorrências dizem que a frequência real é **bem menor que isso**, ou que
+depende de alguma condição que eu não identifiquei.
+
+Candidata para a condição, não testada a fundo: as duas observações
+aconteceram em processo **recém-iniciado depois de uma carga longa anterior**
+(a observação 1 durante a suíte completa; a 2 na primeira execução logo depois
+de a suíte sob TSan terminar). Pode ser dependência de estado de fragmentação
+de arena, que repetição em processo novo não reproduz.
+
+### Última tentativa, derivada do mecanismo
+
+Em vez de mais força bruta, uma tentativa raciocinada: a assertion diz que
+`blocks_inuse` **não** está claimed. `blocks_inuse` é limpo em `arena.c:740`,
+no caminho de liberar bloco de arena — ou seja, o parceiro da corrida é o
+**purge de arena**. Forçando purge imediato, esse caminho roda o mais rápido
+possível:
+
+```
+MIMALLOC_PURGE_DELAY=0        # purge imediato (default 10ms)
+MIMALLOC_ARENA_PURGE_MULT=1   # sem multiplicador de atraso (default 10)
+```
+
+O mimalloc lê essas opções do ambiente nativamente, e o autor da gh-161420 usou
+`MIMALLOC_PURGE_DELAY=0` com CPython exatamente assim.
+
+**Resultado: a hipótese não se confirmou.**
+
+| Build | Teste | Resultado |
+|---|---|---|
+| FT + TSan | `test_str` | limpo, fatia completa de 600 s |
+| FT | `test_generators` | **truncada em 166 s** — parou no próprio `test_generators`, mas **sem** a assertion do mimalloc |
+
+Forçar purge agressivo de arena não produziu a assertion. A hipótese do purge
+como parceiro da corrida continua plausível pela leitura do código, mas não
+tem suporte empírico.
+
+Com isso a caça pela assertion do mimalloc **para aqui**, como estava decidido
+de antemão. Mais força bruta sem hipótese nova não se paga.
+
+### Mas a tentativa produziu outra coisa
+
+A fatia do `test_generators` parou **no próprio teste**, em 166 s, e **não** foi
+a assertion do mimalloc. Ou seja: aquele arquivo tem uma segunda forma de
+falhar, que acontece em menos de três minutos — o primeiro sinal
+**reprodutível** do dia inteiro, contra ~2 h 28 de caça que não reproduziu
+nada.
+
+Está sendo investigado separadamente. Se for falha distinta, vira caçada
+própria; se for teste simplesmente instável, isso também é informação, porque
+explica parte do ruído do baseline do build FT.
+
 ## 9. O que falta, em ordem
 
 1. **Taxa.** `cacador-longo.sh` acumulando horas. Sem isso nada avança.
