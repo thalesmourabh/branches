@@ -143,7 +143,21 @@ Verificado: dos 20 commits mais recentes do repo, **zero** ficaram sem
 atribuição — todos aparecem como `thalesmourabh`. O email está vinculado e o
 CLA vai casar.
 
-## 8. O que falta, e é só isto
+## 8. Estado técnico — tudo verificado
+
+| Checagem | Resultado |
+|---|---|
+| `make patchcheck` | **limpo** — 3 arquivos, *"Misc/NEWS.d updated with `blurb` ... yes"*, nada de espaço em branco, nada de doc ou `configure` pendente |
+| commit local | `5ed12c7d340`, branch `gh-160978-ctypes-array-cache` |
+| atraso em relação a `upstream/main` | 10 commits |
+| `_ctypes` / `test_ctypes` mudaram upstream desde a base? | **não** — aplica sem conflito |
+| email de commit vinculado à conta | sim (item 7) |
+
+O `patchcheck` só acusou o blurb como ausente **antes** do commit local, porque
+ele olha o diff contra `upstream/main` e arquivo untracked não entra. Depois do
+commit, passou.
+
+## 9. O que falta, e é só isto
 
 **O CLA.** O Thales tem 0 PRs no CPython e o
 [Contributor License Agreement](https://cla.python.org/) não está assinado.
