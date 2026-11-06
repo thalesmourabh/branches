@@ -26,7 +26,6 @@ tools/stress/runs/
 venv/
 .env
 
-# tally do cacador: dado de maquina, nao de repo. O .INVALIDO fica versionado
-# de proposito, como registro do aparato travado.
-tools/stress/runs/
-!tools/stress/runs/cacador/tally-*.INVALIDO.tsv
+# tally do cacador: dado de maquina, nao de repo. (tools/stress/runs/ ja esta
+# excluido acima. Negacao nao funciona dentro de diretorio ignorado -- o git
+# nao desce nele -- entao o tally invalido foi copiado para hunts/005/.)
