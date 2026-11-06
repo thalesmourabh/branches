@@ -314,31 +314,68 @@ MIMALLOC_ARENA_PURGE_MULT=1   # sem multiplicador de atraso (default 10)
 O mimalloc lê essas opções do ambiente nativamente, e o autor da gh-161420 usou
 `MIMALLOC_PURGE_DELAY=0` com CPython exatamente assim.
 
-**Resultado: a hipótese não se confirmou.**
+**Primeiro resultado, e eu o interpretei errado.**
 
 | Build | Teste | Resultado |
 |---|---|---|
 | FT + TSan | `test_str` | limpo, fatia completa de 600 s |
-| FT | `test_generators` | **truncada em 166 s** — parou no próprio `test_generators`, mas **sem** a assertion do mimalloc |
+| FT | `test_generators` | truncada em 166 s — parou no próprio teste, **sem** a assertion |
 
-Forçar purge agressivo de arena não produziu a assertion. A hipótese do purge
-como parceiro da corrida continua plausível pela leitura do código, mas não
-tem suporte empírico.
+Com esses dois eu declarei a hipótese do purge "não confirmada" e **fechei a
+caçada**. Foi precoce, em duas frentes.
 
-Com isso a caça pela assertion do mimalloc **para aqui**, como estava decidido
-de antemão. Mais força bruta sem hipótese nova não se paga.
+### Quarto erro: fechei um passo antes da reprodução
 
-### Mas a tentativa produziu outra coisa
+Fui investigar por que o `test_generators` tinha parado em 166 s. Rodei o mesmo
+comando três vezes, **com purge ligado**, capturando a saída inteira:
 
-A fatia do `test_generators` parou **no próprio teste**, em 166 s, e **não** foi
-a assertion do mimalloc. Ou seja: aquele arquivo tem uma segunda forma de
-falhar, que acontece em menos de três minutos — o primeiro sinal
-**reprodutível** do dia inteiro, contra ~2 h 28 de caça que não reproduziu
-nada.
+| Rodada | Duração | Desfecho |
+|---|---|---|
+| 1 | **101 s** | **`mimalloc: assertion failed` em `arena-abandon.c:162`, no `test_concurrent_write`** |
+| 2 | 271 s | `AssertionError: 0 != 1` em `test_concurrent_gi_frame` |
+| 3 | 244 s | idem |
 
-Está sendo investigado separadamente. Se for falha distinta, vira caçada
-própria; se for teste simplesmente instável, isso também é informação, porque
-explica parte do ruído do baseline do build FT.
+**Reproduziu.** Em 101 s, no `test_concurrent_write` — exatamente o teste da
+observação 1. E reproduziu **com o purge ligado**, o que faz do meu "não
+confirmou" uma conclusão tirada de duas amostras, logo antes de a terceira
+contradizer.
+
+Somando as quatro execuções com purge no `test_generators`: **1 assertion em
+~13 min**, contra **0 em 2 h 28** de tudo o que eu tentei antes.
+
+### E o quinto erro, que é o maior dos cinco
+
+Eu passei a maior parte da caça no **`test_str`** e na **suíte inteira**. Nenhum
+dos dois reproduziu.
+
+A observação 1 — a primeira de todas, do baseline — foi em
+`test_free_threading.test_generators`, método `test_concurrent_write`. **O alvo
+certo estava apontado desde o começo e eu fui atrás do outro.** Persegui o
+alvo da observação 2 (`test_str`, que foi onde a segunda ocorrência caiu) e
+depois a suíte, quando a primeira ocorrência já nomeava o lugar.
+
+As ~2 h 28 de caça não foram caça no lugar errado por falta de informação;
+foram caça no lugar errado tendo a informação. É um erro de leitura das minhas
+próprias notas, não de método de medição.
+
+Com isso a caçada **reabre**, e com oráculo:
+
+```bash
+cd ~/src/cpython-ft
+MIMALLOC_PURGE_DELAY=0 MIMALLOC_ARENA_PURGE_MULT=1 \
+  ./python -m test test_free_threading.test_generators \
+      -F --parallel-threads=4 -j10 -W
+```
+
+Está rodando experimento controlado de 5 execuções por braço (purge ligado vs.
+default) para saber se o purge realmente ajuda ou se foi coincidência, e para
+ter taxa dos dois lados.
+
+### Achado lateral: `test_concurrent_gi_frame`
+
+Duas das três rodadas acima falharam com `AssertionError: 0 != 1` em
+`test_concurrent_gi_frame` — defeito **diferente** e mais frequente que a
+assertion do mimalloc. Ver seção 10.
 
 ## 9. O que falta, em ordem
 
@@ -349,3 +386,85 @@ explica parte do ruído do baseline do build FT.
 4. Repro autônomo. O que escrevi (criação e morte de thread com objetos
    sobrevivendo) deu 0/6 — a hipótese de mecanismo pode estar errada, ou a
    pressão insuficiente.
+
+---
+
+## 10. Achado lateral — `test_concurrent_gi_frame` falha com `0 != 1`
+
+Mais frequente que a assertion do mimalloc: **2 de 3** rodadas de investigação,
+e provavelmente também a fatia truncada de 166 s.
+
+O teste, em `Lib/test/test_free_threading/test_generators.py`:
+
+```python
+def test_concurrent_gi_frame(self):
+    frames = set()
+    def gen():
+        for i in range(10000):
+            yield i
+    g = gen()
+    done = threading.Event()
+
+    def runner():
+        for _ in g:
+            pass
+        done.set()
+
+    def reader():
+        while not done.is_set():
+            frame = g.gi_frame
+            if frame:
+                frame.f_code
+                frame.f_locals
+                frames.add(frame)
+        self.assertIsNone(g.gi_frame)
+
+    threading_helper.run_concurrently([runner, reader])
+    self.assertEqual(len(frames), 1)      # <-- 0 != 1 falha aqui
+```
+
+`0 != 1` significa `len(frames) == 0`: o `reader` nunca guardou frame nenhum.
+
+**Hipótese:** corrida de desenho do teste, não bug do CPython. Se o `runner`
+termina os 10.000 yields antes de o `reader` chegar no primeiro
+`while not done.is_set()`, o corpo do laço não roda nenhuma vez, `frames` fica
+vazio, e a asserção final falha. O teste assume um escalonamento que não é
+garantido.
+
+**Status da hipótese: NÃO confirmada.** Medi em processo isolado, 300
+tentativas no build free-threaded:
+
+```
+frames vazio (0 != 1):  0  (0.0%)
+reader com ZERO voltas: 0
+voltas do reader: min=271 max=103055
+```
+
+Ou seja: sozinho, o `reader` sempre roda pelo menos 271 voltas e nunca falha.
+A falha precisa da inanição que o `--parallel-threads=4 -j10` cria — ~40
+threads disputando 10 núcleos. Isso é **consistente** com a hipótese, mas não a
+prova: eu ainda não observei diretamente o `reader` com zero voltas.
+
+O teste de sobrecarga está escrito (24 cópias simultâneas do script de
+mecanismo) e **não foi executado ainda**, para não corromper o experimento de
+purge que está rodando — ele mede taxa sob carga definida, e 24 processos
+extras invalidariam a medição.
+
+### Procedência
+
+| | |
+|---|---|
+| Teste introduzido por | [PR 156037](https://github.com/python/cpython/pull/156037), Kumar Aditya, merged 2026-09-02 |
+| Para a issue | [gh-144446](https://github.com/python/cpython/issues/144446) *"Data races with frame objects"* — **ainda aberta** |
+| Primeira tag | `v3.16.0a1` |
+| Reportado como instável? | nada encontrado em issues nem PRs |
+
+Se a hipótese se confirmar, é reporte pequeno e de baixa controvérsia: teste
+instável, com mecanismo explicado e correção óbvia (barreira, ou asserção que
+tolere o caso de o reader não ser escalonado). Seria candidato melhor a
+primeira contribuição do que a assertion do mimalloc, justamente por ser
+pequeno e verificável.
+
+**Nada reportado.** A hipótese precisa de confirmação direta primeiro — e o
+registro desta caçada já mostra o que acontece quando eu reporto antes de
+medir.
