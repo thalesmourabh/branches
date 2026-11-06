@@ -5,7 +5,7 @@
 | **Projeto** | python/cpython |
 | **Issue upstream** | [gh-160978](https://github.com/python/cpython/issues/160978), aberta por `ngoldbaum` em 2026-10-30 |
 | **Escada** | **E2 — fix dirigido**, primeiro desta série |
-| **Status** | **PR aberto: [gh-161494](https://github.com/python/cpython/pull/161494)**, CLA assinado, 40 checks passando, aguardando review |
+| **Status** | **PR aberto: [gh-161494](https://github.com/python/cpython/pull/161494)** — **56 checks verdes, 0 falhando**, aguardando review |
 | **Data** | 2026-11-06 |
 
 ---
@@ -169,7 +169,7 @@ commit, passou.
 | diff | +122 −3, exatamente os 3 arquivos |
 | CI | rodando |
 | **check `CLA Signing`** | **success** — *"The Contributor License Agreement is signed"* |
-| checks | **40 passando, 0 falhando**, 15 em andamento |
+| checks | **56 passando, 0 falhando, 0 pendentes** |
 
 O `python-cla-bot` comentou nomeando o email que falta:
 
@@ -232,3 +232,30 @@ pulam. Suíte completa segue SUCCESS (650 testes).
 Commit `183e57d8314`, empurrado como commit novo — **sem force-push**. O CPython
 faz squash no merge, então commit de correção é barato; force-push custaria
 re-rodar os ~55 jobs.
+
+---
+
+## 12. CI final — verde
+
+Depois do guard de threads, head `183e57d8314`:
+
+```
+56 passando · 0 falhando · 0 pendentes
+All required checks pass ....................... pass
+```
+
+Os que mais importam para uma mudança de concorrência:
+
+| Check | |
+|---|---|
+| `Sanitizers / TSan (free-threading)` | **pass** (27 min) |
+| `Ubuntu (free-threading)` x86 e arm | **pass** |
+| `Emscripten / build and test` | **pass** — era a falha, resolvida |
+| `Ubuntu (bolt)`, `Ubuntu (installed)`, `Hypothesis` | **pass** |
+
+O TSan passando é o que fecha o argumento: a mudança é sobre corrida, e o
+sanitizer de corrida deles não reclamou dela.
+
+Falta só review humana. Label `awaiting review`, `reviewDecision` vazio, e o
+único comentário é o do bot do CLA. `mergeStateStatus` continua `BLOCKED`
+porque quem faz merge é core dev — não é impedimento no patch.
