@@ -223,6 +223,19 @@ Aplicado o filtro da caçada 004, contra issues **e** PRs:
 | python/cpython | `arena-abandon`, `_mi_arena_segment_mark_abandoned`, `mimalloc`, `test_concurrent_write` | 8 issues de mimalloc abertas, **nenhuma é esta** |
 | microsoft/mimalloc | `arena-abandon`, `blocks_inuse`, `mark_abandoned` | nada com esta assertion |
 
+**Ponta solta conferida e fechada (2026-11-06).** A
+[gh-140209](https://github.com/python/cpython/issues/140209) — *"TSAN reports
+multiple data races, SEGV errors, and thread leaks when running the full test
+suite"* — parecia poder cobrir isto. **Não cobre.** É build **com GIL** (o
+`configure` dela não tem `--disable-gil`), com o JIT experimental ligado,
+Clang 19, 3.15, e as corridas que ela relata são de inicialização de
+subinterpretador. Nenhuma menção a mimalloc ou arena, nos comentários
+tampouco.
+
+Como efeito colateral ela explica um contraste do meu baseline: ela relata
+*milhares* de avisos do TSan e eu medi **zero**. A diferença é a configuração —
+JIT e subinterpretadores ligados no caso dela.
+
 A mais próxima no mimalloc é a
 [#1306](https://github.com/microsoft/mimalloc/issues/1306), assertion no
 caminho de abandono sob carga multi-thread — mas é a função do **v3**
