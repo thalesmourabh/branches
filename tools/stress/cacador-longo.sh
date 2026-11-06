@@ -14,11 +14,22 @@
 # sobrevive entre execucoes, para que a taxa saia de horas e nao de minutos.
 # E so com taxa que a coisa vira issue, e so com taxa o bisect tem oraculo.
 #
-# Uso: bash cacador-longo.sh <gil|ft|tsan> <teste> [horas] [threads]
+# O alvo pode ser o nome de um teste ou a palavra SUITE.
+#
+# SUITE existe porque as duas observacoes vieram dai, nao de repeticao de um
+# teste so: a primeira aconteceu DURANTE a suite completa, e a segunda foi a
+# primeira execucao de teste unico logo DEPOIS da suite completa terminar.
+# Repeticao de teste unico desde entao: 0 em ~26 min. A hipotese e que o
+# gatilho precisa da variedade da suite -- muitos padroes de alocacao e muitas
+# threads em arquivos diferentes -- e nao de repetir um caso. Nao esta provado;
+# com n=2 nao da para afirmar. Mas a suite custa 7 min no build FT, entao
+# testar a hipotese e barato.
+#
+# Uso: bash cacador-longo.sh <gil|ft|tsan> <teste|SUITE> [horas] [threads]
 set -u
 
-LABEL="${1:?uso: cacador-longo.sh <gil|ft|tsan> <teste> [horas] [threads]}"
-TEST="${2:?falta o teste}"
+LABEL="${1:?uso: cacador-longo.sh <gil|ft|tsan> <teste|SUITE> [horas] [threads]}"
+TEST="${2:?falta o alvo: nome do teste ou SUITE}"
 HORAS="${3:-1}"
 PTHREADS="${4:-4}"
 
@@ -54,7 +65,16 @@ while [ "$(date +%s)" -lt "$FIM" ]; do
 
   # -F roda em loop ate dar erro. Fatias de 10 min: longas o bastante para a
   # corrida acontecer, curtas o bastante para nao perder tudo se travar.
-  OUT=$(timeout 600s ./python -m test "$TEST" -F --parallel-threads="$PTHREADS" -j10 -W 2>&1)
+  #
+  # Em SUITE nao vai --parallel-threads: a observacao 1 nao tinha, e com a
+  # suite inteira isso multiplicaria o tempo de cada passada sem necessidade.
+  # Fatia maior (20 min) porque uma passada da suite leva 7 min no FT e 17 no
+  # TSan -- fatia de 10 min cortaria a passada no meio.
+  if [ "$TEST" = "SUITE" ]; then
+    OUT=$(timeout 1800s ./python -m test -F -j10 -W --timeout=600 2>&1)
+  else
+    OUT=$(timeout 600s ./python -m test "$TEST" -F --parallel-threads="$PTHREADS" -j10 -W 2>&1)
+  fi
   T1=$(date -u +%s)
   DUR=$((T1 - T0))
 

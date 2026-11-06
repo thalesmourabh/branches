@@ -85,6 +85,25 @@ como se fosse taxa. **Estava errado.** Fui medir:
 
 **0 de 12.** Mesmo comando da observação 2, mesmo build, mesmo teste: limpo.
 
+Depois disso, mais uma fatia de 10 min com o caçador longo: também limpa.
+Acumulado de caça deliberada: **~58 min, 0 ocorrências.**
+
+### Hipótese sobre o gatilho, não provada
+
+Olhando de onde vieram as duas observações:
+
+- a **1** aconteceu **durante a suíte completa**;
+- a **2** foi a **primeira** execução de teste único, logo **depois** de a suíte
+  completa sob TSan terminar.
+
+E repetição de teste único desde então: **0 em ~26 min**.
+
+Isso sugere que o gatilho precisa da **variedade da suíte** — muitos padrões de
+alocação e muitas threads em arquivos diferentes — e não de repetir um caso.
+Com n=2 isso não dá para afirmar; pode ser só variância de corrida rara. Mas a
+suíte custa 7 min no build FT, então a hipótese é barata de testar, e o
+`cacador-longo.sh` ganhou o alvo `SUITE` para isso.
+
 Uma ocorrência não é taxa. Chamei de reprodução o que era amostra única, e o
 número que eu reportei não sobreviveu à primeira verificação.
 
