@@ -1,0 +1,877 @@
+== CPython 3.16.0a1+dev free-threading build (heads/main:534605904df, Nov 5 2026, 17:20:27) [GCC 15.2.0]
+== Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.43 little-endian
+== Python build: free_threading debug
+== cwd: /home/thales/src/cpython-ft/build/test_python_worker_66166æ
+== CPU count: 10
+== encodings: locale=UTF-8 FS=utf-8
+== resources: all test resources are disabled, use -u option to unskip tests
+
+Using random seed: 4024687628
+0:00:00 load avg: 0.03 mem:   38.4 MiB Run 562 tests in parallel using 10 worker processes (timeout: 10 min, worker timeout: 15 min)
+0:00:01 load avg: 0.03 mem:  324.5 MiB [  1/562] test.test_asyncio.test_buffered_proto passed
+0:00:01 load avg: 0.03 mem:  284.2 MiB [  2/562] test.test_asyncio.test_futures2 passed
+0:00:01 load avg: 0.03 mem:  300.3 MiB [  3/562] test.test_asyncio.test_context passed
+0:00:02 load avg: 0.91 mem:  316.2 MiB [  4/562] test.test_asyncio.test_protocols passed
+0:00:02 load avg: 0.91 mem:  306.0 MiB [  5/562] test.test_asyncio.test_graph passed
+0:00:02 load avg: 0.91 mem:  323.7 MiB [  6/562] test.test_asyncio.test_pep492 passed
+0:00:03 load avg: 0.91 mem:  339.9 MiB [  7/562] test.test_asyncio.test_proactor_events passed
+0:00:03 load avg: 0.91 mem:  315.1 MiB [  8/562] test.test_asyncio.test_runners passed
+0:00:03 load avg: 0.91 mem:  334.8 MiB [  9/562] test.test_asyncio.test_locks passed
+0:00:04 load avg: 0.91 mem:  333.9 MiB [ 10/562] test.test_asyncio.test_queues passed
+0:00:04 load avg: 0.91 mem:  326.7 MiB [ 11/562] test.test_asyncio.test_selector_events passed
+0:00:05 load avg: 0.91 mem:  436.0 MiB [ 12/562] test.test_asyncio.test_server passed
+0:00:05 load avg: 0.91 mem:  367.5 MiB [ 13/562] test.test_asyncio.test_server_context passed
+0:00:05 load avg: 0.91 mem:  364.2 MiB [ 14/562] test.test_asyncio.test_base_events passed
+0:00:07 load avg: 1.48 mem:  388.6 MiB [ 15/562] test.test_asyncio.test_staggered passed
+0:00:07 load avg: 1.48 mem:  347.9 MiB [ 16/562] test.test_asyncio.test_eager_task_factory passed
+0:00:07 load avg: 1.48 mem:  356.2 MiB [ 17/562] test.test_asyncio.test_streams passed
+0:00:08 load avg: 1.48 mem:  343.2 MiB [ 18/562] test.test_asyncio.test_futures passed
+0:00:09 load avg: 1.48 mem:  380.4 MiB [ 19/562] test.test_asyncio.test_threads passed
+0:00:09 load avg: 1.48 mem:  358.5 MiB [ 20/562] test.test_asyncio.test_sock_lowlevel passed
+0:00:10 load avg: 1.48 mem:  384.0 MiB [ 21/562] test.test_asyncio.test_tools passed
+0:00:10 load avg: 1.48 mem:  406.5 MiB [ 22/562] test.test_asyncio.test_timeouts passed
+0:00:10 load avg: 1.48 mem:  354.2 MiB [ 23/562] test.test_asyncio.test_transports passed
+0:00:10 load avg: 1.48 mem:  388.5 MiB [ 24/562] test.test_asyncio.test_sslproto passed
+0:00:11 load avg: 1.48 mem:  386.6 MiB [ 25/562] test.test_asyncio.test_windows_events skipped
+test.test_asyncio.test_windows_events skipped -- Windows only
+0:00:11 load avg: 2.00 mem:  356.0 MiB [ 26/562] test.test_asyncio.test_sendfile passed
+0:00:12 load avg: 2.00 mem:  348.1 MiB [ 27/562] test.test_asyncio.test_windows_utils skipped
+test.test_asyncio.test_windows_utils skipped -- Windows only
+0:00:12 load avg: 2.00 mem:  381.0 MiB [ 28/562] test.test_asyncio.test_waitfor passed
+0:00:13 load avg: 2.00 mem:  363.1 MiB [ 29/562] test.test_asyncio.test_unix_events passed
+0:00:16 load avg: 2.00 mem:  255.5 MiB [ 30/562] test.test_concurrent_futures.test_future passed
+0:00:17 load avg: 2.64 mem:  326.8 MiB [ 31/562] test.test_asyncio.test_ssl passed
+0:00:18 load avg: 2.64 mem:  341.5 MiB [ 32/562] test.test_asyncio.test_subprocess passed
+0:00:21 load avg: 2.64 mem:  453.6 MiB [ 33/562] test.test_concurrent_futures.test_init passed
+0:00:22 load avg: 2.83 mem:  481.9 MiB [ 34/562] test.test_concurrent_futures.test_thread_pool passed
+0:00:23 load avg: 2.83 mem:  470.8 MiB [ 35/562] test.test_asyncio.test_taskgroups passed
+0:00:23 load avg: 2.83 mem:  468.2 MiB [ 36/562] test.test_free_threading.test_async_generators passed
+0:00:24 load avg: 2.83 mem:  493.2 MiB [ 37/562] test.test_free_threading.test_bisect passed
+0:00:26 load avg: 2.83 mem:  501.6 MiB [ 38/562] test.test_free_threading.test_bytes_object passed
+0:00:27 load avg: 4.20 mem:  495.2 MiB [ 39/562] test.test_free_threading.test_bz2 passed
+0:00:28 load avg: 4.20 mem:  494.6 MiB [ 40/562] test.test_free_threading.test_capi passed
+0:00:29 load avg: 4.20 mem:  499.1 MiB [ 41/562] test.test_free_threading.test_code passed
+0:00:29 load avg: 4.20 mem:  495.8 MiB [ 42/562] test.test_asyncio.test_events passed
+0:00:30 load avg: 4.20 mem:  502.8 MiB [ 43/562] test.test_free_threading.test_context passed -- running (1): test.test_asyncio.test_free_threading (30.3 sec)
+0:00:31 load avg: 4.20 mem:  504.0 MiB [ 44/562] test.test_free_threading.test_collections passed -- running (1): test.test_asyncio.test_free_threading (30.8 sec)
+0:00:31 load avg: 4.20 mem:  513.8 MiB [ 45/562] test.test_free_threading.test_cprofile passed -- running (1): test.test_asyncio.test_free_threading (31.5 sec)
+0:00:32 load avg: 5.31 mem:  544.1 MiB [ 46/562] test.test_free_threading.test_csv passed -- running (1): test.test_asyncio.test_free_threading (32.1 sec)
+0:00:32 load avg: 5.31 mem:  547.2 MiB [ 47/562] test.test_free_threading.test_datetime passed -- running (1): test.test_asyncio.test_free_threading (32.4 sec)
+0:00:34 load avg: 5.31 mem:  575.3 MiB [ 48/562] test.test_asyncio.test_free_threading passed (34.0 sec)
+0:00:34 load avg: 5.31 mem:  594.8 MiB [ 49/562] test.test_free_threading.test_dbm_gnu passed
+0:00:35 load avg: 5.31 mem:  588.4 MiB [ 50/562] test.test_free_threading.test_dict_watcher passed
+0:00:35 load avg: 5.31 mem:  606.3 MiB [ 51/562] test.test_free_threading.test_enumerate passed
+0:00:36 load avg: 5.31 mem:  621.1 MiB [ 52/562] test.test_free_threading.test_exceptions passed
+0:00:37 load avg: 6.41 mem:  670.4 MiB [ 53/562] test.test_free_threading.test_frame passed
+0:00:40 load avg: 6.41 mem:  720.7 MiB [ 54/562] test.test_free_threading.test_func_annotations passed -- running (1): test.test_asyncio.test_tasks (32.5 sec)
+0:00:41 load avg: 6.41 mem:  693.0 MiB [ 55/562] test.test_concurrent_futures.test_as_completed passed -- running (1): test.test_asyncio.test_tasks (33.1 sec)
+0:00:41 load avg: 7.09 mem:  694.1 MiB [ 56/562] test.test_free_threading.test_functools passed -- running (1): test.test_asyncio.test_tasks (34.0 sec)
+0:00:42 load avg: 7.09 mem:  693.2 MiB [ 57/562] test.test_free_threading.test_dict passed -- running (2): test.test_asyncio.test_tasks (34.2 sec), test.test_concurrent_futures.test_deadlock (30.0 sec)
+0:00:43 load avg: 7.09 mem:  723.8 MiB [ 58/562] test.test_free_threading.test_functions passed -- running (2): test.test_asyncio.test_tasks (35.6 sec), test.test_concurrent_futures.test_deadlock (31.4 sec)
+0:00:44 load avg: 7.09 mem:  747.4 MiB [ 59/562] test.test_free_threading.test_gc_get_stats_race passed -- running (2): test.test_asyncio.test_tasks (36.6 sec), test.test_concurrent_futures.test_deadlock (32.4 sec)
+0:00:44 load avg: 7.09 mem:  751.0 MiB [ 60/562] test.test_free_threading.test_grp passed -- running (2): test.test_asyncio.test_tasks (36.9 sec), test.test_concurrent_futures.test_deadlock (32.7 sec)
+0:00:46 load avg: 7.09 mem:  768.5 MiB [ 61/562] test.test_free_threading.test_interpreters passed -- running (2): test.test_asyncio.test_tasks (38.2 sec), test.test_concurrent_futures.test_deadlock (34.0 sec)
+0:00:46 load avg: 7.09 mem:  793.1 MiB [ 62/562] test.test_concurrent_futures.test_wait passed -- running (2): test.test_asyncio.test_tasks (38.8 sec), test.test_concurrent_futures.test_deadlock (34.6 sec)
+0:00:48 load avg: 7.89 mem:  796.3 MiB [ 63/562] test.test_asyncio.test_tasks passed (40.2 sec) -- running (3): test.test_concurrent_futures.test_process_pool (31.3 sec), test.test_concurrent_futures.test_interpreter_pool (31.3 sec), test.test_concurrent_futures.test_deadlock (36.0 sec)
+0:00:48 load avg: 7.89 mem:  832.7 MiB [ 64/562] test.test_free_threading.test_heapq passed -- running (3): test.test_concurrent_futures.test_process_pool (31.7 sec), test.test_concurrent_futures.test_interpreter_pool (31.8 sec), test.test_concurrent_futures.test_deadlock (36.5 sec)
+0:00:49 load avg: 7.89 mem:  337.3 MiB [ 65/562] test.test_concurrent_futures.test_interpreter_pool passed (32.6 sec) -- running (3): test.test_concurrent_futures.test_process_pool (32.6 sec), test.test_concurrent_futures.test_deadlock (37.3 sec), test.test_concurrent_futures.test_shutdown (30.8 sec)
+0:00:49 load avg: 7.89 mem:  306.0 MiB [ 66/562] test.test_free_threading.test_io passed -- running (3): test.test_concurrent_futures.test_process_pool (32.8 sec), test.test_concurrent_futures.test_deadlock (37.6 sec), test.test_concurrent_futures.test_shutdown (31.1 sec)
+0:00:50 load avg: 7.89 mem:  236.5 MiB [ 67/562] test.test_free_threading.test_itertools_combinatoric passed -- running (3): test.test_concurrent_futures.test_process_pool (33.2 sec), test.test_concurrent_futures.test_deadlock (37.9 sec), test.test_concurrent_futures.test_shutdown (31.4 sec)
+0:00:50 load avg: 7.89 mem:  263.8 MiB [ 68/562] test.test_free_threading.test_gc passed -- running (3): test.test_concurrent_futures.test_process_pool (33.3 sec), test.test_concurrent_futures.test_deadlock (38.1 sec), test.test_concurrent_futures.test_shutdown (31.6 sec)
+0:00:50 load avg: 7.89 mem:  268.0 MiB [ 69/562] test.test_free_threading.test_iteration passed -- running (3): test.test_concurrent_futures.test_process_pool (33.5 sec), test.test_concurrent_futures.test_deadlock (38.3 sec), test.test_concurrent_futures.test_shutdown (31.7 sec)
+0:00:50 load avg: 7.89 mem:  301.7 MiB [ 70/562] test.test_free_threading.test_json passed -- running (3): test.test_concurrent_futures.test_process_pool (33.7 sec), test.test_concurrent_futures.test_deadlock (38.5 sec), test.test_concurrent_futures.test_shutdown (32.0 sec)
+0:00:50 load avg: 7.89 mem:  312.7 MiB [ 71/562] test.test_free_threading.test_methodcaller passed -- running (3): test.test_concurrent_futures.test_process_pool (34.0 sec), test.test_concurrent_futures.test_deadlock (38.8 sec), test.test_concurrent_futures.test_shutdown (32.3 sec)
+0:00:51 load avg: 7.89 mem:  270.0 MiB [ 72/562] test.test_free_threading.test_list passed -- running (3): test.test_concurrent_futures.test_process_pool (34.2 sec), test.test_concurrent_futures.test_deadlock (38.9 sec), test.test_concurrent_futures.test_shutdown (32.4 sec)
+0:00:51 load avg: 7.89 mem:  289.1 MiB [ 73/562] test.test_free_threading.test_lzma passed -- running (3): test.test_concurrent_futures.test_process_pool (34.3 sec), test.test_concurrent_futures.test_deadlock (39.1 sec), test.test_concurrent_futures.test_shutdown (32.6 sec)
+0:00:51 load avg: 7.89 mem:  270.1 MiB [ 74/562] test.test_free_threading.test_mmap passed -- running (3): test.test_concurrent_futures.test_process_pool (34.7 sec), test.test_concurrent_futures.test_deadlock (39.5 sec), test.test_concurrent_futures.test_shutdown (33.0 sec)
+0:00:51 load avg: 7.89 mem:  268.1 MiB [ 75/562] test.test_free_threading.test_memoryview passed -- running (3): test.test_concurrent_futures.test_process_pool (34.9 sec), test.test_concurrent_futures.test_deadlock (39.6 sec), test.test_concurrent_futures.test_shutdown (33.1 sec)
+0:00:51 load avg: 7.89 mem:  285.8 MiB [ 76/562] test.test_free_threading.test_os passed -- running (3): test.test_concurrent_futures.test_process_pool (35.0 sec), test.test_concurrent_futures.test_deadlock (39.8 sec), test.test_concurrent_futures.test_shutdown (33.3 sec)
+0:00:52 load avg: 8.86 mem:  283.7 MiB [ 77/562] test.test_free_threading.test_pwd passed -- running (3): test.test_concurrent_futures.test_process_pool (35.5 sec), test.test_concurrent_futures.test_deadlock (40.3 sec), test.test_concurrent_futures.test_shutdown (33.8 sec)
+0:00:52 load avg: 8.86 mem:  283.5 MiB [ 78/562] test.test_free_threading.test_re passed -- running (3): test.test_concurrent_futures.test_process_pool (35.8 sec), test.test_concurrent_futures.test_deadlock (40.6 sec), test.test_concurrent_futures.test_shutdown (34.0 sec)
+0:00:52 load avg: 8.86 mem:  286.2 MiB [ 79/562] test.test_free_threading.test_pickle passed -- running (3): test.test_concurrent_futures.test_process_pool (36.0 sec), test.test_concurrent_futures.test_deadlock (40.8 sec), test.test_concurrent_futures.test_shutdown (34.3 sec)
+0:00:53 load avg: 8.86 mem:  304.8 MiB [ 80/562] test.test_free_threading.test_resource passed -- running (3): test.test_concurrent_futures.test_process_pool (36.5 sec), test.test_concurrent_futures.test_deadlock (41.3 sec), test.test_concurrent_futures.test_shutdown (34.8 sec)
+0:00:53 load avg: 8.86 mem:  270.3 MiB [ 81/562] test.test_free_threading.test_readline passed -- running (3): test.test_concurrent_futures.test_process_pool (37.0 sec), test.test_concurrent_futures.test_deadlock (41.7 sec), test.test_concurrent_futures.test_shutdown (35.2 sec)
+0:00:53 load avg: 8.86 mem:  285.0 MiB [ 82/562] test.test_free_threading.test_reversed passed -- running (3): test.test_concurrent_futures.test_process_pool (37.1 sec), test.test_concurrent_futures.test_deadlock (41.9 sec), test.test_concurrent_futures.test_shutdown (35.4 sec)
+0:00:54 load avg: 8.86 mem:  277.1 MiB [ 83/562] test.test_free_threading.test_itertools passed -- running (3): test.test_concurrent_futures.test_process_pool (37.2 sec), test.test_concurrent_futures.test_deadlock (42.0 sec), test.test_concurrent_futures.test_shutdown (35.5 sec)
+0:00:54 load avg: 8.86 mem:  282.0 MiB [ 84/562] test.test_free_threading.test_set passed -- running (3): test.test_concurrent_futures.test_process_pool (37.5 sec), test.test_concurrent_futures.test_deadlock (42.3 sec), test.test_concurrent_futures.test_shutdown (35.8 sec)
+0:00:54 load avg: 8.86 mem:  288.8 MiB [ 85/562] test.test_free_threading.test_races passed -- running (3): test.test_concurrent_futures.test_process_pool (37.9 sec), test.test_concurrent_futures.test_deadlock (42.6 sec), test.test_concurrent_futures.test_shutdown (36.1 sec)
+0:00:55 load avg: 8.86 mem:  290.1 MiB [ 86/562] test.test_free_threading.test_slots passed -- running (3): test.test_concurrent_futures.test_process_pool (38.9 sec), test.test_concurrent_futures.test_deadlock (43.6 sec), test.test_concurrent_futures.test_shutdown (37.1 sec)
+0:00:56 load avg: 8.86 mem:  284.1 MiB [ 87/562] test.test_free_threading.test_suggestions passed -- running (3): test.test_concurrent_futures.test_process_pool (39.2 sec), test.test_concurrent_futures.test_deadlock (43.9 sec), test.test_concurrent_futures.test_shutdown (37.4 sec)
+0:00:56 load avg: 8.86 mem:  278.3 MiB [ 88/562] test.test_free_threading.test_str passed -- running (3): test.test_concurrent_futures.test_process_pool (39.4 sec), test.test_concurrent_futures.test_deadlock (44.2 sec), test.test_concurrent_futures.test_shutdown (37.6 sec)
+0:00:57 load avg: 11.11 mem:  287.6 MiB [ 89/562] test.test_free_threading.test_string_template_race passed -- running (3): test.test_concurrent_futures.test_process_pool (40.3 sec), test.test_concurrent_futures.test_deadlock (45.1 sec), test.test_concurrent_futures.test_shutdown (38.6 sec)
+0:00:57 load avg: 11.11 mem:  253.8 MiB [ 90/562] test.test_free_threading.test_sys passed -- running (3): test.test_concurrent_futures.test_process_pool (40.5 sec), test.test_concurrent_futures.test_deadlock (45.3 sec), test.test_concurrent_futures.test_shutdown (38.8 sec)
+0:00:57 load avg: 11.11 mem:  269.7 MiB [ 91/562] test.test_free_threading.test_monitoring passed -- running (3): test.test_concurrent_futures.test_process_pool (40.9 sec), test.test_concurrent_futures.test_deadlock (45.7 sec), test.test_concurrent_futures.test_shutdown (39.2 sec)
+0:00:57 load avg: 11.11 mem:  284.9 MiB [ 92/562] test.test_free_threading.test_syslog passed -- running (3): test.test_concurrent_futures.test_process_pool (41.1 sec), test.test_concurrent_futures.test_deadlock (45.9 sec), test.test_concurrent_futures.test_shutdown (39.4 sec)
+0:00:58 load avg: 11.11 mem:  277.3 MiB [ 93/562] test.test_free_threading.test_tokenize passed -- running (3): test.test_concurrent_futures.test_process_pool (41.3 sec), test.test_concurrent_futures.test_deadlock (46.0 sec), test.test_concurrent_futures.test_shutdown (39.5 sec)
+0:00:58 load avg: 11.11 mem:  270.7 MiB [ 94/562] test.test_free_threading.test_sqlite3 passed -- running (3): test.test_concurrent_futures.test_process_pool (41.5 sec), test.test_concurrent_futures.test_deadlock (46.3 sec), test.test_concurrent_futures.test_shutdown (39.8 sec)
+0:00:58 load avg: 11.11 mem:  271.6 MiB [ 95/562] test.test_free_threading.test_uuid passed -- running (3): test.test_concurrent_futures.test_process_pool (41.7 sec), test.test_concurrent_futures.test_deadlock (46.5 sec), test.test_concurrent_futures.test_shutdown (40.0 sec)
+0:00:58 load avg: 11.11 mem:  282.1 MiB [ 96/562] test.test_free_threading.test_weakref passed -- running (3): test.test_concurrent_futures.test_process_pool (42.1 sec), test.test_concurrent_futures.test_deadlock (46.9 sec), test.test_concurrent_futures.test_shutdown (40.4 sec)
+0:00:59 load avg: 11.11 mem:  279.6 MiB [ 97/562] test.test_free_threading.test_zip passed -- running (3): test.test_concurrent_futures.test_process_pool (42.3 sec), test.test_concurrent_futures.test_deadlock (47.1 sec), test.test_concurrent_futures.test_shutdown (40.6 sec)
+0:00:59 load avg: 11.11 mem:  246.1 MiB [ 98/562] test.test_free_threading.test_zlib passed -- running (3): test.test_concurrent_futures.test_process_pool (42.6 sec), test.test_concurrent_futures.test_deadlock (47.3 sec), test.test_concurrent_futures.test_shutdown (40.8 sec)
+0:00:59 load avg: 11.11 mem:  271.2 MiB [ 99/562] test.test_concurrent_futures.test_deadlock passed (47.4 sec) -- running (2): test.test_concurrent_futures.test_process_pool (42.7 sec), test.test_concurrent_futures.test_shutdown (40.9 sec)
+0:00:59 load avg: 11.11 mem:  283.2 MiB [100/562] test.test_future_stmt.test_future_flags passed -- running (2): test.test_concurrent_futures.test_process_pool (43.1 sec), test.test_concurrent_futures.test_shutdown (41.3 sec)
+0:01:00 load avg: 11.11 mem:  262.0 MiB [101/562] test.test_future_stmt.test_future_multiple_features passed -- running (2): test.test_concurrent_futures.test_process_pool (43.3 sec), test.test_concurrent_futures.test_shutdown (41.6 sec)
+0:01:00 load avg: 11.11 mem:  279.9 MiB [102/562] test.test_future_stmt.test_future_multiple_imports passed -- running (2): test.test_concurrent_futures.test_process_pool (43.4 sec), test.test_concurrent_futures.test_shutdown (41.7 sec)
+0:01:00 load avg: 11.11 mem:  275.9 MiB [103/562] test.test_free_threading.test_threading passed -- running (2): test.test_concurrent_futures.test_process_pool (43.6 sec), test.test_concurrent_futures.test_shutdown (41.8 sec)
+0:01:00 load avg: 11.11 mem:  282.6 MiB [104/562] test.test_future_stmt.test_future_single_import passed -- running (2): test.test_concurrent_futures.test_process_pool (43.8 sec), test.test_concurrent_futures.test_shutdown (42.0 sec)
+0:01:00 load avg: 11.11 mem:  264.3 MiB [105/562] test.test_future_stmt.test_future passed -- running (2): test.test_concurrent_futures.test_process_pool (44.0 sec), test.test_concurrent_futures.test_shutdown (42.3 sec)
+0:01:01 load avg: 11.11 mem:  285.4 MiB [106/562] test.test_free_threading.test_types passed -- running (2): test.test_concurrent_futures.test_process_pool (44.1 sec), test.test_concurrent_futures.test_shutdown (42.4 sec)
+0:01:01 load avg: 11.11 mem:  294.9 MiB [107/562] test.test_gdb.test_cfunction passed -- running (2): test.test_concurrent_futures.test_process_pool (44.7 sec), test.test_concurrent_futures.test_shutdown (42.9 sec)
+0:01:01 load avg: 11.11 mem:  281.2 MiB [108/562] test.test_gdb.test_cfunction_full passed -- running (2): test.test_concurrent_futures.test_process_pool (44.9 sec), test.test_concurrent_futures.test_shutdown (43.1 sec)
+0:01:01 load avg: 11.98 mem:  278.1 MiB [109/562] test.test_gdb.test_jit passed -- running (2): test.test_concurrent_futures.test_process_pool (45.1 sec), test.test_concurrent_futures.test_shutdown (43.3 sec)
+0:01:02 load avg: 11.98 mem:  303.7 MiB [110/562/1] test.test_free_threading.test_generators worker non-zero exit code (Exit code -6 (SIGABRT)) -- running (2): test.test_concurrent_futures.test_process_pool (45.6 sec), test.test_concurrent_futures.test_shutdown (43.8 sec)
+test_concurrent_close (test.test_free_threading.test_generators.TestFTGenerators.test_concurrent_close) ... ok
+test_concurrent_gi_frame (test.test_free_threading.test_generators.TestFTGenerators.test_concurrent_gi_frame) ... ok
+test_concurrent_gi_yieldfrom (test.test_free_threading.test_generators.TestFTGenerators.test_concurrent_gi_yieldfrom) ... ok
+test_concurrent_send (test.test_free_threading.test_generators.TestFTGenerators.test_concurrent_send) ... ok
+test_concurrent_write (test.test_free_threading.test_generators.TestFTGenerators.test_concurrent_write) ... mimalloc: assertion failed: at "Objects/mimalloc/arena-abandon.c":162, _mi_arena_segment_mark_abandoned
+  assertion: "_mi_bitmap_is_claimed(arena->blocks_inuse, arena->field_count, 1, bitmap_idx)"
+Fatal Python error: Aborted
+
+
+Current thread's C stack trace (most recent call first):
+  Binary file "/home/thales/src/cpython-ft/python", at _Py_DumpStack+0x46 [0x6238a686c259]
+  Binary file "/home/thales/src/cpython-ft/python", at +0x37ab2b [0x6238a688ab2b]
+  Binary file "/home/thales/src/cpython-ft/python", at +0x37b405 [0x6238a688b405]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at +0x45cb0 [0x782f82645cb0]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at pthread_kill+0x11c [0x782f826a61ac]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at gsignal+0x1e [0x782f82645b7e]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at abort+0x27 [0x782f826288ec]
+  Binary file "/home/thales/src/cpython-ft/python", at +0x1bc73f [0x6238a66cc73f]
+  Binary file "/home/thales/src/cpython-ft/python", at +0x1c6be6 [0x6238a66d6be6]
+  Binary file "/home/thales/src/cpython-ft/python", at +0x1cd76b [0x6238a66dd76b]
+  Binary file "/home/thales/src/cpython-ft/python", at +0x1d07b7 [0x6238a66e07b7]
+  Binary file "/home/thales/src/cpython-ft/python", at +0x1d08ad [0x6238a66e08ad]
+  Binary file "/home/thales/src/cpython-ft/python", at +0x1d4c31 [0x6238a66e4c31]
+  Binary file "/home/thales/src/cpython-ft/python", at +0x1d4d0d [0x6238a66e4d0d]
+  Binary file "/home/thales/src/cpython-ft/python", at +0x1d4d35 [0x6238a66e4d35]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at +0xa0df2 [0x782f826a0df2]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at +0xa3c90 [0x782f826a3c90]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at +0x1375cc [0x782f827375cc]
+
+Extension modules: _testcapi (total: 1)
+0:01:03 load avg: 11.98 mem:  298.4 MiB [111/562/1] test.test_io.test_file passed -- running (2): test.test_concurrent_futures.test_process_pool (46.6 sec), test.test_concurrent_futures.test_shutdown (44.9 sec)
+0:01:03 load avg: 11.98 mem:  302.1 MiB [112/562/1] test.test_io.test_fileio passed -- running (2): test.test_concurrent_futures.test_process_pool (46.8 sec), test.test_concurrent_futures.test_shutdown (45.0 sec)
+0:01:04 load avg: 11.98 mem:  308.8 MiB [113/562/1] test.test_io.test_largefile passed -- running (2): test.test_concurrent_futures.test_process_pool (47.9 sec), test.test_concurrent_futures.test_shutdown (46.2 sec)
+0:01:05 load avg: 11.98 mem:  317.3 MiB [114/562/1] test.test_gdb.test_backtrace passed -- running (2): test.test_concurrent_futures.test_process_pool (48.5 sec), test.test_concurrent_futures.test_shutdown (46.7 sec)
+0:01:06 load avg: 11.98 mem:  324.0 MiB [115/562/1] test.test_io.test_memoryio passed -- running (2): test.test_concurrent_futures.test_process_pool (49.7 sec), test.test_concurrent_futures.test_shutdown (48.0 sec)
+0:01:07 load avg: 13.03 mem:  324.7 MiB [116/562/1] test.test_io.test_general passed -- running (2): test.test_concurrent_futures.test_process_pool (51.0 sec), test.test_concurrent_futures.test_shutdown (49.3 sec)
+0:01:08 load avg: 13.03 mem:  482.7 MiB [117/562/1] test.test_free_threading.test_type passed -- running (2): test.test_concurrent_futures.test_process_pool (51.6 sec), test.test_concurrent_futures.test_shutdown (49.8 sec)
+0:01:08 load avg: 13.03 mem:  310.0 MiB [118/562/1] test.test_io.test_univnewlines passed -- running (2): test.test_concurrent_futures.test_process_pool (51.9 sec), test.test_concurrent_futures.test_shutdown (50.1 sec)
+0:01:09 load avg: 13.03 mem:  325.2 MiB [119/562/1] test.test_io.test_bufferedio passed -- running (2): test.test_concurrent_futures.test_process_pool (52.2 sec), test.test_concurrent_futures.test_shutdown (50.5 sec)
+0:01:10 load avg: 13.03 mem:  278.1 MiB [120/562/1] test.test_gdb.test_misc passed -- running (2): test.test_concurrent_futures.test_process_pool (53.4 sec), test.test_concurrent_futures.test_shutdown (51.7 sec)
+0:01:11 load avg: 13.59 mem:  264.6 MiB [121/562/1] test.test_inspect.test_inspect passed -- running (2): test.test_concurrent_futures.test_process_pool (54.9 sec), test.test_concurrent_futures.test_shutdown (53.1 sec)
+0:01:14 load avg: 13.59 mem:  268.5 MiB [122/562/1] test.test_concurrent_futures.test_shutdown passed (56.1 sec) -- running (1): test.test_concurrent_futures.test_process_pool (57.8 sec)
+0:01:15 load avg: 13.59 mem:  283.3 MiB [123/562/1] test.test_io.test_signals passed -- running (1): test.test_concurrent_futures.test_process_pool (58.2 sec)
+0:01:21 load avg: 14.82 mem:  334.7 MiB [124/562/1] test.test_multiprocessing_forkserver.test_preload passed -- running (1): test.test_concurrent_futures.test_process_pool (1 min 4 sec)
+0:01:21 load avg: 14.82 mem:  326.5 MiB [125/562/1] test.test_io.test_textio passed -- running (1): test.test_concurrent_futures.test_process_pool (1 min 4 sec)
+0:01:22 load avg: 14.43 mem:  306.2 MiB [126/562/1] test.test_gdb.test_pretty_print passed -- running (1): test.test_concurrent_futures.test_process_pool (1 min 6 sec)
+0:01:32 load avg: 14.30 mem:  369.4 MiB [127/562/1] test.test_multiprocessing_fork.test_manager passed -- running (1): test.test_concurrent_futures.test_process_pool (1 min 15 sec)
+0:01:33 load avg: 14.30 mem:  349.1 MiB [128/562/1] test.test_multiprocessing_fork.test_threads passed -- running (1): test.test_concurrent_futures.test_process_pool (1 min 16 sec)
+0:01:48 load avg: 14.98 mem:  414.6 MiB [129/562/1] test.test_multiprocessing_fork.test_processes passed (38.9 sec) -- running (4): test.test_concurrent_futures.test_process_pool (1 min 31 sec), test.test_multiprocessing_fork.test_misc (39.3 sec), test.test_multiprocessing_forkserver.test_manager (36.3 sec), test.test_multiprocessing_forkserver.test_misc (33.3 sec)
+0:01:48 load avg: 14.98 mem:  395.9 MiB [130/562/1] test.test_multiprocessing_forkserver.test_threads passed -- running (4): test.test_concurrent_futures.test_process_pool (1 min 31 sec), test.test_multiprocessing_fork.test_misc (39.5 sec), test.test_multiprocessing_forkserver.test_manager (36.5 sec), test.test_multiprocessing_forkserver.test_misc (33.5 sec)
+0:01:57 load avg: 15.11 mem:  358.3 MiB [131/562/1] test.test_multiprocessing_fork.test_misc passed (48.3 sec) -- running (5): test.test_concurrent_futures.test_process_pool (1 min 40 sec), test.test_multiprocessing_spawn.test_manager (34.1 sec), test.test_multiprocessing_forkserver.test_processes (36.1 sec), test.test_multiprocessing_forkserver.test_manager (45.3 sec), test.test_multiprocessing_forkserver.test_misc (42.4 sec)
+0:01:57 load avg: 15.11 mem:  379.0 MiB [132/562/1] test.test_multiprocessing_forkserver.test_manager passed (45.5 sec) -- running (4): test.test_concurrent_futures.test_process_pool (1 min 40 sec), test.test_multiprocessing_spawn.test_manager (34.4 sec), test.test_multiprocessing_forkserver.test_processes (36.3 sec), test.test_multiprocessing_forkserver.test_misc (42.6 sec)
+0:01:58 load avg: 15.11 mem:  376.3 MiB [133/562/1] test.test_os.test_windows skipped -- running (4): test.test_concurrent_futures.test_process_pool (1 min 41 sec), test.test_multiprocessing_spawn.test_manager (35.1 sec), test.test_multiprocessing_forkserver.test_processes (37.0 sec), test.test_multiprocessing_forkserver.test_misc (43.3 sec)
+test.test_os.test_windows skipped -- Win32 specific tests
+0:02:02 load avg: 14.78 mem:  398.9 MiB [134/562/1] test.test_os.test_posix passed -- running (5): test.test_concurrent_futures.test_process_pool (1 min 45 sec), test.test_multiprocessing_spawn.test_misc (30.2 sec), test.test_multiprocessing_spawn.test_manager (39.8 sec), test.test_multiprocessing_forkserver.test_processes (41.8 sec), test.test_multiprocessing_forkserver.test_misc (48.1 sec)
+0:02:09 load avg: 14.72 mem:  484.4 MiB [135/562/1] test.test_os.test_os passed -- running (6): test.test_concurrent_futures.test_process_pool (1 min 52 sec), test.test_multiprocessing_spawn.test_misc (37.1 sec), test.test_multiprocessing_spawn.test_processes (36.3 sec), test.test_multiprocessing_spawn.test_manager (46.7 sec), test.test_multiprocessing_forkserver.test_processes (48.7 sec), test.test_multiprocessing_forkserver.test_misc (55.0 sec)
+0:02:10 load avg: 14.72 mem:  443.9 MiB [136/562/1] test.test_multiprocessing_forkserver.test_misc passed (55.3 sec) -- running (5): test.test_concurrent_futures.test_process_pool (1 min 53 sec), test.test_multiprocessing_spawn.test_misc (37.5 sec), test.test_multiprocessing_spawn.test_processes (36.7 sec), test.test_multiprocessing_spawn.test_manager (47.1 sec), test.test_multiprocessing_forkserver.test_processes (49.0 sec)
+0:02:11 load avg: 14.72 mem:  493.8 MiB [137/562/1] test__colorize passed -- running (5): test.test_concurrent_futures.test_process_pool (1 min 54 sec), test.test_multiprocessing_spawn.test_misc (38.6 sec), test.test_multiprocessing_spawn.test_processes (37.8 sec), test.test_multiprocessing_spawn.test_manager (48.2 sec), test.test_multiprocessing_forkserver.test_processes (50.2 sec)
+0:02:11 load avg: 14.72 mem:  479.4 MiB [138/562/1] test.test_multiprocessing_spawn.test_threads passed -- running (5): test.test_concurrent_futures.test_process_pool (1 min 54 sec), test.test_multiprocessing_spawn.test_misc (38.8 sec), test.test_multiprocessing_spawn.test_processes (38.0 sec), test.test_multiprocessing_spawn.test_manager (48.4 sec), test.test_multiprocessing_forkserver.test_processes (50.4 sec)
+0:02:12 load avg: 14.58 mem:  557.0 MiB [139/562/1] test__locale passed -- running (5): test.test_concurrent_futures.test_process_pool (1 min 55 sec), test.test_multiprocessing_spawn.test_misc (39.8 sec), test.test_multiprocessing_spawn.test_processes (39.0 sec), test.test_multiprocessing_spawn.test_manager (49.4 sec), test.test_multiprocessing_forkserver.test_processes (51.4 sec)
+0:02:13 load avg: 14.58 mem:  624.3 MiB [140/562/1] test__opcode passed -- running (5): test.test_concurrent_futures.test_process_pool (1 min 56 sec), test.test_multiprocessing_spawn.test_misc (40.8 sec), test.test_multiprocessing_spawn.test_processes (40.0 sec), test.test_multiprocessing_spawn.test_manager (50.4 sec), test.test_multiprocessing_forkserver.test_processes (52.3 sec)
+0:02:14 load avg: 14.58 mem:  709.3 MiB [141/562/1] test__osx_support passed -- running (5): test.test_concurrent_futures.test_process_pool (1 min 57 sec), test.test_multiprocessing_spawn.test_misc (41.8 sec), test.test_multiprocessing_spawn.test_processes (41.1 sec), test.test_multiprocessing_spawn.test_manager (51.5 sec), test.test_multiprocessing_forkserver.test_processes (53.4 sec)
+0:02:15 load avg: 14.58 mem:  631.5 MiB [142/562/1] test__interpchannels passed -- running (5): test.test_concurrent_futures.test_process_pool (1 min 58 sec), test.test_multiprocessing_spawn.test_misc (42.6 sec), test.test_multiprocessing_spawn.test_processes (41.9 sec), test.test_multiprocessing_spawn.test_manager (52.3 sec), test.test_multiprocessing_forkserver.test_processes (54.2 sec)
+0:02:15 load avg: 14.58 mem:  630.2 MiB [143/562/1] test_abc passed -- running (5): test.test_concurrent_futures.test_process_pool (1 min 58 sec), test.test_multiprocessing_spawn.test_misc (42.9 sec), test.test_multiprocessing_spawn.test_processes (42.1 sec), test.test_multiprocessing_spawn.test_manager (52.5 sec), test.test_multiprocessing_forkserver.test_processes (54.4 sec)
+0:02:16 load avg: 14.58 mem:  647.0 MiB [144/562/1] test_abstract_numbers passed -- running (5): test.test_concurrent_futures.test_process_pool (1 min 59 sec), test.test_multiprocessing_spawn.test_misc (43.5 sec), test.test_multiprocessing_spawn.test_processes (42.7 sec), test.test_multiprocessing_spawn.test_manager (53.1 sec), test.test_multiprocessing_forkserver.test_processes (55.0 sec)
+0:02:16 load avg: 14.58 mem:  649.5 MiB [145/562/1] test_android skipped -- running (5): test.test_concurrent_futures.test_process_pool (1 min 59 sec), test.test_multiprocessing_spawn.test_misc (43.7 sec), test.test_multiprocessing_spawn.test_processes (42.9 sec), test.test_multiprocessing_spawn.test_manager (53.3 sec), test.test_multiprocessing_forkserver.test_processes (55.3 sec)
+test_android skipped -- Android-specific
+0:02:17 load avg: 14.38 mem:  660.0 MiB [146/562/1] test_apple skipped -- running (5): test.test_concurrent_futures.test_process_pool (2 min), test.test_multiprocessing_spawn.test_misc (44.4 sec), test.test_multiprocessing_spawn.test_processes (43.7 sec), test.test_multiprocessing_spawn.test_manager (54.1 sec), test.test_multiprocessing_forkserver.test_processes (56.0 sec)
+test_apple skipped -- Apple-specific
+0:02:17 load avg: 14.38 mem:  550.1 MiB [147/562/1] test___all__ passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min), test.test_multiprocessing_spawn.test_misc (44.9 sec), test.test_multiprocessing_spawn.test_processes (44.1 sec), test.test_multiprocessing_spawn.test_manager (54.5 sec), test.test_multiprocessing_forkserver.test_processes (56.4 sec)
+0:02:17 load avg: 14.38 mem:  578.7 MiB [148/562/1] test_annotationlib passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min), test.test_multiprocessing_spawn.test_misc (45.1 sec), test.test_multiprocessing_spawn.test_processes (44.3 sec), test.test_multiprocessing_spawn.test_manager (54.7 sec), test.test_multiprocessing_forkserver.test_processes (56.7 sec)
+0:02:18 load avg: 14.38 mem:  637.0 MiB [149/562/1] test_asdl_parser passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 1 sec), test.test_multiprocessing_spawn.test_misc (45.7 sec), test.test_multiprocessing_spawn.test_processes (44.9 sec), test.test_multiprocessing_spawn.test_manager (55.3 sec), test.test_multiprocessing_forkserver.test_processes (57.3 sec)
+0:02:20 load avg: 14.38 mem:  591.9 MiB [150/562/1] test__interpreters passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 3 sec), test.test_multiprocessing_spawn.test_misc (47.9 sec), test.test_multiprocessing_spawn.test_processes (47.1 sec), test.test_multiprocessing_spawn.test_manager (57.6 sec), test.test_multiprocessing_forkserver.test_processes (59.5 sec)
+0:02:23 load avg: 14.43 mem:  396.7 MiB [151/562/1] test_asyncgen passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 6 sec), test.test_multiprocessing_spawn.test_misc (50.8 sec), test.test_multiprocessing_spawn.test_processes (50.0 sec), test.test_multiprocessing_spawn.test_manager (1 min), test.test_multiprocessing_forkserver.test_processes (1 min 2 sec)
+0:02:23 load avg: 14.43 mem:  416.3 MiB [152/562/1] test_array passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 6 sec), test.test_multiprocessing_spawn.test_misc (51.0 sec), test.test_multiprocessing_spawn.test_processes (50.2 sec), test.test_multiprocessing_spawn.test_manager (1 min), test.test_multiprocessing_forkserver.test_processes (1 min 2 sec)
+0:02:25 load avg: 14.43 mem:  420.9 MiB [153/562/1] test_ast passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 8 sec), test.test_multiprocessing_spawn.test_misc (52.6 sec), test.test_multiprocessing_spawn.test_processes (51.9 sec), test.test_multiprocessing_spawn.test_manager (1 min 2 sec), test.test_multiprocessing_forkserver.test_processes (1 min 4 sec)
+0:02:25 load avg: 14.43 mem:  448.5 MiB [154/562/1] test_augassign passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 9 sec), test.test_multiprocessing_spawn.test_misc (53.4 sec), test.test_multiprocessing_spawn.test_processes (52.6 sec), test.test_multiprocessing_spawn.test_manager (1 min 2 sec), test.test_multiprocessing_forkserver.test_processes (1 min 4 sec)
+0:02:27 load avg: 14.07 mem:  445.4 MiB [155/562/1] test_base64 passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 10 sec), test.test_multiprocessing_spawn.test_misc (54.9 sec), test.test_multiprocessing_spawn.test_processes (54.1 sec), test.test_multiprocessing_spawn.test_manager (1 min 4 sec), test.test_multiprocessing_forkserver.test_processes (1 min 6 sec)
+0:02:27 load avg: 14.07 mem:  386.3 MiB [156/562/1] test.test_multiprocessing_spawn.test_manager passed (1 min 4 sec) -- running (4): test.test_concurrent_futures.test_process_pool (2 min 10 sec), test.test_multiprocessing_spawn.test_misc (55.1 sec), test.test_multiprocessing_spawn.test_processes (54.3 sec), test.test_multiprocessing_forkserver.test_processes (1 min 6 sec)
+0:02:27 load avg: 14.07 mem:  364.4 MiB [157/562/1] test_atexit passed -- running (4): test.test_concurrent_futures.test_process_pool (2 min 10 sec), test.test_multiprocessing_spawn.test_misc (55.3 sec), test.test_multiprocessing_spawn.test_processes (54.5 sec), test.test_multiprocessing_forkserver.test_processes (1 min 6 sec)
+0:02:28 load avg: 14.07 mem:  373.5 MiB [158/562/1] test_baseexception passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 11 sec), test.test_multiprocessing_spawn.test_misc (55.7 sec), test.test_multiprocessing_spawn.test_processes (54.9 sec), test.test_multiprocessing_forkserver.test_processes (1 min 7 sec), test.test_pydoc.test_pydoc (30.2 sec)
+0:02:28 load avg: 14.07 mem:  369.8 MiB [159/562/1] test_bigaddrspace passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 11 sec), test.test_multiprocessing_spawn.test_misc (55.9 sec), test.test_multiprocessing_spawn.test_processes (55.1 sec), test.test_multiprocessing_forkserver.test_processes (1 min 7 sec), test.test_pydoc.test_pydoc (30.4 sec)
+0:02:29 load avg: 14.07 mem:  378.6 MiB [160/562/1] test_bdb passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 12 sec), test.test_multiprocessing_spawn.test_misc (56.5 sec), test.test_multiprocessing_spawn.test_processes (55.7 sec), test.test_multiprocessing_forkserver.test_processes (1 min 8 sec), test.test_pydoc.test_pydoc (31.0 sec)
+0:02:29 load avg: 14.07 mem:  351.4 MiB [161/562/1] test_bigmem passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 12 sec), test.test_multiprocessing_spawn.test_misc (57.1 sec), test.test_multiprocessing_spawn.test_processes (56.3 sec), test.test_multiprocessing_forkserver.test_processes (1 min 8 sec), test.test_pydoc.test_pydoc (31.6 sec)
+0:02:29 load avg: 14.07 mem:  361.8 MiB [162/562/1] test_binascii passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 12 sec), test.test_multiprocessing_spawn.test_misc (57.3 sec), test.test_multiprocessing_spawn.test_processes (56.5 sec), test.test_multiprocessing_forkserver.test_processes (1 min 8 sec), test.test_pydoc.test_pydoc (31.8 sec)
+0:02:30 load avg: 14.07 mem:  378.6 MiB [163/562/1] test_binop passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 13 sec), test.test_multiprocessing_spawn.test_misc (57.5 sec), test.test_multiprocessing_spawn.test_processes (56.7 sec), test.test_multiprocessing_forkserver.test_processes (1 min 9 sec), test.test_pydoc.test_pydoc (32.0 sec)
+0:02:30 load avg: 14.07 mem:  365.8 MiB [164/562/1] test_bool passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 13 sec), test.test_multiprocessing_spawn.test_misc (57.9 sec), test.test_multiprocessing_spawn.test_processes (57.2 sec), test.test_multiprocessing_forkserver.test_processes (1 min 9 sec), test.test_pydoc.test_pydoc (32.5 sec)
+0:02:30 load avg: 14.07 mem:  383.1 MiB [165/562/1] test_bisect passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 13 sec), test.test_multiprocessing_spawn.test_misc (58.1 sec), test.test_multiprocessing_spawn.test_processes (57.3 sec), test.test_multiprocessing_forkserver.test_processes (1 min 9 sec), test.test_pydoc.test_pydoc (32.7 sec)
+0:02:31 load avg: 14.07 mem:  356.1 MiB [166/562/1] test_build_details passed -- running (5): test.test_concurrent_futures.test_process_pool (2 min 14 sec), test.test_multiprocessing_spawn.test_misc (58.9 sec), test.test_multiprocessing_spawn.test_processes (58.1 sec), test.test_multiprocessing_forkserver.test_processes (1 min 10 sec), test.test_pydoc.test_pydoc (33.4 sec)
+0:02:31 load avg: 14.07 mem:  371.5 MiB [167/562/1] test.test_concurrent_futures.test_process_pool passed (2 min 14 sec) -- running (4): test.test_multiprocessing_spawn.test_misc (59.0 sec), test.test_multiprocessing_spawn.test_processes (58.3 sec), test.test_multiprocessing_forkserver.test_processes (1 min 10 sec), test.test_pydoc.test_pydoc (33.6 sec)
+0:02:32 load avg: 14.07 mem:  346.4 MiB [168/562/1] test_builtin passed -- running (4): test.test_multiprocessing_spawn.test_misc (59.8 sec), test.test_multiprocessing_spawn.test_processes (59.1 sec), test.test_multiprocessing_forkserver.test_processes (1 min 11 sec), test.test_pydoc.test_pydoc (34.4 sec)
+0:02:32 load avg: 14.07 mem:  385.6 MiB [169/562/1] test.test_multiprocessing_spawn.test_misc passed (59.9 sec) -- running (3): test.test_multiprocessing_spawn.test_processes (59.2 sec), test.test_multiprocessing_forkserver.test_processes (1 min 11 sec), test.test_pydoc.test_pydoc (34.5 sec)
+0:02:33 load avg: 14.07 mem:  412.8 MiB [170/562/1] test_c_stack_unwind passed -- running (3): test.test_multiprocessing_spawn.test_processes (59.8 sec), test.test_multiprocessing_forkserver.test_processes (1 min 12 sec), test.test_pydoc.test_pydoc (35.1 sec)
+0:02:33 load avg: 14.07 mem:  305.6 MiB [171/562/1] test_argparse passed -- running (3): test.test_multiprocessing_spawn.test_processes (1 min), test.test_multiprocessing_forkserver.test_processes (1 min 12 sec), test.test_pydoc.test_pydoc (35.8 sec)
+0:02:34 load avg: 14.07 mem:  300.9 MiB [172/562/1] test_bz2 passed -- running (3): test.test_multiprocessing_spawn.test_processes (1 min 1 sec), test.test_multiprocessing_forkserver.test_processes (1 min 13 sec), test.test_pydoc.test_pydoc (36.6 sec)
+0:02:36 load avg: 14.07 mem:  309.5 MiB [173/562/1] test_call passed -- running (3): test.test_multiprocessing_spawn.test_processes (1 min 3 sec), test.test_multiprocessing_forkserver.test_processes (1 min 15 sec), test.test_pydoc.test_pydoc (38.9 sec)
+0:02:37 load avg: 13.66 mem:  312.4 MiB [174/562/1] test_audit passed -- running (3): test.test_multiprocessing_spawn.test_processes (1 min 4 sec), test.test_multiprocessing_forkserver.test_processes (1 min 16 sec), test.test_pydoc.test_pydoc (39.4 sec)
+0:02:38 load avg: 13.66 mem:  317.4 MiB [175/562/1] test_charmapcodec passed -- running (3): test.test_multiprocessing_spawn.test_processes (1 min 4 sec), test.test_multiprocessing_forkserver.test_processes (1 min 17 sec), test.test_pydoc.test_pydoc (40.0 sec)
+0:02:39 load avg: 13.66 mem:  320.1 MiB [176/562/1] test_class passed -- running (3): test.test_multiprocessing_spawn.test_processes (1 min 5 sec), test.test_multiprocessing_forkserver.test_processes (1 min 18 sec), test.test_pydoc.test_pydoc (41.0 sec)
+0:02:40 load avg: 13.66 mem:  339.7 MiB [177/562/1] test_c_locale_coercion passed -- running (3): test.test_multiprocessing_spawn.test_processes (1 min 7 sec), test.test_multiprocessing_forkserver.test_processes (1 min 19 sec), test.test_pydoc.test_pydoc (42.5 sec)
+0:02:41 load avg: 13.66 mem:  341.1 MiB [178/562/1] test_buffer passed -- running (3): test.test_multiprocessing_spawn.test_processes (1 min 7 sec), test.test_multiprocessing_forkserver.test_processes (1 min 19 sec), test.test_pydoc.test_pydoc (43.0 sec)
+0:02:41 load avg: 13.66 mem:  330.1 MiB [179/562/1] test_cmath passed -- running (3): test.test_multiprocessing_spawn.test_processes (1 min 8 sec), test.test_multiprocessing_forkserver.test_processes (1 min 20 sec), test.test_pydoc.test_pydoc (43.8 sec)
+0:02:42 load avg: 13.69 mem:  331.9 MiB [180/562/1] test_cmd passed -- running (3): test.test_multiprocessing_spawn.test_processes (1 min 8 sec), test.test_multiprocessing_forkserver.test_processes (1 min 21 sec), test.test_pydoc.test_pydoc (44.3 sec)
+0:02:44 load avg: 13.69 mem:  322.8 MiB [181/562/1] test_clinic passed -- running (3): test.test_multiprocessing_spawn.test_processes (1 min 10 sec), test.test_multiprocessing_forkserver.test_processes (1 min 23 sec), test.test_pydoc.test_pydoc (46.2 sec)
+0:02:45 load avg: 13.69 mem:  308.6 MiB [182/562/1] test.test_pydoc.test_pydoc passed (47.7 sec) -- running (2): test.test_multiprocessing_spawn.test_processes (1 min 12 sec), test.test_multiprocessing_forkserver.test_processes (1 min 24 sec)
+0:02:46 load avg: 13.69 mem:  316.1 MiB [183/562/1] test_code passed -- running (2): test.test_multiprocessing_spawn.test_processes (1 min 13 sec), test.test_multiprocessing_forkserver.test_processes (1 min 25 sec)
+0:02:47 load avg: 13.47 mem:  286.7 MiB [184/562/1] test.test_multiprocessing_forkserver.test_processes passed (1 min 26 sec) -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 13 sec)
+0:02:47 load avg: 13.47 mem:  279.9 MiB [185/562/1] test_code_module passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 13 sec)
+0:02:47 load avg: 13.47 mem:  279.0 MiB [186/562/1] test_codeccallbacks passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 14 sec)
+0:02:47 load avg: 13.47 mem:  296.4 MiB [187/562/1] test_calendar passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 14 sec)
+0:02:48 load avg: 13.47 mem:  297.7 MiB [188/562/1] test_codecencodings_hk passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 14 sec)
+0:02:48 load avg: 13.47 mem:  297.6 MiB [189/562/1] test_codecencodings_cn passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 15 sec)
+0:02:49 load avg: 13.47 mem:  333.4 MiB [190/562/1] test_codecencodings_kr passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 16 sec)
+0:02:49 load avg: 13.47 mem:  322.2 MiB [191/562/1] test_codecencodings_iso2022 passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 16 sec)
+0:02:50 load avg: 13.47 mem:  318.2 MiB [192/562/1] test_codecencodings_tw passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 16 sec)
+0:02:50 load avg: 13.47 mem:  272.4 MiB [193/562/1] test_codecencodings_jp passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 16 sec)
+0:02:50 load avg: 13.47 mem:  295.1 MiB [194/562/1] test_codecmaps_cn passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 17 sec)
+0:02:50 load avg: 13.47 mem:  278.8 MiB [195/562/1] test_codecmaps_hk passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 17 sec)
+0:02:50 load avg: 13.47 mem:  310.3 MiB [196/562/1] test_codecmaps_jp passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 17 sec)
+0:02:51 load avg: 13.47 mem:  282.5 MiB [197/562/1] test_codecmaps_tw passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 17 sec)
+0:02:51 load avg: 13.47 mem:  297.0 MiB [198/562/1] test_codecmaps_kr passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 18 sec)
+0:02:52 load avg: 13.35 mem:  299.8 MiB [199/562/1] test_colorsys passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 18 sec)
+0:02:52 load avg: 13.35 mem:  297.1 MiB [200/562/1] test_codeop passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 18 sec)
+0:02:52 load avg: 13.35 mem:  306.7 MiB [201/562/1] test_compare passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 19 sec)
+0:02:55 load avg: 13.35 mem:  404.1 MiB [202/562/1] test_cext passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 22 sec)
+0:02:56 load avg: 13.35 mem:  456.7 MiB [203/562/1] test_compiler_assemble passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 23 sec)
+0:02:56 load avg: 13.35 mem:  498.1 MiB [204/562/1] test_collections passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 23 sec)
+0:02:57 load avg: 13.33 mem:  475.5 MiB [205/562/1] test_compiler_codegen passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 24 sec)
+0:02:57 load avg: 13.33 mem:  496.2 MiB [206/562/1] test_codecs passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 24 sec)
+0:02:57 load avg: 13.33 mem:  506.8 MiB [207/562/1] test_complex passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 24 sec)
+0:02:58 load avg: 13.33 mem:  551.0 MiB [208/562/1] test_contains passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 24 sec)
+0:02:59 load avg: 13.33 mem:  615.8 MiB [209/562/1] test_contextlib passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 26 sec)
+0:02:59 load avg: 13.33 mem:  627.9 MiB [210/562/1] test_context passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 26 sec)
+0:03:01 load avg: 13.33 mem:  674.9 MiB [211/562/1] test_cmd_line_script passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 27 sec)
+0:03:01 load avg: 13.33 mem:  694.0 MiB [212/562/1] test_copy passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 27 sec)
+0:03:01 load avg: 13.33 mem:  734.5 MiB [213/562/1] test_contextlib_async passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 28 sec)
+0:03:01 load avg: 13.33 mem:  831.5 MiB [214/562/1] test_copyreg passed -- running (2): test.test_multiprocessing_spawn.test_processes (1 min 28 sec), test_bytes (30.4 sec)
+0:03:03 load avg: 13.86 mem:  923.2 MiB [215/562/1] test_crossinterp passed -- running (2): test.test_multiprocessing_spawn.test_processes (1 min 29 sec), test_bytes (31.5 sec)
+0:03:03 load avg: 13.86 mem:  893.0 MiB [216/562/1] test_coroutines passed -- running (2): test.test_multiprocessing_spawn.test_processes (1 min 30 sec), test_bytes (32.4 sec)
+0:03:04 load avg: 13.86 mem:  739.8 MiB [217/562/1] test_csv passed -- running (2): test.test_multiprocessing_spawn.test_processes (1 min 31 sec), test_bytes (33.0 sec)
+0:03:04 load avg: 13.86 mem:  748.6 MiB [218/562/1] test_curses skipped (resource denied) -- running (3): test_capi (30.2 sec), test.test_multiprocessing_spawn.test_processes (1 min 31 sec), test_bytes (33.3 sec)
+test_curses skipped -- Use of the 'curses' resource not enabled
+0:03:05 load avg: 13.86 mem:  982.2 MiB [219/562/1] test_compile passed -- running (3): test_capi (31.4 sec), test.test_multiprocessing_spawn.test_processes (1 min 32 sec), test_bytes (34.5 sec)
+0:03:06 load avg: 13.86 mem:  829.6 MiB [220/562/1] test_dataclasses passed -- running (3): test_capi (32.3 sec), test.test_multiprocessing_spawn.test_processes (1 min 33 sec), test_bytes (35.4 sec)
+0:03:08 load avg: 14.19 mem:  844.2 MiB [221/562/1] test_dbm_dumb passed -- running (3): test_capi (33.5 sec), test.test_multiprocessing_spawn.test_processes (1 min 34 sec), test_bytes (36.6 sec)
+0:03:08 load avg: 14.19 mem:  772.6 MiB [222/562/1] test_configparser passed -- running (3): test_capi (33.7 sec), test.test_multiprocessing_spawn.test_processes (1 min 34 sec), test_bytes (36.8 sec)
+0:03:08 load avg: 14.19 mem:  785.1 MiB [223/562/1] test_cmd_line passed -- running (3): test_capi (33.9 sec), test.test_multiprocessing_spawn.test_processes (1 min 35 sec), test_bytes (37.0 sec)
+0:03:08 load avg: 14.19 mem:  819.2 MiB [224/562/1] test_dbm passed -- running (3): test_capi (34.0 sec), test.test_multiprocessing_spawn.test_processes (1 min 35 sec), test_bytes (37.2 sec)
+0:03:08 load avg: 14.19 mem:  806.5 MiB [225/562/1] test_dbm_gnu passed -- running (3): test_capi (34.3 sec), test.test_multiprocessing_spawn.test_processes (1 min 35 sec), test_bytes (37.5 sec)
+0:03:09 load avg: 14.19 mem:  819.8 MiB [226/562/1] test_dbm_ndbm passed -- running (3): test_capi (34.5 sec), test.test_multiprocessing_spawn.test_processes (1 min 35 sec), test_bytes (37.6 sec)
+0:03:09 load avg: 14.19 mem:  722.7 MiB [227/562/1] test_decorators passed -- running (3): test_capi (35.1 sec), test.test_multiprocessing_spawn.test_processes (1 min 36 sec), test_bytes (38.2 sec)
+0:03:09 load avg: 14.19 mem:  701.3 MiB [228/562/1] test_defaultdict passed -- running (2): test_capi (35.3 sec), test.test_multiprocessing_spawn.test_processes (1 min 36 sec)
+0:03:10 load avg: 14.19 mem:  696.3 MiB [229/562/1] test_bytes passed (38.4 sec) -- running (2): test_capi (35.5 sec), test.test_multiprocessing_spawn.test_processes (1 min 36 sec)
+0:03:10 load avg: 14.19 mem:  756.6 MiB [230/562/1] test_dbm_sqlite3 passed -- running (2): test_capi (35.6 sec), test.test_multiprocessing_spawn.test_processes (1 min 36 sec)
+0:03:10 load avg: 14.19 mem:  866.0 MiB [231/562/1] test_descrtut passed -- running (2): test_capi (36.1 sec), test.test_multiprocessing_spawn.test_processes (1 min 37 sec)
+0:03:10 load avg: 14.19 mem:  877.4 MiB [232/562/1] test_devpoll skipped -- running (2): test_capi (36.3 sec), test.test_multiprocessing_spawn.test_processes (1 min 37 sec)
+test_devpoll skipped -- test works only on Solaris OS family
+0:03:11 load avg: 14.19 mem:  807.8 MiB [233/562/1] test_dictcomps passed -- running (2): test_capi (37.1 sec), test.test_multiprocessing_spawn.test_processes (1 min 38 sec)
+0:03:13 load avg: 13.78 mem:  820.8 MiB [234/562/1] test_descr passed -- running (2): test_capi (38.4 sec), test.test_multiprocessing_spawn.test_processes (1 min 39 sec)
+0:03:13 load avg: 13.78 mem:  771.1 MiB [235/562/1] test_ctypes passed -- running (2): test_capi (38.6 sec), test.test_multiprocessing_spawn.test_processes (1 min 39 sec)
+0:03:13 load avg: 13.78 mem:  737.0 MiB [236/562/1] test_dictviews passed -- running (2): test_capi (38.8 sec), test.test_multiprocessing_spawn.test_processes (1 min 40 sec)
+0:03:15 load avg: 13.78 mem:  881.1 MiB [237/562/1] test_deque passed -- running (2): test_capi (40.4 sec), test.test_multiprocessing_spawn.test_processes (1 min 41 sec)
+0:03:16 load avg: 13.78 mem:  733.1 MiB [238/562/1] test_dict passed -- running (2): test_capi (41.4 sec), test.test_multiprocessing_spawn.test_processes (1 min 42 sec)
+0:03:16 load avg: 13.78 mem:  738.0 MiB [239/562/1] test_dtrace skipped -- running (2): test_capi (42.2 sec), test.test_multiprocessing_spawn.test_processes (1 min 43 sec)
+test_dtrace skipped -- CPython must be configured with the --with-dtrace option.
+0:03:17 load avg: 13.55 mem:  312.5 MiB [240/562/1] test_capi passed (42.5 sec) -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 43 sec)
+0:03:17 load avg: 13.55 mem:  312.8 MiB [241/562/1] test_dynamic passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 44 sec)
+0:03:17 load avg: 13.55 mem:  282.5 MiB [242/562/1] test_difflib passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 44 sec)
+0:03:17 load avg: 13.55 mem:  303.7 MiB [243/562/1] test_dis passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 44 sec)
+0:03:18 load avg: 13.55 mem:  305.5 MiB [244/562/1] test_dynamicclassattribute passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 44 sec)
+0:03:18 load avg: 13.55 mem:  314.5 MiB [245/562/1] test_eintr passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 44 sec)
+0:03:19 load avg: 13.55 mem:  325.0 MiB [246/562/1] test_ensurepip passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 45 sec)
+0:03:19 load avg: 13.55 mem:  442.3 MiB [247/562/1] test_docxmlrpc passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 46 sec)
+0:03:20 load avg: 13.55 mem:  371.5 MiB [248/562/1] test_enumerate passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 47 sec)
+0:03:21 load avg: 13.55 mem:  563.8 MiB [249/562/1] test_epoll passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 48 sec)
+0:03:21 load avg: 13.55 mem:  452.7 MiB [250/562/1] test_doctest passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 48 sec)
+0:03:22 load avg: 13.43 mem:  410.6 MiB [251/562/1] test_errno passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 48 sec)
+0:03:22 load avg: 13.43 mem:  526.7 MiB [252/562/1] test_except_star passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 49 sec)
+0:03:22 load avg: 13.43 mem:  466.5 MiB [253/562/1] test_datetime passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 49 sec)
+0:03:22 load avg: 13.43 mem:  390.9 MiB [254/562/1] test_eof passed -- running (1): test.test_multiprocessing_spawn.test_processes (1 min 49 sec)
+0:03:23 load avg: 13.43 mem:  354.6 MiB [255/562/1] test_exception_hierarchy passed -- running (2): test_compileall (30.2 sec), test.test_multiprocessing_spawn.test_processes (1 min 49 sec)
+0:03:23 load avg: 13.43 mem:  375.0 MiB [256/562/1] test_exception_variations passed -- running (2): test_compileall (30.5 sec), test.test_multiprocessing_spawn.test_processes (1 min 50 sec)
+0:03:24 load avg: 13.43 mem:  411.6 MiB [257/562/1] test_extcall passed -- running (2): test_compileall (31.2 sec), test.test_multiprocessing_spawn.test_processes (1 min 50 sec)
+0:03:24 load avg: 13.43 mem:  390.9 MiB [258/562/1] test_decimal passed -- running (2): test_compileall (31.9 sec), test.test_multiprocessing_spawn.test_processes (1 min 51 sec)
+0:03:25 load avg: 13.43 mem:  398.9 MiB [259/562/1] test_enum passed -- running (2): test_compileall (32.1 sec), test.test_multiprocessing_spawn.test_processes (1 min 51 sec)
+0:03:25 load avg: 13.43 mem:  317.0 MiB [260/562/1] test_exception_group passed -- running (2): test_compileall (32.7 sec), test.test_multiprocessing_spawn.test_processes (1 min 52 sec)
+0:03:26 load avg: 13.43 mem:  305.6 MiB [261/562/1] test_filecmp passed -- running (2): test_compileall (33.6 sec), test.test_multiprocessing_spawn.test_processes (1 min 53 sec)
+0:03:27 load avg: 13.31 mem:  307.7 MiB [262/562/1] test_fcntl passed -- running (2): test_compileall (34.2 sec), test.test_multiprocessing_spawn.test_processes (1 min 53 sec)
+0:03:27 load avg: 13.31 mem:  301.2 MiB [263/562/1] test_fileinput passed -- running (2): test_compileall (34.5 sec), test.test_multiprocessing_spawn.test_processes (1 min 54 sec)
+0:03:27 load avg: 13.31 mem:  312.4 MiB [264/562/1] test_fileutils passed -- running (2): test_compileall (35.0 sec), test.test_multiprocessing_spawn.test_processes (1 min 54 sec)
+0:03:28 load avg: 13.31 mem:  334.6 MiB [265/562/1] test_file_eintr passed -- running (2): test_compileall (36.0 sec), test.test_multiprocessing_spawn.test_processes (1 min 55 sec)
+0:03:29 load avg: 13.31 mem:  322.7 MiB [266/562/1] test_finalization passed -- running (2): test_compileall (36.2 sec), test.test_multiprocessing_spawn.test_processes (1 min 55 sec)
+0:03:29 load avg: 13.31 mem:  328.2 MiB [267/562/1] test_float passed -- running (2): test_compileall (36.4 sec), test.test_multiprocessing_spawn.test_processes (1 min 56 sec)
+0:03:29 load avg: 13.31 mem:  322.6 MiB [268/562/1] test_flufl passed -- running (2): test_compileall (36.7 sec), test.test_multiprocessing_spawn.test_processes (1 min 56 sec)
+0:03:29 load avg: 13.31 mem:  298.3 MiB [269/562/1] test_fnmatch passed -- running (2): test_compileall (37.0 sec), test.test_multiprocessing_spawn.test_processes (1 min 56 sec)
+0:03:30 load avg: 13.31 mem:  266.2 MiB [270/562/1] test_format passed -- running (2): test_compileall (37.5 sec), test.test_multiprocessing_spawn.test_processes (1 min 57 sec)
+0:03:30 load avg: 13.31 mem:  283.5 MiB [271/562/1] test_email passed -- running (2): test_compileall (37.7 sec), test.test_multiprocessing_spawn.test_processes (1 min 57 sec)
+0:03:31 load avg: 13.31 mem:  282.7 MiB [272/562/1] test_fractions passed -- running (2): test_compileall (38.0 sec), test.test_multiprocessing_spawn.test_processes (1 min 57 sec)
+0:03:31 load avg: 13.31 mem:  280.5 MiB [273/562/1] test_frozen passed -- running (2): test_compileall (38.3 sec), test.test_multiprocessing_spawn.test_processes (1 min 57 sec)
+0:03:33 load avg: 12.81 mem:  434.7 MiB [274/562/1] test_fstring passed -- running (2): test_compileall (40.2 sec), test.test_multiprocessing_spawn.test_processes (1 min 59 sec)
+0:03:33 load avg: 12.81 mem:  486.6 MiB [275/562/1] test_funcattrs passed -- running (2): test_compileall (40.9 sec), test.test_multiprocessing_spawn.test_processes (2 min)
+0:03:35 load avg: 12.81 mem:  568.3 MiB [276/562/1] test_fork1 passed -- running (2): test_compileall (42.3 sec), test.test_multiprocessing_spawn.test_processes (2 min 1 sec)
+0:03:36 load avg: 12.81 mem:  566.1 MiB [277/562/1] test_compileall passed (43.1 sec) -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 2 sec)
+0:03:37 load avg: 12.42 mem:  514.0 MiB [278/562/1] test_external_inspection passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 3 sec)
+0:03:37 load avg: 12.42 mem:  321.1 MiB [279/562/1] test_frame passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 4 sec)
+0:03:37 load avg: 12.42 mem:  319.7 MiB [280/562/1] test_gc_stats passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 4 sec)
+0:03:38 load avg: 12.42 mem:  322.3 MiB [281/562/1] test_generator_stop passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 4 sec)
+0:03:39 load avg: 12.42 mem:  334.2 MiB [282/562/1] test_generated_cases passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 5 sec)
+0:03:39 load avg: 12.42 mem:  294.4 MiB [283/562/1] test_generators passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 5 sec)
+0:03:39 load avg: 12.42 mem:  304.1 MiB [284/562/1] test_genericalias passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 6 sec)
+0:03:39 load avg: 12.42 mem:  323.5 MiB [285/562/1] test_genericclass passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 6 sec)
+0:03:40 load avg: 12.42 mem:  316.9 MiB [286/562/1] test_genericpath passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 6 sec)
+0:03:40 load avg: 12.42 mem:  312.2 MiB [287/562/1] test_genexps passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 6 sec)
+0:03:40 load avg: 12.42 mem:  304.5 MiB [288/562/1] test_getpass passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 7 sec)
+0:03:41 load avg: 12.42 mem:  323.0 MiB [289/562/1] test_getopt passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 7 sec)
+0:03:41 load avg: 12.42 mem:  337.0 MiB [290/562/1] test_getpath passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 8 sec)
+0:03:41 load avg: 12.42 mem:  355.4 MiB [291/562/1] test_faulthandler passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 8 sec)
+0:03:41 load avg: 12.42 mem:  374.4 MiB [292/562/1] test_gc passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 8 sec)
+0:03:42 load avg: 12.39 mem:  312.4 MiB [293/562/1] test_gettext passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 8 sec)
+0:03:42 load avg: 12.39 mem:  248.5 MiB [294/562/1] test_global passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 9 sec)
+0:03:42 load avg: 12.39 mem:  264.7 MiB [295/562/1] test_ftplib passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 9 sec)
+0:03:43 load avg: 12.39 mem:  253.5 MiB [296/562/1] test_exceptions passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 9 sec)
+0:03:43 load avg: 12.39 mem:  274.3 MiB [297/562/1] test_grammar passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 10 sec)
+0:03:43 load avg: 12.39 mem:  251.5 MiB [298/562/1] test_functools passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 10 sec)
+0:03:44 load avg: 12.39 mem:  254.9 MiB [299/562/1] test_graphlib passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 10 sec)
+0:03:44 load avg: 12.39 mem:  272.6 MiB [300/562/1] test_grp passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 11 sec)
+0:03:44 load avg: 12.39 mem:  299.1 MiB [301/562/1] test_glob passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 11 sec)
+0:03:45 load avg: 12.39 mem:  319.1 MiB [302/562/1] test_html passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 11 sec)
+0:03:45 load avg: 12.39 mem:  303.2 MiB [303/562/1] test_htmlparser passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 12 sec)
+0:03:45 load avg: 12.39 mem:  308.1 MiB [304/562/1] test_hmac passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 12 sec)
+0:03:46 load avg: 12.39 mem:  349.0 MiB [305/562/1] test_http_cookies passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 12 sec)
+0:03:46 load avg: 12.39 mem:  501.1 MiB [306/562/1] test_http_cookiejar passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 13 sec)
+0:03:46 load avg: 12.39 mem:  325.2 MiB [307/562/1] test_hash passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 13 sec)
+0:03:47 load avg: 12.39 mem:  325.0 MiB [308/562/1] test_heapq passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 13 sec)
+0:03:47 load avg: 12.36 mem:  321.5 MiB [309/562/1] test_httplib passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 14 sec)
+0:03:47 load avg: 12.36 mem:  322.0 MiB [310/562/1] test_hashlib passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 14 sec)
+0:03:48 load avg: 12.36 mem:  352.3 MiB [311/562/1] test_index passed -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 14 sec), test_embed (30.3 sec)
+0:03:48 load avg: 12.36 mem:  401.3 MiB [312/562/1] test_int_literal passed -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 15 sec), test_embed (31.0 sec)
+0:03:49 load avg: 12.36 mem:  369.2 MiB [313/562/1] test_gzip passed -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 15 sec), test_embed (31.5 sec)
+0:03:49 load avg: 12.36 mem:  384.5 MiB [314/562/1] test_interpreters skipped -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 16 sec), test_embed (31.7 sec)
+test_interpreters skipped -- GIL disabled
+0:03:49 load avg: 12.36 mem:  401.1 MiB [315/562/1] test_int passed -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 16 sec), test_embed (32.1 sec)
+0:03:50 load avg: 12.36 mem:  412.8 MiB [316/562/1] test_ioctl passed -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 17 sec), test_embed (32.6 sec)
+0:03:50 load avg: 12.36 mem:  349.8 MiB [317/562/1] test_ipaddress passed -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 17 sec), test_embed (33.0 sec)
+0:03:50 load avg: 12.36 mem:  398.8 MiB [318/562/1] test_httpservers passed -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 17 sec), test_embed (33.1 sec)
+0:03:51 load avg: 12.36 mem:  392.7 MiB [319/562/1] test_iterlen passed -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 18 sec), test_embed (33.7 sec)
+0:03:51 load avg: 12.36 mem:  399.8 MiB [320/562/1] test_iter passed -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 18 sec), test_embed (33.9 sec)
+0:03:52 load avg: 12.25 mem:  385.2 MiB [321/562/1] test_idle passed -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 18 sec), test_embed (34.4 sec)
+0:03:52 load avg: 12.25 mem:  381.8 MiB [322/562/1] test_keyword passed -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 18 sec), test_embed (34.6 sec)
+0:03:52 load avg: 12.25 mem:  395.4 MiB [323/562/1] test_keywordonlyarg passed -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 19 sec), test_embed (35.2 sec)
+0:03:53 load avg: 12.25 mem:  420.7 MiB [324/562/1] test_kqueue skipped -- running (2): test.test_multiprocessing_spawn.test_processes (2 min 19 sec), test_embed (35.4 sec)
+test_kqueue skipped -- test works only on BSD
+0:03:53 load avg: 12.25 mem:  428.7 MiB [325/562/1] test_embed passed (35.6 sec) -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 19 sec)
+0:03:54 load avg: 12.25 mem:  383.5 MiB [326/562/1] test_linecache passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 20 sec)
+0:03:54 load avg: 12.25 mem:  406.9 MiB [327/562/1] test_isinstance passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 21 sec)
+0:03:55 load avg: 12.25 mem:  426.7 MiB [328/562/1] test_listcomps passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 22 sec)
+0:03:55 load avg: 12.25 mem:  438.1 MiB [329/562/1] test_lltrace passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 22 sec)
+0:03:56 load avg: 12.25 mem:  421.5 MiB [330/562/1] test_list passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 22 sec)
+0:03:56 load avg: 12.25 mem:  458.8 MiB [331/562/1] test_locale passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 23 sec)
+0:03:57 load avg: 11.91 mem:  570.5 MiB [332/562/1] test_longexp passed -- running (1): test.test_multiprocessing_spawn.test_processes (2 min 23 sec)
+0:03:57 load avg: 11.91 mem:  571.7 MiB [333/562/1] test.test_multiprocessing_spawn.test_processes passed (2 min 24 sec)
+0:03:59 load avg: 11.91 mem:  492.0 MiB [334/562/1] test_itertools passed
+0:03:59 load avg: 11.91 mem:  403.4 MiB [335/562/1] test_lzma passed
+0:04:01 load avg: 11.91 mem:  410.2 MiB [336/562/1] test_import passed
+0:04:02 load avg: 11.84 mem:  321.6 MiB [337/562/1] test_importlib passed
+0:04:02 load avg: 11.84 mem:  315.6 MiB [338/562/1] test_mailbox passed
+0:04:02 load avg: 11.84 mem:  330.0 MiB [339/562/1] test_math_property passed
+0:04:03 load avg: 11.84 mem:  327.6 MiB [340/562/1] test_metaclass passed
+0:04:05 load avg: 11.84 mem:  313.8 MiB [341/562/1] test_marshal passed
+0:04:05 load avg: 11.84 mem:  311.8 MiB [342/562/1] test_memoryview passed
+0:04:06 load avg: 11.84 mem:  317.6 MiB [343/562/1] test_math passed
+0:04:06 load avg: 11.84 mem:  282.7 MiB [344/562/1] test_long passed
+0:04:06 load avg: 11.84 mem:  312.2 MiB [345/562/1] test_minidom passed
+0:04:06 load avg: 11.84 mem:  309.7 MiB [346/562/1] test_mmap passed
+0:04:07 load avg: 11.85 mem:  383.4 MiB [347/562/1] test_mimetypes passed
+0:04:07 load avg: 11.85 mem:  344.7 MiB [348/562/1] test_msvcrt skipped
+test_msvcrt skipped -- windows related tests
+0:04:07 load avg: 11.85 mem:  364.8 MiB [349/562/1] test_monitoring passed
+0:04:07 load avg: 11.85 mem:  388.9 MiB [350/562/1] test_module passed
+0:04:08 load avg: 11.85 mem:  368.5 MiB [351/562/1] test_multibytecodec passed
+0:04:08 load avg: 11.85 mem:  371.7 MiB [352/562/1] test_netrc passed
+0:04:08 load avg: 11.85 mem:  410.7 MiB [353/562/1] test_named_expressions passed
+0:04:08 load avg: 11.85 mem:  397.8 MiB [354/562/1] test_math_integer passed
+0:04:09 load avg: 11.85 mem:  441.2 MiB [355/562/1] test_nturl2path passed
+0:04:09 load avg: 11.85 mem:  526.3 MiB [356/562/1] test_ntpath passed
+0:04:09 load avg: 11.85 mem:  542.4 MiB [357/562/1] test_numeric_tower passed
+0:04:09 load avg: 11.85 mem:  558.2 MiB [358/562/1] test_opcodes passed
+0:04:10 load avg: 11.85 mem:  618.8 MiB [359/562/1] test_openpty passed
+0:04:10 load avg: 11.85 mem:  592.5 MiB [360/562/1] test_optimizer passed
+0:04:10 load avg: 11.85 mem:  577.6 MiB [361/562/1] test_operator passed
+0:04:10 load avg: 11.85 mem:  576.1 MiB [362/562/1] test_modulefinder passed
+0:04:11 load avg: 11.85 mem:  558.5 MiB [363/562/1] test_osx_env passed
+0:04:11 load avg: 11.85 mem:  571.4 MiB [364/562/1] test_optparse passed
+0:04:12 load avg: 11.78 mem:  579.8 MiB [365/562/1] test_patma passed
+0:04:12 load avg: 11.78 mem:  592.6 MiB [366/562/1] test_ordered_dict passed
+0:04:13 load avg: 11.78 mem:  565.7 MiB [367/562/1] test_peg_generator skipped (resource denied)
+test_peg_generator skipped -- Use of the 'cpu' resource not enabled
+0:04:14 load avg: 11.78 mem:  560.0 MiB [368/562/1] test_pep646_syntax passed
+0:04:14 load avg: 11.78 mem:  566.5 MiB [369/562/1] test_peepholer passed
+0:04:14 load avg: 11.78 mem:  558.1 MiB [370/562/1] test_perfmaps passed
+0:04:15 load avg: 11.78 mem:  551.0 MiB [371/562/1] test_json passed
+0:04:15 load avg: 11.78 mem:  555.7 MiB [372/562/1] test_picklebuffer passed
+0:04:19 load avg: 12.12 mem:  642.4 MiB [373/562/1] test_logging passed -- running (1): test_imaplib (33.0 sec)
+0:04:19 load avg: 12.12 mem:  650.7 MiB [374/562/1] test_pathlib passed -- running (1): test_imaplib (33.4 sec)
+0:04:20 load avg: 12.12 mem:  623.2 MiB [375/562/1] test_pkg passed -- running (1): test_imaplib (33.9 sec)
+0:04:20 load avg: 12.12 mem:  628.1 MiB [376/562/1] test_pkgutil passed -- running (1): test_imaplib (34.4 sec)
+0:04:21 load avg: 12.12 mem:  390.1 MiB [377/562/1] test_pickletools passed -- running (1): test_imaplib (35.3 sec)
+0:04:21 load avg: 12.12 mem:  319.1 MiB [378/562/1] test_lazy_import passed -- running (1): test_imaplib (35.5 sec)
+0:04:22 load avg: 12.51 mem:  352.0 MiB [379/562/1] test_platform passed -- running (1): test_imaplib (35.8 sec)
+0:04:23 load avg: 12.51 mem:  382.0 MiB [380/562/1] test_popen passed -- running (1): test_imaplib (36.7 sec)
+0:04:23 load avg: 12.51 mem:  368.9 MiB [381/562/1] test_positional_only_arg passed -- running (1): test_imaplib (37.4 sec)
+0:04:24 load avg: 12.51 mem:  359.3 MiB [382/562/1] test_poll passed -- running (1): test_imaplib (37.6 sec)
+0:04:24 load avg: 12.51 mem:  376.3 MiB [383/562/1] test_posixpath passed -- running (1): test_imaplib (38.5 sec)
+0:04:26 load avg: 12.51 mem:  360.3 MiB [384/562/1] test_plistlib passed -- running (1): test_imaplib (39.7 sec)
+0:04:26 load avg: 12.51 mem:  358.8 MiB [385/562/1] test_pprint passed -- running (1): test_imaplib (40.2 sec)
+0:04:26 load avg: 12.51 mem:  361.9 MiB [386/562/1] test_print passed -- running (1): test_imaplib (40.5 sec)
+0:04:28 load avg: 12.71 mem:  337.8 MiB [387/562/2] test_perf_profiler failed (2 errors) -- running (1): test_imaplib (42.5 sec)
+test_pre_fork_compile (test.test_perf_profiler.TestPerfProfiler.test_pre_fork_compile) ... ok
+test_python_calls_appear_in_the_stack_if_perf_activated (test.test_perf_profiler.TestPerfProfiler.test_python_calls_appear_in_the_stack_if_perf_activated) ... ok
+test_python_calls_do_not_appear_in_the_stack_if_perf_deactivated (test.test_perf_profiler.TestPerfProfiler.test_python_calls_do_not_appear_in_the_stack_if_perf_deactivated) ... ok
+test_python_calls_appear_in_the_stack_if_perf_activated (test.test_perf_profiler.TestPerfProfilerWithDwarf.test_python_calls_appear_in_the_stack_if_perf_activated) ...   Error: unknown switch `j'
+
+ Usage: perf inject [<options>]
+
+    -b, --build-ids       Inject build-ids into the output stream
+    -B, --mmap2-buildids  Drop unused mmap events, make others mmap2 with build IDs
+    -f, --force           don't complain, do it
+    -i, --input <file>    input file name
+    -k, --vmlinux <file>  vmlinux pathname
+    -o, --output <file>   output file name
+    -s, --sched-stat      Merge sched-stat and sched-switch for getting events where and how long tasks slept
+    -v, --verbose         be more verbose (show build ids, etc)
+        --buildid-all     Inject build-ids of all DSOs into the output stream
+        --convert-callchain
+                          Generate callchains using DWARF and drop register/stack data
+                          (not built-in because NO_LIBDW=1)
+        --guest-data[=<opts>]
+                          inject events from a guest perf.data file
+        --guestmount <directory>
+                          guest mount directory under which every guest os instance has a subdir
+        --ignore-vmlinux  don't load vmlinux even if found
+        --itrace[=<opts>]
+                          Instruction Tracing options
+				i[period]:    		synthesize instructions events
+				y[period]:    		synthesize cycles events (same period as i)
+				b:	    		synthesize branches events
+				c:	    		synthesize branches events (calls only)
+				r:	    		synthesize branches events (returns only)
+				x:	    		synthesize transactions events
+				w:	    		synthesize ptwrite events
+				p:	    		synthesize power events
+				o:			synthesize other events recorded due to the use
+							of aux-output (refer to perf record)
+				I:			synthesize interrupt or similar (asynchronous) events
+							(e.g. Intel PT Event Trace)
+				e[flags]:		synthesize error events
+							each flag must be preceded by + or -
+							error flags are: o (overflow)
+									 l (data lost)
+				d[flags]:		create a debug log
+							each flag must be preceded by + or -
+							log flags are: a (all perf events)
+							               o (output to stdout)
+				f:	    		synthesize first level cache events
+				m:	    		synthesize last level cache events
+				t:	    		synthesize TLB events
+				a:	    		synthesize remote access events
+				g[len]:     		synthesize a call chain (use with i or x)
+				G[len]:			synthesize a call chain on existing event records
+				l[len]:     		synthesize last branch entries (use with i or x)
+				L[len]:			synthesize last branch entries on existing event records
+				sNUMBER:    		skip initial number of events
+				q:			quicker (less detailed) decoding
+				A:			approximate IPC
+				Z:			prefer to ignore timestamps (so-called "timeless" decoding)
+				T:			use the timestamp trace as kernel time
+				PERIOD[ns|us|ms|i|t]:   specify period to sample stream
+				concatenate multiple options. Default is iybxwpe or cewp
+
+        --kallsyms <file>
+                          kallsyms pathname
+        --known-build-ids <buildid path [,buildid path...]>
+                          build-ids to use for given paths
+        --mmap2-buildid-all
+                          Rewrite all mmap events as mmap2 events with build IDs
+        --strip           strip non-synthesized events (use with --itrace)
+        --vm-time-correlation[=<opts>]
+                          correlate time between VM guests and the host
+
+
+ERROR
+test_python_calls_do_not_appear_in_the_stack_if_perf_deactivated (test.test_perf_profiler.TestPerfProfilerWithDwarf.test_python_calls_do_not_appear_in_the_stack_if_perf_deactivated) ...   Error: unknown switch `j'
+
+ Usage: perf inject [<options>]
+
+    -b, --build-ids       Inject build-ids into the output stream
+    -B, --mmap2-buildids  Drop unused mmap events, make others mmap2 with build IDs
+    -f, --force           don't complain, do it
+    -i, --input <file>    input file name
+    -k, --vmlinux <file>  vmlinux pathname
+    -o, --output <file>   output file name
+    -s, --sched-stat      Merge sched-stat and sched-switch for getting events where and how long tasks slept
+    -v, --verbose         be more verbose (show build ids, etc)
+        --buildid-all     Inject build-ids of all DSOs into the output stream
+        --convert-callchain
+                          Generate callchains using DWARF and drop register/stack data
+                          (not built-in because NO_LIBDW=1)
+        --guest-data[=<opts>]
+                          inject events from a guest perf.data file
+        --guestmount <directory>
+                          guest mount directory under which every guest os instance has a subdir
+        --ignore-vmlinux  don't load vmlinux even if found
+        --itrace[=<opts>]
+                          Instruction Tracing options
+				i[period]:    		synthesize instructions events
+				y[period]:    		synthesize cycles events (same period as i)
+				b:	    		synthesize branches events
+				c:	    		synthesize branches events (calls only)
+				r:	    		synthesize branches events (returns only)
+				x:	    		synthesize transactions events
+				w:	    		synthesize ptwrite events
+				p:	    		synthesize power events
+				o:			synthesize other events recorded due to the use
+							of aux-output (refer to perf record)
+				I:			synthesize interrupt or similar (asynchronous) events
+							(e.g. Intel PT Event Trace)
+				e[flags]:		synthesize error events
+							each flag must be preceded by + or -
+							error flags are: o (overflow)
+									 l (data lost)
+				d[flags]:		create a debug log
+							each flag must be preceded by + or -
+							log flags are: a (all perf events)
+							               o (output to stdout)
+				f:	    		synthesize first level cache events
+				m:	    		synthesize last level cache events
+				t:	    		synthesize TLB events
+				a:	    		synthesize remote access events
+				g[len]:     		synthesize a call chain (use with i or x)
+				G[len]:			synthesize a call chain on existing event records
+				l[len]:     		synthesize last branch entries (use with i or x)
+				L[len]:			synthesize last branch entries on existing event records
+				sNUMBER:    		skip initial number of events
+				q:			quicker (less detailed) decoding
+				A:			approximate IPC
+				Z:			prefer to ignore timestamps (so-called "timeless" decoding)
+				T:			use the timestamp trace as kernel time
+				PERIOD[ns|us|ms|i|t]:   specify period to sample stream
+				concatenate multiple options. Default is iybxwpe or cewp
+
+        --kallsyms <file>
+                          kallsyms pathname
+        --known-build-ids <buildid path [,buildid path...]>
+                          build-ids to use for given paths
+        --mmap2-buildid-all
+                          Rewrite all mmap events as mmap2 events with build IDs
+        --strip           strip non-synthesized events (use with --itrace)
+        --vm-time-correlation[=<opts>]
+                          correlate time between VM guests and the host
+
+
+ERROR
+test_sys_api (test.test_perf_profiler.TestPerfTrampoline.test_sys_api) ... ok
+test_sys_api_get_status (test.test_perf_profiler.TestPerfTrampoline.test_sys_api_get_status) ... ok
+test_sys_api_perf_jit_backend (test.test_perf_profiler.TestPerfTrampoline.test_sys_api_perf_jit_backend) ... ok
+test_sys_api_perf_jit_backend_in_subinterpreter (test.test_perf_profiler.TestPerfTrampoline.test_sys_api_perf_jit_backend_in_subinterpreter) ... skipped 'requires a real JIT (_Py_JIT)'
+test_sys_api_with_existing_perf_jit_trampoline (test.test_perf_profiler.TestPerfTrampoline.test_sys_api_with_existing_perf_jit_trampoline) ... ok
+test_sys_api_with_existing_trampoline (test.test_perf_profiler.TestPerfTrampoline.test_sys_api_with_existing_trampoline) ... ok
+test_sys_api_with_invalid_trampoline (test.test_perf_profiler.TestPerfTrampoline.test_sys_api_with_invalid_trampoline) ... ok
+test_trampoline_with_unencodable_name (test.test_perf_profiler.TestPerfTrampoline.test_trampoline_with_unencodable_name) ... ok
+test_trampoline_works (test.test_perf_profiler.TestPerfTrampoline.test_trampoline_works) ... ok
+test_trampoline_works_after_fork_with_many_code_objects (test.test_perf_profiler.TestPerfTrampoline.test_trampoline_works_after_fork_with_many_code_objects) ... ok
+test_trampoline_works_with_forks (test.test_perf_profiler.TestPerfTrampoline.test_trampoline_works_with_forks) ... ok
+
+======================================================================
+ERROR: test_python_calls_appear_in_the_stack_if_perf_activated (test.test_perf_profiler.TestPerfProfilerWithDwarf.test_python_calls_appear_in_the_stack_if_perf_activated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/thales/src/cpython-ft/Lib/test/test_perf_profiler.py", line 517, in test_python_calls_appear_in_the_stack_if_perf_activated
+    stdout, _ = self.run_perf_with_retries(
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        script_dir, script, expected_symbols
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/thales/src/cpython-ft/Lib/test/test_perf_profiler.py", line 484, in run_perf_with_retries
+    stdout, stderr = self.run_perf(
+                     ~~~~~~~~~~~~~^
+        script_dir, script, activate_trampoline=activate_trampoline
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/thales/src/cpython-ft/Lib/test/test_perf_profiler.py", line 674, in run_perf
+    return run_perf(
+        script_dir, sys.executable, "-Xperf_jit", script, use_jit=True
+    )
+  File "/home/thales/src/cpython-ft/Lib/test/test_perf_profiler.py", line 457, in run_perf
+    raise ValueError(f"Perf failed with return code {proc.returncode}")
+ValueError: Perf failed with return code 129
+
+======================================================================
+ERROR: test_python_calls_do_not_appear_in_the_stack_if_perf_deactivated (test.test_perf_profiler.TestPerfProfilerWithDwarf.test_python_calls_do_not_appear_in_the_stack_if_perf_deactivated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/thales/src/cpython-ft/Lib/test/test_perf_profiler.py", line 542, in test_python_calls_do_not_appear_in_the_stack_if_perf_deactivated
+    stdout, _ = self.run_perf_with_retries(
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        script_dir, script, activate_trampoline=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/thales/src/cpython-ft/Lib/test/test_perf_profiler.py", line 484, in run_perf_with_retries
+    stdout, stderr = self.run_perf(
+                     ~~~~~~~~~~~~~^
+        script_dir, script, activate_trampoline=activate_trampoline
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/thales/src/cpython-ft/Lib/test/test_perf_profiler.py", line 677, in run_perf
+    return run_perf(script_dir, sys.executable, script, use_jit=True)
+  File "/home/thales/src/cpython-ft/Lib/test/test_perf_profiler.py", line 457, in run_perf
+    raise ValueError(f"Perf failed with return code {proc.returncode}")
+ValueError: Perf failed with return code 129
+
+----------------------------------------------------------------------
+Ran 16 tests in 13.771s
+
+FAILED (errors=2, skipped=1)
+test test_perf_profiler failed
+0:04:29 load avg: 12.71 mem:  334.9 MiB [388/562/2] test_profile passed -- running (1): test_imaplib (42.7 sec)
+0:04:30 load avg: 12.71 mem:  343.3 MiB [389/562/2] test_property passed -- running (1): test_imaplib (43.6 sec)
+0:04:30 load avg: 12.71 mem:  327.1 MiB [390/562/2] test_pty passed -- running (1): test_imaplib (44.6 sec)
+0:04:31 load avg: 12.71 mem:  346.1 MiB [391/562/2] test_pstats passed -- running (1): test_imaplib (44.8 sec)
+0:04:31 load avg: 12.71 mem:  344.2 MiB [392/562/2] test_pulldom passed -- running (1): test_imaplib (45.5 sec)
+0:04:32 load avg: 12.73 mem:  340.7 MiB [393/562/2] test_pwd passed -- running (1): test_imaplib (45.7 sec)
+0:04:32 load avg: 12.73 mem:  353.3 MiB [394/562/2] test_pow passed -- running (1): test_imaplib (45.9 sec)
+0:04:34 load avg: 12.73 mem:  337.9 MiB [395/562/2] test_pyexpat passed -- running (1): test_imaplib (47.8 sec)
+0:04:34 load avg: 12.73 mem:  355.0 MiB [396/562/2] test_poplib passed -- running (1): test_imaplib (48.3 sec)
+0:04:35 load avg: 12.73 mem:  352.9 MiB [397/562/2] test_py_compile passed -- running (1): test_imaplib (48.7 sec)
+0:04:35 load avg: 12.73 mem:  349.7 MiB [398/562/2] test_pystats passed -- running (1): test_imaplib (49.0 sec)
+0:04:36 load avg: 12.73 mem:  362.2 MiB [399/562/2] test_quopri passed -- running (1): test_imaplib (50.2 sec)
+0:04:37 load avg: 12.67 mem:  369.8 MiB [400/562/2] test_raise passed -- running (2): test_multiprocessing_main_handling (30.1 sec), test_imaplib (51.1 sec)
+0:04:39 load avg: 12.67 mem:  664.0 MiB [401/562/2] test_pyclbr passed -- running (3): test_opcache (30.8 sec), test_multiprocessing_main_handling (32.2 sec), test_imaplib (53.3 sec)
+0:04:41 load avg: 12.67 mem:  667.7 MiB [402/562/2] test_opcache passed (32.6 sec) -- running (3): test_multiprocessing_main_handling (34.0 sec), test_imaplib (55.1 sec), test_pdb (30.1 sec)
+0:04:41 load avg: 12.67 mem:  662.6 MiB [403/562/2] test_multiprocessing_main_handling passed (34.2 sec) -- running (2): test_imaplib (55.3 sec), test_pdb (30.3 sec)
+0:04:43 load avg: 12.62 mem:  421.7 MiB [404/562/2] test_readline passed -- running (2): test_imaplib (56.8 sec), test_pdb (31.9 sec)
+0:04:44 load avg: 12.62 mem:  405.7 MiB [405/562/2] test_range passed -- running (2): test_imaplib (58.3 sec), test_pdb (33.3 sec)
+0:04:44 load avg: 12.62 mem:  418.2 MiB [406/562/2] test_random passed -- running (3): test_pickle (30.2 sec), test_imaplib (58.5 sec), test_pdb (33.5 sec)
+0:04:46 load avg: 12.62 mem:  420.3 MiB [407/562/2] test_re passed -- running (3): test_pickle (31.5 sec), test_imaplib (59.9 sec), test_pdb (34.9 sec)
+0:04:47 load avg: 12.33 mem:  409.8 MiB [408/562/2] test_reprlib passed -- running (3): test_pickle (32.3 sec), test_imaplib (1 min), test_pdb (35.7 sec)
+0:04:48 load avg: 12.33 mem:  355.6 MiB [409/562/2] test_resource passed -- running (3): test_pickle (34.2 sec), test_imaplib (1 min 2 sec), test_pdb (37.6 sec)
+0:04:49 load avg: 12.33 mem:  356.9 MiB [410/562/2] test_richcmp passed -- running (3): test_pickle (34.9 sec), test_imaplib (1 min 3 sec), test_pdb (38.3 sec)
+0:04:50 load avg: 12.33 mem:  359.0 MiB [411/562/2] test_rlcompleter passed -- running (3): test_pickle (35.7 sec), test_imaplib (1 min 4 sec), test_pdb (39.1 sec)
+0:04:51 load avg: 12.33 mem:  357.9 MiB [412/562/2] test_remote_pdb passed -- running (3): test_pickle (36.4 sec), test_imaplib (1 min 4 sec), test_pdb (39.8 sec)
+0:04:51 load avg: 12.33 mem:  345.8 MiB [413/562/2] test_robotparser passed -- running (3): test_pickle (36.8 sec), test_imaplib (1 min 5 sec), test_pdb (40.2 sec)
+0:04:52 load avg: 12.33 mem:  351.4 MiB [414/562/2] test_pdb passed (40.7 sec) -- running (2): test_pickle (37.4 sec), test_imaplib (1 min 5 sec)
+0:04:52 load avg: 12.46 mem:  344.1 MiB [415/562/2] test_samply_profiler passed -- running (2): test_pickle (37.5 sec), test_imaplib (1 min 5 sec)
+0:04:52 load avg: 12.46 mem:  343.9 MiB [416/562/2] test_imaplib passed (1 min 6 sec) -- running (1): test_pickle (37.9 sec)
+0:04:53 load avg: 12.46 mem:  329.8 MiB [417/562/2] test_sax passed -- running (1): test_pickle (38.6 sec)
+0:04:53 load avg: 12.46 mem:  347.0 MiB [418/562/2] test_scope passed -- running (1): test_pickle (38.8 sec)
+0:04:53 load avg: 12.46 mem:  336.6 MiB [419/562/2] test_sched passed -- running (1): test_pickle (39.1 sec)
+0:04:54 load avg: 12.46 mem:  315.5 MiB [420/562/2] test_secrets passed -- running (1): test_pickle (39.4 sec)
+0:04:54 load avg: 12.46 mem:  334.8 MiB [421/562/2] test_repl passed -- running (1): test_pickle (39.6 sec)
+0:04:54 load avg: 12.46 mem:  314.7 MiB [422/562/2] test_runpy passed -- running (1): test_pickle (39.9 sec)
+0:04:54 load avg: 12.46 mem:  331.2 MiB [423/562/2] test_script_helper passed -- running (1): test_pickle (40.0 sec)
+0:04:55 load avg: 12.46 mem:  345.9 MiB [424/562/2] test_setcomps passed -- running (1): test_pickle (40.5 sec)
+0:04:56 load avg: 12.46 mem:  314.8 MiB [425/562/2] test_select passed -- running (1): test_pickle (41.3 sec)
+0:04:56 load avg: 12.46 mem:  331.3 MiB [426/562/2] test_shlex passed -- running (1): test_pickle (41.6 sec)
+0:04:57 load avg: 12.19 mem:  447.0 MiB [427/562/2] test_queue passed -- running (2): test_pickle (42.8 sec), test_profiling (30.7 sec)
+0:04:58 load avg: 12.19 mem:  372.5 MiB [428/562/2] test_shutil passed -- running (2): test_pickle (44.1 sec), test_profiling (32.0 sec)
+0:04:59 load avg: 12.19 mem:  364.2 MiB [429/562/2] test_pickle passed (44.8 sec) -- running (1): test_profiling (32.6 sec)
+0:04:59 load avg: 12.19 mem:  356.8 MiB [430/562/2] test_slice passed -- running (1): test_profiling (33.0 sec)
+0:05:00 load avg: 12.19 mem:  379.7 MiB [431/562/2] test_smtpnet skipped (resource denied) -- running (1): test_profiling (33.7 sec)
+test_smtpnet skipped -- Use of the 'network' resource not enabled
+0:05:00 load avg: 12.19 mem:  380.8 MiB [432/562/2] test_site passed -- running (1): test_profiling (34.0 sec)
+0:05:01 load avg: 12.19 mem:  416.2 MiB [433/562/2] test_socketserver skipped (resource denied) -- running (1): test_profiling (34.7 sec)
+test_socketserver skipped -- Use of the 'network' resource not enabled
+0:05:01 load avg: 12.19 mem:  408.1 MiB [434/562/2] test_smtplib passed -- running (1): test_profiling (35.0 sec)
+0:05:02 load avg: 11.85 mem:  404.4 MiB [435/562/2] test_shelve passed -- running (1): test_profiling (35.8 sec)
+0:05:03 load avg: 11.85 mem:  404.6 MiB [436/562/2] test_sort passed -- running (1): test_profiling (36.2 sec)
+0:05:07 load avg: 11.46 mem:  418.6 MiB [437/562/2] test_sqlite3 passed -- running (2): test_pyrepl (33.0 sec), test_profiling (40.3 sec)
+0:05:07 load avg: 11.46 mem:  421.6 MiB [438/562/2] test_stable_abi_ctypes passed -- running (2): test_pyrepl (33.6 sec), test_profiling (40.9 sec)
+0:05:08 load avg: 11.46 mem:  400.1 MiB [439/562/2] test_source_encoding passed -- running (2): test_pyrepl (34.2 sec), test_profiling (41.5 sec)
+0:05:08 load avg: 11.46 mem:  416.2 MiB [440/562/2] test_startfile skipped -- running (2): test_pyrepl (34.4 sec), test_profiling (41.7 sec)
+test_startfile skipped -- object <module 'os' from '/home/thales/src/cpython-ft/Lib/os.py'> has no attribute 'startfile'
+0:05:08 load avg: 11.46 mem:  409.1 MiB [441/562/2] test_selectors passed -- running (2): test_pyrepl (34.7 sec), test_profiling (42.0 sec)
+0:05:09 load avg: 11.46 mem:  406.1 MiB [442/562/2] test_stat passed -- running (2): test_pyrepl (35.0 sec), test_profiling (42.3 sec)
+0:05:10 load avg: 11.46 mem:  487.1 MiB [443/562/2] test_set passed -- running (2): test_pyrepl (36.1 sec), test_profiling (43.5 sec)
+0:05:10 load avg: 11.46 mem:  558.3 MiB [444/562/2] test_strftime passed -- running (2): test_pyrepl (36.5 sec), test_profiling (43.8 sec)
+0:05:11 load avg: 11.46 mem:  668.1 MiB [445/562/2] test_string passed -- running (2): test_pyrepl (37.3 sec), test_profiling (44.6 sec)
+0:05:12 load avg: 11.67 mem:  649.3 MiB [446/562/2] test_string_literals passed -- running (2): test_pyrepl (37.8 sec), test_profiling (45.1 sec)
+0:05:12 load avg: 11.67 mem:  460.0 MiB [447/562/2] test_stringprep passed -- running (2): test_pyrepl (38.2 sec), test_profiling (45.5 sec)
+0:05:13 load avg: 11.67 mem:  432.2 MiB [448/562/2] test_strptime passed -- running (2): test_pyrepl (38.8 sec), test_profiling (46.1 sec)
+0:05:14 load avg: 11.67 mem:  392.0 MiB [449/562/2] test_pyrepl passed (40.4 sec) -- running (2): test_regrtest (31.4 sec), test_profiling (47.7 sec)
+0:05:15 load avg: 11.67 mem:  389.9 MiB [450/562/2] test_structseq passed -- running (2): test_regrtest (32.3 sec), test_profiling (48.6 sec)
+0:05:15 load avg: 11.67 mem:  416.8 MiB [451/562/2] test_strtod passed -- running (2): test_regrtest (32.6 sec), test_profiling (49.0 sec)
+0:05:16 load avg: 11.67 mem:  402.6 MiB [452/562/2] test_subclassinit passed -- running (2): test_regrtest (33.0 sec), test_profiling (49.3 sec)
+0:05:16 load avg: 11.67 mem:  410.0 MiB [453/562/2] test_statistics passed -- running (2): test_regrtest (33.4 sec), test_profiling (49.7 sec)
+0:05:17 load avg: 11.61 mem:  400.0 MiB [454/562/2] test_signal passed -- running (2): test_regrtest (34.3 sec), test_profiling (50.6 sec)
+0:05:17 load avg: 11.61 mem:  355.0 MiB [455/562/2] test_struct passed -- running (2): test_regrtest (34.5 sec), test_profiling (50.8 sec)
+0:05:18 load avg: 11.61 mem:  348.7 MiB [456/562/2] test_symtable passed -- running (2): test_regrtest (35.2 sec), test_profiling (51.5 sec)
+0:05:18 load avg: 11.61 mem:  361.4 MiB [457/562/2] test_super passed -- running (2): test_regrtest (35.4 sec), test_profiling (51.7 sec)
+0:05:19 load avg: 11.61 mem:  346.4 MiB [458/562/2] test_sys_setprofile passed -- running (2): test_regrtest (36.2 sec), test_profiling (52.5 sec)
+0:05:19 load avg: 11.61 mem:  368.2 MiB [459/562/2] test_syntax passed -- running (2): test_regrtest (36.5 sec), test_profiling (52.8 sec)
+0:05:21 load avg: 11.61 mem:  373.6 MiB [460/562/2] test_sysconfig passed -- running (2): test_regrtest (38.6 sec), test_profiling (54.9 sec)
+0:05:23 load avg: 11.48 mem:  397.2 MiB [461/562/2] test_syslog passed -- running (2): test_regrtest (40.6 sec), test_profiling (56.9 sec)
+0:05:24 load avg: 11.48 mem:  429.8 MiB [462/562/2] test_sys_settrace passed -- running (2): test_regrtest (41.3 sec), test_profiling (57.6 sec)
+0:05:25 load avg: 11.48 mem:  467.4 MiB [463/562/2] test_tabnanny passed -- running (2): test_regrtest (42.6 sec), test_profiling (58.9 sec)
+0:05:26 load avg: 11.48 mem:  468.9 MiB [464/562/2] test_str passed -- running (2): test_regrtest (43.2 sec), test_profiling (59.5 sec)
+0:05:28 load avg: 11.52 mem:  461.2 MiB [465/562/2] test_tcl passed -- running (2): test_regrtest (45.0 sec), test_profiling (1 min 1 sec)
+0:05:29 load avg: 11.52 mem:  456.6 MiB [466/562/2] test_termios passed -- running (2): test_regrtest (46.4 sec), test_profiling (1 min 2 sec)
+0:05:29 load avg: 11.52 mem:  458.2 MiB [467/562/2] test_tempfile passed -- running (2): test_regrtest (46.7 sec), test_profiling (1 min 2 sec)
+0:05:30 load avg: 11.52 mem:  459.1 MiB [468/562/2] test_textwrap passed -- running (2): test_regrtest (47.2 sec), test_profiling (1 min 3 sec)
+0:05:31 load avg: 11.52 mem:  371.4 MiB [469/562/2] test_sys passed -- running (3): test_socket (31.0 sec), test_regrtest (48.4 sec), test_profiling (1 min 4 sec)
+0:05:31 load avg: 11.52 mem:  364.4 MiB [470/562/2] test_thread_local_bytecode passed -- running (3): test_socket (31.4 sec), test_regrtest (48.7 sec), test_profiling (1 min 5 sec)
+0:05:32 load avg: 11.48 mem:  374.2 MiB [471/562/2] test_threadedtempfile passed -- running (3): test_socket (31.9 sec), test_regrtest (49.2 sec), test_profiling (1 min 5 sec)
+0:05:33 load avg: 11.48 mem:  364.7 MiB [472/562/2] test_support passed -- running (4): test_socket (32.7 sec), test_regrtest (50.1 sec), test_ssl (30.2 sec), test_profiling (1 min 6 sec)
+0:05:34 load avg: 11.48 mem:  372.9 MiB [473/562/2] test_thread passed -- running (4): test_socket (33.5 sec), test_regrtest (50.8 sec), test_ssl (31.0 sec), test_profiling (1 min 7 sec)
+0:05:35 load avg: 11.48 mem:  374.8 MiB [474/562/2] test_threading_local passed -- running (4): test_socket (34.6 sec), test_regrtest (51.9 sec), test_ssl (32.1 sec), test_profiling (1 min 8 sec)
+0:05:36 load avg: 11.48 mem:  400.9 MiB [475/562/2] test_timeit passed -- running (4): test_socket (35.5 sec), test_regrtest (52.9 sec), test_ssl (33.0 sec), test_profiling (1 min 9 sec)
+0:05:36 load avg: 11.48 mem:  391.2 MiB [476/562/2] test_timeout passed -- running (4): test_socket (36.3 sec), test_regrtest (53.6 sec), test_ssl (33.8 sec), test_profiling (1 min 9 sec)
+0:05:37 load avg: 11.28 mem:  391.8 MiB [477/562/2] test_tkinter skipped (resource denied) -- running (4): test_socket (36.9 sec), test_regrtest (54.2 sec), test_ssl (34.4 sec), test_profiling (1 min 10 sec)
+test_tkinter skipped -- Use of the 'gui' resource not enabled
+0:05:38 load avg: 11.28 mem:  389.8 MiB [478/562/2] test_time passed -- running (4): test_socket (37.7 sec), test_regrtest (55.0 sec), test_ssl (35.2 sec), test_profiling (1 min 11 sec)
+0:05:39 load avg: 11.28 mem:  394.3 MiB [479/562/2] test_threadsignals passed -- running (4): test_socket (38.6 sec), test_regrtest (56.0 sec), test_ssl (36.1 sec), test_profiling (1 min 12 sec)
+0:05:39 load avg: 11.28 mem:  395.7 MiB [480/562/2] test_tomllib passed -- running (4): test_socket (38.9 sec), test_regrtest (56.2 sec), test_ssl (36.4 sec), test_profiling (1 min 12 sec)
+0:05:41 load avg: 11.28 mem:  432.5 MiB [481/562/2] test_ssl passed (38.1 sec) -- running (3): test_socket (40.6 sec), test_regrtest (57.9 sec), test_profiling (1 min 14 sec)
+0:05:44 load avg: 11.02 mem:  380.7 MiB [482/562/2] test_tokenize passed -- running (3): test_socket (44.2 sec), test_regrtest (1 min 1 sec), test_profiling (1 min 17 sec)
+0:05:49 load avg: 11.10 mem:  403.6 MiB [483/562/2] test_trace passed -- running (4): test_socket (49.2 sec), test_regrtest (1 min 6 sec), test_profiling (1 min 22 sec), test_subprocess (34.1 sec)
+0:05:50 load avg: 11.10 mem:  388.1 MiB [484/562/2] test_tracemalloc passed -- running (4): test_socket (49.5 sec), test_regrtest (1 min 6 sec), test_profiling (1 min 23 sec), test_subprocess (34.4 sec)
+0:05:50 load avg: 11.10 mem:  368.0 MiB [485/562/2] test_tstring passed -- running (4): test_socket (50.1 sec), test_regrtest (1 min 7 sec), test_profiling (1 min 23 sec), test_subprocess (35.0 sec)
+0:05:50 load avg: 11.10 mem:  385.9 MiB [486/562/2] test_ttk skipped (resource denied) -- running (4): test_socket (50.3 sec), test_regrtest (1 min 7 sec), test_profiling (1 min 23 sec), test_subprocess (35.2 sec)
+test_ttk skipped -- Use of the 'gui' resource not enabled
+0:05:51 load avg: 11.10 mem:  371.3 MiB [487/562/2] test_ttk_textonly passed -- running (4): test_socket (50.8 sec), test_regrtest (1 min 8 sec), test_profiling (1 min 24 sec), test_subprocess (35.7 sec)
+0:05:51 load avg: 11.10 mem:  384.8 MiB [488/562/2] test_tty passed -- running (4): test_socket (51.0 sec), test_regrtest (1 min 8 sec), test_profiling (1 min 24 sec), test_subprocess (35.9 sec)
+0:05:53 load avg: 10.93 mem:  430.4 MiB [489/562/2] test_turtle passed -- running (4): test_socket (53.0 sec), test_regrtest (1 min 10 sec), test_profiling (1 min 26 sec), test_subprocess (37.9 sec)
+0:05:54 load avg: 10.93 mem:  424.2 MiB [490/562/2] test_type_aliases passed -- running (4): test_socket (53.8 sec), test_regrtest (1 min 11 sec), test_profiling (1 min 27 sec), test_subprocess (38.7 sec)
+0:05:55 load avg: 10.93 mem:  418.8 MiB [491/562/2] test_type_annotations passed -- running (5): test_socket (54.7 sec), test_tarfile (30.8 sec), test_regrtest (1 min 12 sec), test_profiling (1 min 28 sec), test_subprocess (39.6 sec)
+0:05:55 load avg: 10.93 mem:  390.6 MiB [492/562/2] test_tuple passed -- running (5): test_socket (54.9 sec), test_tarfile (31.0 sec), test_regrtest (1 min 12 sec), test_profiling (1 min 28 sec), test_subprocess (39.8 sec)
+0:05:56 load avg: 10.93 mem:  395.9 MiB [493/562/2] test_type_cache passed -- running (5): test_socket (55.4 sec), test_tarfile (31.5 sec), test_regrtest (1 min 12 sec), test_profiling (1 min 29 sec), test_subprocess (40.3 sec)
+0:05:56 load avg: 10.93 mem:  375.7 MiB [494/562/2] test_type_comments passed -- running (5): test_socket (55.8 sec), test_tarfile (31.9 sec), test_regrtest (1 min 13 sec), test_profiling (1 min 29 sec), test_subprocess (40.7 sec)
+0:05:56 load avg: 10.93 mem:  393.7 MiB [495/562/2] test_tools passed -- running (5): test_socket (56.0 sec), test_tarfile (32.1 sec), test_regrtest (1 min 13 sec), test_profiling (1 min 29 sec), test_subprocess (40.9 sec)
+0:05:56 load avg: 10.93 mem:  375.0 MiB [496/562/2] test_type_params passed -- running (5): test_socket (56.4 sec), test_tarfile (32.5 sec), test_regrtest (1 min 13 sec), test_profiling (1 min 30 sec), test_subprocess (41.3 sec)
+0:05:57 load avg: 10.93 mem:  388.2 MiB [497/562/2] test_typechecks passed -- running (5): test_socket (56.5 sec), test_tarfile (32.6 sec), test_regrtest (1 min 13 sec), test_profiling (1 min 30 sec), test_subprocess (41.4 sec)
+0:05:57 load avg: 10.94 mem:  392.5 MiB [498/562/2] test_subprocess passed (41.7 sec) -- running (4): test_socket (56.8 sec), test_tarfile (32.9 sec), test_regrtest (1 min 14 sec), test_profiling (1 min 30 sec)
+0:05:57 load avg: 10.94 mem:  401.5 MiB [499/562/2] test_unary passed -- running (4): test_socket (57.4 sec), test_tarfile (33.5 sec), test_regrtest (1 min 14 sec), test_profiling (1 min 31 sec)
+0:05:58 load avg: 10.94 mem:  379.1 MiB [500/562/2] test_ucn passed -- running (4): test_socket (57.9 sec), test_tarfile (34.0 sec), test_regrtest (1 min 15 sec), test_profiling (1 min 31 sec)
+0:05:58 load avg: 10.94 mem:  397.2 MiB [501/562/2] test_types passed -- running (4): test_socket (58.1 sec), test_tarfile (34.2 sec), test_regrtest (1 min 15 sec), test_profiling (1 min 31 sec)
+0:05:58 load avg: 10.94 mem:  413.0 MiB [502/562/2] test_unicode_file passed -- running (4): test_socket (58.3 sec), test_tarfile (34.4 sec), test_regrtest (1 min 15 sec), test_profiling (1 min 31 sec)
+0:05:59 load avg: 10.94 mem:  367.4 MiB [503/562/2] test_unicode_identifiers passed -- running (4): test_socket (58.6 sec), test_tarfile (34.7 sec), test_regrtest (1 min 15 sec), test_profiling (1 min 32 sec)
+0:05:59 load avg: 10.94 mem:  375.9 MiB [504/562/2] test_unicode_file_functions passed -- running (4): test_socket (58.8 sec), test_tarfile (34.9 sec), test_regrtest (1 min 16 sec), test_profiling (1 min 32 sec)
+0:05:59 load avg: 10.94 mem:  377.6 MiB [505/562/2] test_typing passed -- running (4): test_socket (59.3 sec), test_tarfile (35.4 sec), test_regrtest (1 min 16 sec), test_profiling (1 min 32 sec)
+0:06:00 load avg: 10.94 mem:  375.9 MiB [506/562/2] test_unpack passed -- running (4): test_socket (59.5 sec), test_tarfile (35.6 sec), test_regrtest (1 min 16 sec), test_profiling (1 min 33 sec)
+0:06:00 load avg: 10.94 mem:  395.3 MiB [507/562/2] test_unpack_ex passed -- running (4): test_socket (1 min), test_tarfile (36.3 sec), test_regrtest (1 min 17 sec), test_profiling (1 min 33 sec)
+0:06:02 load avg: 10.78 mem:  403.6 MiB [508/562/2] test_urllib passed -- running (5): test_socket (1 min 2 sec), test_threading (30.8 sec), test_tarfile (38.3 sec), test_regrtest (1 min 19 sec), test_profiling (1 min 35 sec)
+0:06:04 load avg: 10.78 mem:  366.7 MiB [509/562/2] test_socket passed (1 min 3 sec) -- running (4): test_threading (32.2 sec), test_tarfile (39.7 sec), test_regrtest (1 min 20 sec), test_profiling (1 min 37 sec)
+0:06:04 load avg: 10.78 mem:  368.5 MiB [510/562/2] test_unparse passed -- running (4): test_threading (32.4 sec), test_tarfile (39.8 sec), test_regrtest (1 min 21 sec), test_profiling (1 min 37 sec)
+0:06:05 load avg: 10.78 mem:  366.3 MiB [511/562/2] test_urllib2 passed -- running (4): test_threading (33.1 sec), test_tarfile (40.6 sec), test_regrtest (1 min 21 sec), test_profiling (1 min 38 sec)
+0:06:05 load avg: 10.78 mem:  379.8 MiB [512/562/2] test_urllib2net skipped (resource denied) -- running (4): test_threading (33.3 sec), test_tarfile (40.8 sec), test_regrtest (1 min 22 sec), test_profiling (1 min 38 sec)
+test_urllib2net skipped -- Use of the 'network' resource not enabled
+0:06:05 load avg: 10.78 mem:  369.5 MiB [513/562/2] test_urllib_response passed -- running (4): test_threading (33.8 sec), test_tarfile (41.3 sec), test_regrtest (1 min 22 sec), test_profiling (1 min 38 sec)
+0:06:06 load avg: 10.78 mem:  383.0 MiB [514/562/2] test_urllibnet skipped (resource denied) -- running (4): test_threading (34.0 sec), test_tarfile (41.5 sec), test_regrtest (1 min 22 sec), test_profiling (1 min 39 sec)
+test_urllibnet skipped -- Use of the 'network' resource not enabled
+0:06:08 load avg: 11.20 mem:  388.8 MiB [515/562/2] test_userdict passed -- running (4): test_threading (36.0 sec), test_tarfile (43.5 sec), test_regrtest (1 min 24 sec), test_profiling (1 min 41 sec)
+0:06:08 load avg: 11.20 mem:  362.0 MiB [516/562/2] test_urllib2_localnet passed -- running (4): test_threading (36.3 sec), test_tarfile (43.8 sec), test_regrtest (1 min 25 sec), test_profiling (1 min 41 sec)
+0:06:09 load avg: 11.20 mem:  422.0 MiB [517/562/2] test_urlparse passed -- running (4): test_threading (37.5 sec), test_tarfile (45.0 sec), test_regrtest (1 min 26 sec), test_profiling (1 min 42 sec)
+0:06:11 load avg: 11.20 mem:  365.9 MiB [518/562/2] test_userlist passed -- running (4): test_threading (39.1 sec), test_tarfile (46.6 sec), test_regrtest (1 min 27 sec), test_profiling (1 min 44 sec)
+0:06:12 load avg: 11.20 mem:  374.5 MiB [519/562/2] test_utf8source passed -- running (5): test_threading (40.0 sec), test_tarfile (47.5 sec), test_regrtest (1 min 28 sec), test_traceback (30.9 sec), test_profiling (1 min 45 sec)
+0:06:13 load avg: 11.74 mem:  354.9 MiB [520/562/2] test_traceback passed (32.9 sec) -- running (4): test_threading (42.0 sec), test_tarfile (49.5 sec), test_regrtest (1 min 30 sec), test_profiling (1 min 47 sec)
+0:06:14 load avg: 11.74 mem:  366.7 MiB [521/562/2] test_utf8_mode passed -- running (4): test_threading (42.2 sec), test_tarfile (49.7 sec), test_regrtest (1 min 30 sec), test_profiling (1 min 47 sec)
+0:06:18 load avg: 12.33 mem:  387.7 MiB [522/562/2] test_unicodedata passed -- running (4): test_threading (46.9 sec), test_tarfile (54.4 sec), test_regrtest (1 min 35 sec), test_profiling (1 min 51 sec)
+0:06:20 load avg: 12.33 mem:  358.5 MiB [523/562/2] test_uuid passed -- running (4): test_threading (48.2 sec), test_tarfile (55.7 sec), test_regrtest (1 min 36 sec), test_profiling (1 min 53 sec)
+0:06:20 load avg: 12.33 mem:  350.1 MiB [524/562/2] test_wait3 passed -- running (4): test_threading (48.7 sec), test_tarfile (56.2 sec), test_regrtest (1 min 37 sec), test_profiling (1 min 53 sec)
+0:06:20 load avg: 12.33 mem:  322.6 MiB [525/562/2] test_threading passed (48.9 sec) -- running (3): test_tarfile (56.5 sec), test_regrtest (1 min 37 sec), test_profiling (1 min 54 sec)
+0:06:21 load avg: 12.33 mem:  354.9 MiB [526/562/2] test_wave passed -- running (3): test_tarfile (57.3 sec), test_regrtest (1 min 38 sec), test_profiling (1 min 54 sec)
+0:06:23 load avg: 12.14 mem:  294.4 MiB [527/562/2] test_unittest passed -- running (3): test_tarfile (58.8 sec), test_regrtest (1 min 40 sec), test_profiling (1 min 56 sec)
+0:06:23 load avg: 12.14 mem:  273.4 MiB [528/562/2] test_profiling passed (1 min 56 sec) -- running (2): test_tarfile (59.2 sec), test_regrtest (1 min 40 sec)
+0:06:24 load avg: 12.14 mem:  278.0 MiB [529/562/2] test_weakset passed -- running (2): test_tarfile (59.7 sec), test_regrtest (1 min 41 sec)
+0:06:24 load avg: 12.14 mem:  284.5 MiB [530/562/2] test_winapi skipped -- running (2): test_tarfile (59.9 sec), test_regrtest (1 min 41 sec)
+test_winapi skipped -- No module named '_winapi'
+0:06:24 load avg: 12.14 mem:  285.3 MiB [531/562/2] test_venv passed -- running (2): test_tarfile (1 min), test_regrtest (1 min 41 sec)
+0:06:25 load avg: 12.14 mem:  267.0 MiB [532/562/2] test_wait4 passed -- running (2): test_tarfile (1 min), test_regrtest (1 min 41 sec)
+0:06:25 load avg: 12.14 mem:  272.5 MiB [533/562/2] test_winconsoleio skipped -- running (2): test_tarfile (1 min), test_regrtest (1 min 41 sec)
+test_winconsoleio skipped -- test only relevant on win32
+0:06:25 load avg: 12.14 mem:  280.0 MiB [534/562/2] test_winreg skipped -- running (2): test_tarfile (1 min 1 sec), test_regrtest (1 min 42 sec)
+test_winreg skipped -- No module named 'winreg'
+0:06:25 load avg: 12.14 mem:  275.7 MiB [535/562/2] test_winsound skipped (resource denied) -- running (2): test_tarfile (1 min 1 sec), test_regrtest (1 min 42 sec)
+test_winsound skipped -- Use of the 'audio' resource not enabled
+0:06:26 load avg: 12.14 mem:  356.0 MiB [536/562/2] test_wmi skipped -- running (2): test_tarfile (1 min 1 sec), test_regrtest (1 min 43 sec)
+test_wmi skipped -- No module named '_wmi'
+0:06:26 load avg: 12.14 mem:  280.1 MiB [537/562/2] test_with passed -- running (2): test_tarfile (1 min 2 sec), test_regrtest (1 min 43 sec)
+0:06:26 load avg: 12.14 mem:  298.5 MiB [538/562/2] test_xml_dom_minicompat passed -- running (2): test_tarfile (1 min 2 sec), test_regrtest (1 min 43 sec)
+0:06:27 load avg: 12.14 mem:  291.7 MiB [539/562/2] test_wsgiref passed -- running (2): test_tarfile (1 min 2 sec), test_regrtest (1 min 43 sec)
+0:06:27 load avg: 12.45 mem:  301.4 MiB [540/562/2] test_xml passed -- running (2): test_tarfile (1 min 2 sec), test_regrtest (1 min 44 sec)
+0:06:27 load avg: 12.45 mem:  333.8 MiB [541/562/2] test_xml_dom_xmlbuilder passed -- running (2): test_tarfile (1 min 3 sec), test_regrtest (1 min 44 sec)
+0:06:28 load avg: 12.45 mem:  514.7 MiB [542/562/2] test_xpickle skipped (resource denied) -- running (2): test_tarfile (1 min 4 sec), test_regrtest (1 min 45 sec)
+test_xpickle skipped -- Use of the 'xpickle' resource not enabled
+0:06:28 load avg: 12.45 mem:  424.3 MiB [543/562/2] test_userstring passed -- running (2): test_tarfile (1 min 4 sec), test_regrtest (1 min 45 sec)
+0:06:29 load avg: 12.45 mem:  398.8 MiB [544/562/2] test_xmlrpc passed -- running (2): test_tarfile (1 min 4 sec), test_regrtest (1 min 45 sec)
+0:06:29 load avg: 12.45 mem:  405.8 MiB [545/562/2] test_warnings passed -- running (1): test_regrtest (1 min 46 sec)
+0:06:29 load avg: 12.45 mem:  330.4 MiB [546/562/2] test_tarfile passed (1 min 4 sec) -- running (1): test_regrtest (1 min 46 sec)
+0:06:29 load avg: 12.45 mem:  355.5 MiB [547/562/2] test_xxtestfuzz passed -- running (1): test_regrtest (1 min 46 sec)
+0:06:30 load avg: 12.45 mem:  365.0 MiB [548/562/2] test_xxlimited passed -- running (1): test_regrtest (1 min 46 sec)
+0:06:30 load avg: 12.45 mem:  343.1 MiB [549/562/2] test_zipapp passed -- running (1): test_regrtest (1 min 47 sec)
+0:06:30 load avg: 12.45 mem:  342.1 MiB [550/562/2] test_yield_from passed -- running (1): test_regrtest (1 min 47 sec)
+0:06:30 load avg: 12.45 mem:  388.0 MiB [551/562/2] test_webbrowser passed -- running (1): test_regrtest (1 min 47 sec)
+0:06:31 load avg: 12.45 mem:  409.2 MiB [552/562/2] test_zipfile64 skipped (resource denied) -- running (1): test_regrtest (1 min 47 sec)
+test_zipfile64 skipped -- test requires loads of disk-space bytes and a long time to run
+0:06:31 load avg: 12.45 mem:  420.5 MiB [553/562/2] test_zipimport passed -- running (1): test_regrtest (1 min 48 sec)
+0:06:32 load avg: 12.25 mem:  486.0 MiB [554/562/2] test_zlib passed -- running (1): test_regrtest (1 min 49 sec)
+0:06:33 load avg: 12.25 mem:  615.2 MiB [555/562/2] test_xml_etree_c passed -- running (1): test_regrtest (1 min 50 sec)
+0:06:33 load avg: 12.25 mem:  452.8 MiB [556/562/2] test_zipimport_support passed -- running (1): test_regrtest (1 min 50 sec)
+0:06:34 load avg: 12.25 mem:  427.4 MiB [557/562/2] test_zoneinfo passed -- running (1): test_regrtest (1 min 51 sec)
+0:06:35 load avg: 12.25 mem:  349.8 MiB [558/562/2] test_zstd passed -- running (1): test_regrtest (1 min 52 sec)
+0:06:37 load avg: 11.67 mem:  124.6 MiB [559/562/2] test_xml_etree passed -- running (1): test_regrtest (1 min 54 sec)
+0:06:41 load avg: 11.67 mem:  197.4 MiB [560/562/2] test_weakref passed -- running (1): test_regrtest (1 min 58 sec)
+0:06:46 load avg: 11.38 mem:  106.3 MiB [561/562/2] test_regrtest passed (2 min 3 sec)
+0:07:16 load avg: 7.83 mem:  124.8 MiB running (1): test_zipfile (47.4 sec)
+0:07:25 load avg: 6.78 mem:   38.0 MiB [562/562/2] test_zipfile passed (57.0 sec)
+
+== Tests result: FAILURE ==
+
+10 slowest tests:
+- test.test_multiprocessing_spawn.test_processes: 2 min 24 sec
+- test.test_concurrent_futures.test_process_pool: 2 min 14 sec
+- test_regrtest: 2 min 3 sec
+- test_profiling: 1 min 56 sec
+- test.test_multiprocessing_forkserver.test_processes: 1 min 26 sec
+- test_imaplib: 1 min 6 sec
+- test_tarfile: 1 min 4 sec
+- test.test_multiprocessing_spawn.test_manager: 1 min 4 sec
+- test_socket: 1 min 3 sec
+- test.test_multiprocessing_spawn.test_misc: 59.9 sec
+
+15 tests skipped:
+    test.test_asyncio.test_windows_events
+    test.test_asyncio.test_windows_utils test.test_os.test_windows
+    test_android test_apple test_devpoll test_dtrace test_interpreters
+    test_kqueue test_msvcrt test_startfile test_winapi
+    test_winconsoleio test_winreg test_wmi
+
+11 tests skipped (resource denied):
+    test_curses test_peg_generator test_smtpnet test_socketserver
+    test_tkinter test_ttk test_urllib2net test_urllibnet test_winsound
+    test_xpickle test_zipfile64
+
+2 tests failed:
+    test.test_free_threading.test_generators test_perf_profiler
+
+534 tests OK.
+
+Total duration: 7 min 26 sec
+Total tests: run=53,535 skipped=2,777
+Total test files: run=551/562 failed=2 skipped=15 resource_denied=11
+Result: FAILURE

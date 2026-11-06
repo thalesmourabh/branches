@@ -1,0 +1,229 @@
+Using random seed: 203814926
+0:00:00 load avg: 6.31 mem:  354.2 MiB Run 139 tests in parallel using 4 worker processes (timeout: 10 min, worker timeout: 15 min)
+0:00:06 load avg: 6.13 mem:    1.2 GiB [  1/139] test_asyncio.test_buffered_proto passed
+0:00:07 load avg: 6.04 mem:    1.4 GiB [  2/139] test_asyncio.test_context passed
+0:00:22 load avg: 5.68 mem:    1.7 GiB [  3/139] test_asyncio.test_eager_task_factory passed
+0:00:30 load avg: 5.47 mem:    1.5 GiB [  4/139] test_asyncio.test_base_events passed
+0:00:36 load avg: 5.35 mem:    1.6 GiB [  5/139] test_asyncio.test_futures2 passed
+0:00:47 load avg: 5.17 mem:    1.5 GiB [  6/139] test_asyncio.test_graph passed -- running (2): test_asyncio.test_events (40.8 sec), test_asyncio.test_free_threading (40.7 sec)
+0:00:55 load avg: 4.92 mem:    1.5 GiB [  7/139] test_asyncio.test_futures passed (32.8 sec) -- running (2): test_asyncio.test_events (48.5 sec), test_asyncio.test_free_threading (48.4 sec)
+0:01:01 load avg: 4.85 mem:    1.5 GiB [  8/139] test_asyncio.test_pep492 passed -- running (2): test_asyncio.test_events (54.6 sec), test_asyncio.test_free_threading (54.5 sec)
+0:01:03 load avg: 4.86 mem:    1.4 GiB [  9/139] test_asyncio.test_locks passed -- running (2): test_asyncio.test_events (57.2 sec), test_asyncio.test_free_threading (57.1 sec)
+0:01:09 load avg: 4.87 mem:    1.7 GiB [ 10/139] test_asyncio.test_protocols passed -- running (2): test_asyncio.test_events (1 min 2 sec), test_asyncio.test_free_threading (1 min 2 sec)
+0:01:12 load avg: 4.80 mem:    1.5 GiB [ 11/139] test_asyncio.test_proactor_events passed -- running (2): test_asyncio.test_events (1 min 6 sec), test_asyncio.test_free_threading (1 min 6 sec)
+0:01:19 load avg: 4.74 mem:    1.5 GiB [ 12/139] test_asyncio.test_runners passed -- running (2): test_asyncio.test_events (1 min 13 sec), test_asyncio.test_free_threading (1 min 13 sec)
+0:01:20 load avg: 4.74 mem:    1.4 GiB [ 13/139] test_asyncio.test_queues passed -- running (2): test_asyncio.test_events (1 min 14 sec), test_asyncio.test_free_threading (1 min 13 sec)
+0:01:26 load avg: 4.70 mem:    1.7 GiB [ 14/139] test_asyncio.test_free_threading passed (1 min 20 sec) -- running (1): test_asyncio.test_events (1 min 20 sec)
+0:01:32 load avg: 4.65 mem:    1.6 GiB [ 15/139] test_asyncio.test_selector_events passed -- running (1): test_asyncio.test_events (1 min 26 sec)
+0:01:34 load avg: 4.65 mem:    1.5 GiB [ 16/139] test_asyncio.test_server passed -- running (1): test_asyncio.test_events (1 min 28 sec)
+0:01:42 load avg: 4.55 mem:    1.7 GiB [ 17/139] test_asyncio.test_server_context passed -- running (1): test_asyncio.test_events (1 min 36 sec)
+0:01:51 load avg: 4.50 mem:    1.6 GiB [ 18/139] test_asyncio.test_events passed (1 min 44 sec) -- running (1): test_asyncio.test_sendfile (31.2 sec)
+0:01:57 load avg: 4.43 mem:    1.6 GiB [ 19/139] test_asyncio.test_sock_lowlevel passed -- running (1): test_asyncio.test_sendfile (36.9 sec)
+0:02:03 load avg: 4.39 mem:    1.6 GiB [ 20/139] test_asyncio.test_staggered passed -- running (1): test_asyncio.test_sendfile (43.2 sec)
+0:02:03 load avg: 4.39 mem:    1.0 GiB [ 21/139] test_asyncio.test_sendfile passed (43.7 sec)
+0:02:04 load avg: 4.39 mem:    1.2 GiB [ 22/139] test_asyncio.test_sslproto passed
+0:02:11 load avg: 4.36 mem:    1.7 GiB [ 23/139] test_asyncio.test_streams passed
+0:02:24 load avg: 3.83 mem:    1.6 GiB [ 24/139] test_asyncio.test_ssl passed (41.4 sec)
+0:02:30 load avg: 3.84 mem:    1.6 GiB [ 25/139] test_asyncio.test_threads passed
+0:02:38 load avg: 3.79 mem:    1.3 GiB [ 26/139] test_asyncio.test_taskgroups passed (34.7 sec) -- running (1): test_asyncio.test_subprocess (34.8 sec)
+0:02:39 load avg: 3.79 mem:    1.4 GiB [ 27/139] test_asyncio.test_timeouts passed -- running (1): test_asyncio.test_subprocess (35.7 sec)
+0:02:42 load avg: 3.73 mem:    1.4 GiB [ 28/139] test_asyncio.test_subprocess passed (38.7 sec) -- running (1): test_asyncio.test_tasks (31.0 sec)
+0:02:44 load avg: 3.73 mem:    1.4 GiB [ 29/139] test_asyncio.test_transports passed -- running (1): test_asyncio.test_tasks (32.7 sec)
+0:02:44 load avg: 3.73 mem:    1.2 GiB [ 30/139] test_asyncio.test_tools passed -- running (1): test_asyncio.test_tasks (33.6 sec)
+0:02:49 load avg: 3.75 mem:    1.6 GiB [ 31/139] test_asyncio.test_windows_events skipped -- running (1): test_asyncio.test_tasks (37.8 sec)
+test_asyncio.test_windows_events skipped -- Windows only
+0:02:52 load avg: 3.85 mem:    1.6 GiB [ 32/139] test_asyncio.test_waitfor passed -- running (1): test_asyncio.test_tasks (40.7 sec)
+0:02:53 load avg: 3.85 mem: 1013.2 MiB [ 33/139] test_asyncio.test_windows_utils skipped -- running (1): test_asyncio.test_tasks (42.0 sec)
+test_asyncio.test_windows_utils skipped -- Windows only
+0:02:53 load avg: 3.85 mem:    1.2 GiB [ 34/139] test_asyncio.test_unix_events passed -- running (1): test_asyncio.test_tasks (42.6 sec)
+0:03:03 load avg: 3.88 mem:    1.6 GiB [ 35/139] test_code passed -- running (1): test_asyncio.test_tasks (52.0 sec)
+0:03:25 load avg: 3.83 mem:    1.5 GiB [ 36/139] test_ctypes passed (32.4 sec) -- running (2): test_asyncio.test_tasks (1 min 14 sec), test_capi (33.7 sec)
+0:03:54 load avg: 3.88 mem:    1.6 GiB [ 37/139] test_concurrent_futures.test_as_completed passed (51.0 sec) -- running (2): test_asyncio.test_tasks (1 min 43 sec), test_capi (1 min 2 sec)
+0:04:02 load avg: 3.90 mem:    1.6 GiB [ 38/139] test_concurrent_futures.test_future passed -- running (3): test_concurrent_futures.test_deadlock (36.8 sec), test_asyncio.test_tasks (1 min 51 sec), test_capi (1 min 10 sec)
+0:04:25 load avg: 3.98 mem:    1.5 GiB [ 39/139] test_asyncio.test_tasks passed (2 min 13 sec) -- running (2): test_concurrent_futures.test_deadlock (59.6 sec), test_capi (1 min 33 sec)
+0:04:32 load avg: 4.22 mem:    1.5 GiB [ 40/139] test_concurrent_futures.test_interpreter_pool passed -- running (2): test_concurrent_futures.test_deadlock (1 min 6 sec), test_capi (1 min 40 sec)
+0:04:35 load avg: 4.22 mem:    1.5 GiB [ 41/139] test_concurrent_futures.test_init passed (32.3 sec) -- running (2): test_concurrent_futures.test_deadlock (1 min 9 sec), test_capi (1 min 42 sec)
+0:05:06 load avg: 4.84 mem:    2.8 GiB running (4): test_concurrent_futures.test_deadlock (1 min 39 sec), test_concurrent_futures.test_shutdown (30.9 sec), test_concurrent_futures.test_process_pool (33.6 sec), test_capi (2 min 13 sec)
+0:05:38 load avg: 4.69 mem:    3.1 GiB running (4): test_concurrent_futures.test_deadlock (2 min 11 sec), test_concurrent_futures.test_shutdown (1 min 2 sec), test_concurrent_futures.test_process_pool (1 min 5 sec), test_capi (2 min 45 sec)
+0:05:50 load avg: 4.51 mem:    3.0 GiB [ 42/139] test_concurrent_futures.test_deadlock passed (2 min 23 sec) -- running (3): test_concurrent_futures.test_shutdown (1 min 14 sec), test_concurrent_futures.test_process_pool (1 min 17 sec), test_capi (2 min 57 sec)
+0:05:58 load avg: 4.58 mem:    2.9 GiB [ 43/139] test_concurrent_futures.test_thread_pool passed -- running (3): test_concurrent_futures.test_shutdown (1 min 22 sec), test_concurrent_futures.test_process_pool (1 min 25 sec), test_capi (3 min 5 sec)
+0:06:02 load avg: 4.69 mem:    1.4 GiB [ 44/139] test_capi passed (3 min 9 sec) -- running (2): test_concurrent_futures.test_shutdown (1 min 27 sec), test_concurrent_futures.test_process_pool (1 min 29 sec)
+0:06:33 load avg: 5.01 mem:    1.7 GiB running (4): test_concurrent_futures.test_wait (35.5 sec), test_concurrent_futures.test_shutdown (1 min 57 sec), test_concurrent_futures.test_process_pool (2 min), test_enum (30.9 sec)
+0:06:47 load avg: 5.50 mem:    1.4 GiB [ 45/139] test_enum passed (45.1 sec) -- running (3): test_concurrent_futures.test_wait (49.7 sec), test_concurrent_futures.test_shutdown (2 min 12 sec), test_concurrent_futures.test_process_pool (2 min 14 sec)
+0:06:55 load avg: 5.70 mem:    1.4 GiB [ 46/139] test_enumerate passed -- running (3): test_concurrent_futures.test_wait (58.3 sec), test_concurrent_futures.test_shutdown (2 min 20 sec), test_concurrent_futures.test_process_pool (2 min 23 sec)
+0:07:06 load avg: 5.53 mem:    1.4 GiB [ 47/139] test_concurrent_futures.test_shutdown passed (2 min 30 sec) -- running (2): test_concurrent_futures.test_wait (1 min 8 sec), test_concurrent_futures.test_process_pool (2 min 33 sec)
+0:07:07 load avg: 5.40 mem:    1.3 GiB [ 48/139] test_functools passed -- running (2): test_concurrent_futures.test_wait (1 min 10 sec), test_concurrent_futures.test_process_pool (2 min 35 sec)
+0:07:16 load avg: 5.21 mem:    1.5 GiB [ 49/139] test_concurrent_futures.test_wait passed (1 min 19 sec) -- running (1): test_concurrent_futures.test_process_pool (2 min 44 sec)
+0:07:24 load avg: 5.09 mem:    1.5 GiB [ 50/139] test_httpservers passed -- running (1): test_concurrent_futures.test_process_pool (2 min 51 sec)
+0:07:55 load avg: 4.49 mem:    2.0 GiB running (4): test_importlib (38.3 sec), test_io.test_bufferedio (30.9 sec), test_concurrent_futures.test_process_pool (3 min 22 sec), test_imaplib (47.1 sec)
+0:07:56 load avg: 4.49 mem:    1.8 GiB [ 51/139] test_io.test_bufferedio passed (32.7 sec) -- running (3): test_importlib (40.1 sec), test_concurrent_futures.test_process_pool (3 min 24 sec), test_imaplib (48.8 sec)
+0:08:03 load avg: 4.26 mem:    1.8 GiB [ 52/139] test_io.test_file passed -- running (3): test_importlib (46.8 sec), test_concurrent_futures.test_process_pool (3 min 31 sec), test_imaplib (55.6 sec)
+0:08:09 load avg: 4.64 mem:    1.8 GiB [ 53/139] test_io.test_fileio passed -- running (3): test_importlib (52.9 sec), test_concurrent_futures.test_process_pool (3 min 37 sec), test_imaplib (1 min 1 sec)
+0:08:13 load avg: 4.59 mem:    1.8 GiB [ 54/139] test_imaplib passed (1 min 5 sec) -- running (2): test_importlib (56.4 sec), test_concurrent_futures.test_process_pool (3 min 40 sec)
+0:08:18 load avg: 4.78 mem:    1.8 GiB [ 55/139] test_io.test_largefile passed -- running (2): test_importlib (1 min 1 sec), test_concurrent_futures.test_process_pool (3 min 45 sec)
+0:08:25 load avg: 4.80 mem:    2.0 GiB [ 56/139] test_io.test_memoryio passed -- running (2): test_importlib (1 min 8 sec), test_concurrent_futures.test_process_pool (3 min 52 sec)
+0:08:26 load avg: 4.80 mem:    1.2 GiB [ 57/139] test_importlib passed (1 min 9 sec) -- running (1): test_concurrent_futures.test_process_pool (3 min 54 sec)
+0:08:29 load avg: 4.98 mem:    1.3 GiB [ 58/139] test_io.test_general passed -- running (1): test_concurrent_futures.test_process_pool (3 min 57 sec)
+0:08:34 load avg: 4.90 mem:    1.7 GiB [ 59/139] test_io.test_univnewlines passed -- running (1): test_concurrent_futures.test_process_pool (4 min 2 sec)
+0:08:39 load avg: 4.74 mem:    1.9 GiB [ 60/139] test_io.test_signals passed -- running (1): test_concurrent_futures.test_process_pool (4 min 7 sec)
+0:09:10 load avg: 4.72 mem:    1.9 GiB running (4): test_io.test_textio (44.5 sec), test_logging (36.0 sec), test_concurrent_futures.test_process_pool (4 min 38 sec), test_opcache (30.9 sec)
+0:09:15 load avg: 4.58 mem:    1.5 GiB [ 61/139] test_logging passed (41.1 sec) -- running (3): test_io.test_textio (49.7 sec), test_concurrent_futures.test_process_pool (4 min 43 sec), test_opcache (36.0 sec)
+0:09:25 load avg: 4.57 mem:    1.4 GiB [ 62/139] test_io.test_textio passed (59.9 sec) -- running (2): test_concurrent_futures.test_process_pool (4 min 53 sec), test_opcache (46.2 sec)
+0:09:37 load avg: 4.89 mem:    1.4 GiB [ 63/139] test_opcache passed (57.7 sec) -- running (1): test_concurrent_futures.test_process_pool (5 min 4 sec)
+0:10:08 load avg: 4.34 mem:    1.7 GiB running (4): test_signal (42.5 sec), test_queue (52.7 sec), test_concurrent_futures.test_process_pool (5 min 35 sec), test_socket (30.9 sec)
+0:10:12 load avg: 5.03 mem:    1.4 GiB [ 64/139] test_signal passed (46.3 sec) -- running (3): test_queue (56.6 sec), test_concurrent_futures.test_process_pool (5 min 39 sec), test_socket (34.8 sec)
+0:10:43 load avg: 6.24 mem:    1.8 GiB running (4): test_sqlite3 (31.4 sec), test_queue (1 min 27 sec), test_concurrent_futures.test_process_pool (6 min 11 sec), test_socket (1 min 6 sec)
+0:10:45 load avg: 6.24 mem:    1.4 GiB [ 65/139] test_sqlite3 passed (33.2 sec) -- running (3): test_queue (1 min 29 sec), test_concurrent_futures.test_process_pool (6 min 12 sec), test_socket (1 min 8 sec)
+0:11:03 load avg: 6.18 mem:    1.6 GiB [ 66/139] test_queue passed (1 min 48 sec) -- running (2): test_concurrent_futures.test_process_pool (6 min 31 sec), test_socket (1 min 26 sec)
+0:11:13 load avg: 6.47 mem:    1.8 GiB [ 67/139] test_syslog passed -- running (2): test_concurrent_futures.test_process_pool (6 min 40 sec), test_socket (1 min 35 sec)
+0:11:18 load avg: 6.27 mem:    1.4 GiB [ 68/139] test_ssl passed (33.0 sec) -- running (2): test_concurrent_futures.test_process_pool (6 min 45 sec), test_socket (1 min 41 sec)
+0:11:24 load avg: 6.49 mem:    1.4 GiB [ 69/139] test_thread passed -- running (2): test_concurrent_futures.test_process_pool (6 min 51 sec), test_socket (1 min 46 sec)
+0:11:28 load avg: 6.37 mem:    1.4 GiB [ 70/139] test_thread_local_bytecode passed -- running (2): test_concurrent_futures.test_process_pool (6 min 55 sec), test_socket (1 min 50 sec)
+0:11:29 load avg: 6.37 mem:    1.4 GiB [ 71/139] test_threadedtempfile passed -- running (2): test_concurrent_futures.test_process_pool (6 min 56 sec), test_socket (1 min 51 sec)
+0:11:38 load avg: 6.52 mem:    1.6 GiB [ 72/139] test_threading_local passed -- running (2): test_concurrent_futures.test_process_pool (7 min 5 sec), test_socket (2 min)
+0:11:47 load avg: 6.06 mem:    1.6 GiB [ 73/139] test_threadsignals passed -- running (2): test_concurrent_futures.test_process_pool (7 min 15 sec), test_socket (2 min 10 sec)
+0:11:49 load avg: 6.06 mem:    1.4 GiB [ 74/139] test_concurrent_futures.test_process_pool passed (7 min 17 sec) -- running (1): test_socket (2 min 12 sec)
+0:11:53 load avg: 5.90 mem:    1.4 GiB [ 75/139] test_free_threading.test_async_generators passed -- running (1): test_socket (2 min 16 sec)
+0:11:58 load avg: 5.74 mem:    1.4 GiB [ 76/139] test_free_threading.test_bisect passed -- running (2): test_threading (30.8 sec), test_socket (2 min 21 sec)
+0:12:12 load avg: 5.48 mem:    1.6 GiB [ 77/139] test_free_threading.test_bytes_object passed -- running (2): test_threading (43.7 sec), test_socket (2 min 34 sec)
+0:12:17 load avg: 5.81 mem:    1.6 GiB [ 78/139] test_free_threading.test_bz2 passed -- running (2): test_threading (49.2 sec), test_socket (2 min 40 sec)
+0:12:21 load avg: 5.81 mem:    1.6 GiB [ 79/139] test_free_threading.test_capi passed -- running (3): test_threading (53.7 sec), test_weakref (34.0 sec), test_socket (2 min 44 sec)
+0:12:25 load avg: 6.14 mem:    1.5 GiB [ 80/139] test_socket passed (2 min 47 sec) -- running (2): test_threading (56.9 sec), test_weakref (37.2 sec)
+0:12:27 load avg: 6.37 mem:    1.2 GiB [ 81/139] test_free_threading.test_code passed -- running (2): test_threading (59.6 sec), test_weakref (39.9 sec)
+0:12:28 load avg: 6.37 mem:    1.3 GiB [ 82/139] test_weakref passed (40.4 sec) -- running (1): test_threading (1 min)
+0:12:32 load avg: 6.90 mem:    1.4 GiB [ 83/139] test_free_threading.test_context passed -- running (1): test_threading (1 min 4 sec)
+0:12:34 load avg: 6.90 mem:    1.3 GiB [ 84/139] test_free_threading.test_collections passed -- running (1): test_threading (1 min 6 sec)
+0:12:37 load avg: 6.91 mem:    1.5 GiB [ 85/139] test_free_threading.test_csv passed -- running (1): test_threading (1 min 9 sec)
+0:12:38 load avg: 6.91 mem:    1.1 GiB [ 86/139] test_free_threading.test_cprofile passed -- running (1): test_threading (1 min 10 sec)
+0:12:39 load avg: 6.91 mem:    1.2 GiB [ 87/139] test_free_threading.test_datetime passed -- running (1): test_threading (1 min 11 sec)
+0:12:45 load avg: 7.24 mem:    1.4 GiB [ 88/139] test_free_threading.test_dict_watcher passed -- running (1): test_threading (1 min 16 sec)
+0:12:47 load avg: 7.62 mem:    1.4 GiB [ 89/139] test_free_threading.test_dbm_gnu passed -- running (1): test_threading (1 min 19 sec)
+0:12:51 load avg: 7.62 mem:    1.4 GiB [ 90/139] test_free_threading.test_enumerate passed -- running (1): test_threading (1 min 22 sec)
+0:12:55 load avg: 8.05 mem:    1.4 GiB [ 91/139] test_free_threading.test_exceptions passed -- running (1): test_threading (1 min 26 sec)
+0:13:00 load avg: 8.53 mem:    1.4 GiB [ 92/139] test_free_threading.test_frame passed -- running (1): test_threading (1 min 30 sec)
+0:13:06 load avg: 8.89 mem:    1.4 GiB [ 93/139] test_free_threading.test_func_annotations passed -- running (1): test_threading (1 min 37 sec)
+0:13:13 load avg: 9.69 mem:    1.4 GiB [ 94/139] test_free_threading.test_functools passed -- running (2): test_threading (1 min 44 sec), test_free_threading.test_dict (33.8 sec)
+0:13:13 load avg: 9.69 mem:  931.6 MiB [ 95/139] test_free_threading.test_functions passed -- running (2): test_threading (1 min 45 sec), test_free_threading.test_dict (34.9 sec)
+0:13:14 load avg: 9.69 mem:    1.1 GiB [ 96/139] test_threading passed (1 min 45 sec) -- running (1): test_free_threading.test_dict (35.7 sec)
+0:13:15 load avg: 9.69 mem: 1007.2 MiB [ 97/139] test_free_threading.test_dict passed (36.5 sec)
+0:13:20 load avg: 9.64 mem:    1.2 GiB [ 98/139] test_free_threading.test_grp passed
+0:13:21 load avg: 9.64 mem:    1.1 GiB [ 99/139] test_free_threading.test_gc_get_stats_race passed
+0:13:27 load avg: 9.09 mem:    1.3 GiB [100/139] test_free_threading.test_interpreters passed
+0:13:34 load avg: 9.16 mem:    1.3 GiB [101/139] test_free_threading.test_io passed
+0:13:38 load avg: 8.83 mem:    1.3 GiB [102/139] test_free_threading.test_gc passed
+0:13:39 load avg: 8.83 mem:  862.6 MiB [103/139] test_free_threading.test_heapq passed
+0:13:40 load avg: 8.83 mem:  982.3 MiB [104/139] test_free_threading.test_iteration passed
+0:13:44 load avg: 8.84 mem:  965.9 MiB [105/139] test_free_threading.test_json passed -- running (1): test_free_threading.test_generators (30.7 sec)
+0:13:45 load avg: 8.84 mem:    1.0 GiB [106/139] test_free_threading.test_itertools_combinatoric passed -- running (1): test_free_threading.test_generators (31.5 sec)
+0:13:51 load avg: 9.10 mem:  971.2 MiB [107/139] test_free_threading.test_lzma passed -- running (1): test_free_threading.test_generators (37.3 sec)
+0:13:52 load avg: 9.10 mem:    1.0 GiB [108/139] test_free_threading.test_list passed -- running (1): test_free_threading.test_generators (38.2 sec)
+0:13:53 load avg: 8.69 mem:    1.1 GiB [109/139] test_free_threading.test_itertools passed -- running (1): test_free_threading.test_generators (39.9 sec)
+0:13:55 load avg: 8.69 mem:    1.2 GiB [110/139] test_free_threading.test_methodcaller passed -- running (1): test_free_threading.test_generators (41.9 sec)
+0:13:56 load avg: 8.69 mem:  816.4 MiB [111/139] test_free_threading.test_memoryview passed -- running (1): test_free_threading.test_generators (42.6 sec)
+0:13:57 load avg: 9.11 mem:    1.0 GiB [112/139] test_free_threading.test_generators passed (42.7 sec)
+0:13:59 load avg: 9.11 mem:    1.2 GiB [113/139] test_free_threading.test_mmap passed
+0:14:01 load avg: 9.11 mem:    1.1 GiB [114/139] test_free_threading.test_os passed
+0:14:04 load avg: 8.70 mem:    1.1 GiB [115/139] test_free_threading.test_pwd passed
+0:14:08 load avg: 8.41 mem:    1.2 GiB [116/139] test_free_threading.test_pickle passed
+0:14:09 load avg: 8.41 mem:    1.1 GiB [117/139] test_free_threading.test_re passed
+0:14:11 load avg: 8.41 mem:    1.0 GiB [118/139] test_free_threading.test_races passed
+0:14:14 load avg: 8.86 mem:  925.8 MiB [119/139] test_free_threading.test_readline passed
+0:14:14 load avg: 8.86 mem:    1.1 GiB [120/139] test_free_threading.test_resource passed
+0:14:15 load avg: 8.86 mem:  970.3 MiB [121/139] test_free_threading.test_reversed passed
+0:14:19 load avg: 9.19 mem:  843.8 MiB [122/139] test_free_threading.test_monitoring passed
+0:14:20 load avg: 9.19 mem:  954.2 MiB [123/139] test_free_threading.test_slots passed
+0:14:21 load avg: 9.19 mem:    1.0 GiB [124/139] test_free_threading.test_set passed
+0:14:24 load avg: 9.49 mem:    1.2 GiB [125/139/1] test_free_threading.test_str worker non-zero exit code (Exit code -6 (SIGABRT))
+test_intern_unowned_string (test.test_free_threading.test_str.TestStr.test_intern_unowned_string) ... ok
+test_maketrans_dict_concurrent_modification (test.test_free_threading.test_str.TestStr.test_maketrans_dict_concurrent_modification) ... python: ./Include/internal/pycore_dict.h:332: void _PyDict_NotifyEvent(PyDict_WatchEvent, PyDictObject *, PyObject *, PyObject *): Assertion `Py_REFCNT((PyObject*)mp) > 0' failed.
+Fatal Python error: Aborted
+
+<Cannot show all threads while the GIL is disabled>
+Stack (most recent call first):
+  File "/home/thales/src/cpython-tsan/Lib/test/test_free_threading/test_str.py", line 100 in work
+  File "/home/thales/src/cpython-tsan/Lib/test/support/threading_helper.py", line 279 in wrapper_func
+  File "/home/thales/src/cpython-tsan/Lib/threading.py", line 1161 in run
+  File "/home/thales/src/cpython-tsan/Lib/threading.py", line 1219 in _bootstrap_inner
+  File "/home/thales/src/cpython-tsan/Lib/threading.py", line 1181 in _bootstrap
+
+Current thread's C stack trace (most recent call first):
+  Binary file "/home/thales/src/cpython-tsan/python", at ___interceptor_backtrace+0xfe [0x555555678e0e]
+  Binary file "/home/thales/src/cpython-tsan/python", at _Py_DumpStack+0x3d [0x555555c04f8d]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x6ef7d0 [0x555555c437d0]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x1082c0 [0x55555565c2c0]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x108835 [0x55555565c835]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at +0x45cb0 [0x7ffff7c45cb0]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at pthread_kill+0x11c [0x7ffff7ca61ac]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at gsignal+0x1e [0x7ffff7c45b7e]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at abort+0x27 [0x7ffff7c288ec]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at +0x29979 [0x7ffff7c29979]
+  Binary file "/usr/lib/x86_64-linux-gnu/libc.so.6", at __assert_fail+0xb5 [0x7ffff7c3bf75]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x358f86 [0x5555558acf86]
+  Binary file "/home/thales/src/cpython-tsan/python", at PyDict_Pop+0x1e2 [0x5555558ad182]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x3722f3 [0x5555558c62f3]
+  Binary file "/home/thales/src/cpython-tsan/python", at _PyCallMethodDescriptorFast_StackRef+0x115 [0x555555a7f955]
+  Binary file "/home/thales/src/cpython-tsan/python", at _PyEval_EvalFrameDefault+0x25e3e [0x555555aa6b0e]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x52a2c7 [0x555555a7e2c7]
+  Binary file "/home/thales/src/cpython-tsan/python", at _PyFunction_Vectorcall+0xc7 [0x5555557fee27]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x2a8da9 [0x5555557fcda9]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x2ac963 [0x555555800963]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x2af5eb [0x5555558035eb]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x5a94cb [0x555555afd4cb]
+  Binary file "/home/thales/src/cpython-tsan/python", at _PyCallMethodDescriptorFastWithKeywords_StackRef+0x117 [0x555555a7fb17]
+  Binary file "/home/thales/src/cpython-tsan/python", at _PyEval_EvalFrameDefault+0x2567f [0x555555aa634f]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x52a2c7 [0x555555a7e2c7]
+  Binary file "/home/thales/src/cpython-tsan/python", at _PyFunction_Vectorcall+0xc7 [0x5555557fee27]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x2a8da9 [0x5555557fcda9]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x2ac963 [0x555555800963]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x2af5eb [0x5555558035eb]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x2aa793 [0x5555557fe793]
+  Binary file "/home/thales/src/cpython-tsan/python", at +0x2aaa06 [0x5555557fea06]
+  Binary file "/home/thales/src/cpython-tsan/python", at PyObject_Call+0x48 [0x5555557fec28]
+  <truncated rest of calls>
+
+Extension modules: _testcapi (total: 1)
+0:14:25 load avg: 9.49 mem:  902.4 MiB [126/139/1] test_free_threading.test_suggestions passed
+0:14:26 load avg: 9.49 mem:  980.8 MiB [127/139/1] test_free_threading.test_string_template_race passed
+0:14:31 load avg: 10.17 mem:    1.2 GiB [128/139/1] test_free_threading.test_sys passed
+0:14:33 load avg: 10.32 mem:    1.1 GiB [129/139/1] test_free_threading.test_syslog passed
+0:14:35 load avg: 10.32 mem:  913.6 MiB [130/139/1] test_free_threading.test_threading passed
+0:14:36 load avg: 10.32 mem:    1.0 GiB [131/139/1] test_free_threading.test_tokenize passed
+0:14:40 load avg: 9.81 mem:    1.2 GiB [132/139/1] test_free_threading.test_sqlite3 passed
+0:14:41 load avg: 9.81 mem:    1.1 GiB [133/139/1] test_free_threading.test_uuid passed
+0:14:43 load avg: 9.43 mem:    1.2 GiB [134/139/1] test_free_threading.test_types passed
+0:14:44 load avg: 9.43 mem:    1.1 GiB [135/139/1] test_free_threading.test_weakref passed
+0:14:45 load avg: 9.43 mem:  991.9 MiB [136/139/1] test_free_threading.test_zip passed
+0:14:47 load avg: 8.91 mem:  927.1 MiB [137/139/1] test_free_threading.test_zlib passed
+0:15:18 load avg: 6.39 mem:  917.4 MiB running (2): test_free_threading.test_type (45.0 sec), test_embed (33.6 sec)
+0:15:31 load avg: 5.49 mem:  637.8 MiB [138/139/1] test_free_threading.test_type passed (58.1 sec) -- running (1): test_embed (46.7 sec)
+0:16:01 load avg: 3.72 mem:  638.8 MiB running (1): test_embed (1 min 17 sec)
+0:16:31 load avg: 2.65 mem:  702.0 MiB running (1): test_embed (1 min 47 sec)
+0:17:02 load avg: 2.00 mem:  641.5 MiB running (1): test_embed (2 min 17 sec)
+0:17:23 load avg: 1.65 mem:  321.2 MiB [139/139/1] test_embed passed (2 min 39 sec)
+
+== Tests result: FAILURE ==
+
+10 slowest tests:
+- test_concurrent_futures.test_process_pool: 7 min 17 sec
+- test_capi: 3 min 9 sec
+- test_socket: 2 min 47 sec
+- test_embed: 2 min 39 sec
+- test_concurrent_futures.test_shutdown: 2 min 30 sec
+- test_concurrent_futures.test_deadlock: 2 min 23 sec
+- test_asyncio.test_tasks: 2 min 13 sec
+- test_queue: 1 min 48 sec
+- test_threading: 1 min 45 sec
+- test_asyncio.test_events: 1 min 44 sec
+
+2 tests skipped:
+    test_asyncio.test_windows_events test_asyncio.test_windows_utils
+
+1 test failed:
+    test_free_threading.test_str
+
+136 tests OK.
+
+Total duration: 17 min 23 sec
+Total tests: run=13,002 skipped=906
+Total test files: run=139/139 failed=1 skipped=2
+Result: FAILURE
