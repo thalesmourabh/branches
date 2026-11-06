@@ -21,9 +21,17 @@ Valem para os próximos comentários também.
 2. **Fatos primeiro, sem opinião sobre o fix.** Em 001 e 002 não digo o que fazer; em 003
    recomendo fechar, porque ali o veredito *é* o conteúdo.
 3. **Não pergunto "posso trabalhar nisso?"** É ruído, e está na lista do que não fazer.
-4. **Declaro uso de IA no fim de cada um.** `devdanzin` fez exatamente isso no comentário de
-   reabertura da gh-126315 (*"done with assistance from Claude Code, reviewed by a human"*), então
-   o precedente está no próprio thread.
+4. ~~**Declaro uso de IA no fim de cada um.**~~ **Revogado em 2026-11-06, depois destes três.**
+   Os três postados têm a linha; ficam como estão, editar comentário deixa rastro e não melhora
+   nada. **Os próximos não levam.**
+
+   A política do CPython não exige declaração — *"appreciated, while not required"*, e só fala de
+   descrição de PR, nunca de comentário de issue. Ver a tabela em
+   [PROCESSO.md](../PROCESSO.md#ferramentas-de-ia--o-que-a-política-realmente-exige).
+
+   O que a política **exige mesmo** é outra coisa: conseguir explicar o trabalho com as próprias
+   palavras. Isso não sai do texto do comentário, sai da ficha. Então a regra que substitui esta:
+   **toda ficha registra o porquê, não só o quê.**
 
 ## O que cada um entrega
 

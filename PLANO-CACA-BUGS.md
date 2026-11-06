@@ -368,6 +368,19 @@ faz outra coisa. É aqui que mora a chance de bug novo e relevante.
         sob TSan.
   - [ ] cruzar cada achado contra as 127 issues `topic-free-threading` antes de abrir nada
 - [ ] **S3.4** Escrever stress tests próprios — é aqui que está o diferencial
+  - [ ] **filtro obrigatório ANTES de escrever o teste** — corrigido em 2026-11-06 depois da
+        [caçada 004](hunts/004-decimal-context-compartilhado/), que gastou trabalho por não ter
+        este passo:
+    - [ ] cruzar o módulo contra issues **e PRs abertos**. "Sem arquivo em
+          `Lib/test/test_free_threading/`" é sinal **fraco** de território inexplorado: o
+          `decimal` tem zero arquivo lá e **três PRs abertos** sobre corridas. Eles rastreiam
+          corrida por relatório de TSan, não por cobertura de teste.
+    - [ ] procurar o módulo em `Doc/whatsnew/` da versão corrente. Mudança intencional recente é
+          a explicação mais provável de divergência entre builds — foi o caso de
+          `thread_inherit_context`, que está no What's New com o `decimal` citado pelo nome.
+    - [ ] exigir **oráculo documentado**: o que a doc promete, literal. Sem isso o veredito é
+          fraco. E se o teste não segurar as referências que o trecho da doc segura, ele não
+          testa a promessa — testa taxa de acerto de cache. Ver o item 3 da caçada 004.
   - [ ] escolher módulos de stdlib sem teste de concorrência decente
   - [ ] padrão: N threads × M iterações × operação sobre objeto compartilhado
   - [ ] alvos de alto valor: estruturas com freelist, caches, objetos com estado lazy,

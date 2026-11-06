@@ -33,6 +33,34 @@ make patchcheck                       # verifica estilo, blurb, espaço em branc
 | Copyright | Não adicionar ano novo em arquivo existente — PR assim é fechado. |
 | Formatação pura | *"Pure formatting PRs are usually rejected."* |
 
+### Ferramentas de IA — o que a política realmente exige
+
+Fonte: [devguide, *Guidelines for using AI tools*](https://devguide.python.org/getting-started/ai-tools/).
+Lido em 2026-11-06. É guia oficial do projeto, não regra informal.
+
+| Ponto | O que diz |
+|---|---|
+| Declarar uso de IA | **Não é obrigatório.** *"Disclosure of the use of AI tools in the PR description is appreciated, while not required."* |
+| Onde declarar, se declarar | Só menciona **descrição do PR**. Nada sobre commit, trailer ou comentário de issue. |
+| `Co-Authored-By` de ferramenta | A política é **silenciosa**. Não permite nem proíbe. |
+| Comentário em issue | **Não há regra.** A política fala de abrir issue e abrir PR. |
+| Explicar o próprio trabalho | **Obrigatório.** *"We expect PR authors and those filing issues to be able to explain their proposed changes in their own words."* E: *"Be prepared to explain how the tool was used and what changes it made."* |
+| Responsabilidade | É de quem submete, com ou sem IA. |
+| Usar IA, por si só | **Não é motivo** para label nem para fechar. *"Using AI tools is not a reason on its own for an issue or PR to be labeled or closed."* |
+| Burlar teste | Proibido. *"not acceptable to alter or bypass existing tests… in order to make a failing test pass."* |
+| Reincidência em submissão ruim | Pode dar bloqueio no projeto. |
+
+**As duas labels que importam**, aplicadas por maintainer, com comentário de bot:
+
+- `AI-needs-explanation` — fica **aberto**. Pede: responda com as suas palavras, explique o que a
+  mudança faz ou do que é a issue, e como você verificou que está certo.
+- `AI-guidelines-not-met` — é **fechado**. Cabe resposta se houve mal-entendido.
+
+**Consequência operacional, a única que muda o trabalho:** o risco não é a linha de declaração,
+é não conseguir responder. Toda ficha em `hunts/` tem que deixar o *porquê* registrado, não só o
+*quê* — é dela que sai a resposta com as próprias palavras. Ficha que só mostra resultado sem o
+raciocínio é dívida.
+
 ### blurb
 
 Vai em `Misc/NEWS.d/next/<Seção>/`, nome `<datetime>.gh-issue-<N>.<nonce>.rst`.
