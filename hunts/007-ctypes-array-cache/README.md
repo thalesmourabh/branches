@@ -5,7 +5,7 @@
 | **Projeto** | python/cpython |
 | **Issue upstream** | [gh-160978](https://github.com/python/cpython/issues/160978), aberta por `ngoldbaum` em 2026-10-30 |
 | **Escada** | **E2 — fix dirigido**, primeiro desta série |
-| **Status** | fix escrito e validado. **PR não aberto** — falta o CLA, que só o Thales pode assinar |
+| **Status** | **PR aberto: [gh-161494](https://github.com/python/cpython/pull/161494)**. Bloqueado no check do CLA |
 | **Data** | 2026-11-06 |
 
 ---
@@ -157,7 +157,39 @@ O `patchcheck` só acusou o blurb como ausente **antes** do commit local, porque
 ele olha o diff contra `upstream/main` e arquivo untracked não entra. Depois do
 commit, passou.
 
-## 9. O que falta, e é só isto
+## 9. PR aberto, e o CLA ainda barra
+
+[python/cpython#161494](https://github.com/python/cpython/pull/161494), aberto em
+2026-11-06 com aprovação explícita.
+
+| | |
+|---|---|
+| estado | OPEN, label `awaiting review` aplicada pelo bedevere |
+| autor | `thalesmourabh` |
+| diff | +122 −3, exatamente os 3 arquivos |
+| CI | rodando |
+| **check `CLA Signing`** | **fail** — *"Please sign our Contributor License Agreement"* |
+
+O `python-cla-bot` comentou nomeando o email que falta:
+
+> The following commit authors need to sign the Contributor License Agreement:
+> * `thalesmoura13@gmail.com`
+
+**O bot casa pelo email do autor do commit**, não pela conta do GitHub. O commit
+foi autorado com `thalesmoura13@gmail.com`, então a assinatura precisa estar
+registrada para **esse** email. Três explicações possíveis, em ordem de
+probabilidade:
+
+1. o CLA foi assinado com outro email;
+2. a assinatura ainda não propagou (o bot re-checa por webhook);
+3. o email não está na lista de emails da conta em `cla.python.org`.
+
+Se for o caso 1, há duas saídas: assinar também com `thalesmoura13@gmail.com`,
+ou re-autorar o commit com o email que foi usado na assinatura e force-pushar o
+branch. A segunda é permitida aqui — a regra R2 proíbe force-push **durante
+review**, e a review não começou.
+
+## 10. O que falta
 
 **O CLA.** O Thales tem 0 PRs no CPython e o
 [Contributor License Agreement](https://cla.python.org/) não está assinado.
