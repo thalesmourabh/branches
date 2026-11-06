@@ -115,6 +115,37 @@ pequena** com taxa; aqui eu não conferi se o aparato **estava medindo o que eu
 pensava**. Nove resultados idênticos com duração quase igual deveriam ter me
 feito desconfiar na hora.
 
+### Terceiro erro: o mesmo problema um nível abaixo
+
+Com o `-x test_perf_profiler` aplicado, a caça rodou de novo e deu
+`358 s`, `198 s`, `1800 s` — e o script chamou **as três de "limpo"**.
+
+Só a de 1800 s é caça de verdade: 1800 s é a fatia inteira, ou seja rodou o
+tempo todo sem parar. As de 358 s e 198 s **terminaram antes**, o que com
+`--failfast` significa que pararam em alguma falha — e o script não registrava
+**por quê**. Somou as três como 39 min de caça quando ~30 min eram caça e
+~9 min eram fatia truncada por outra coisa.
+
+É o mesmo erro do parágrafo anterior, um nível abaixo: eu corrigi a causa
+específica (`test_perf_profiler`) em vez de corrigir a **cegueira do
+instrumento**. Enquanto o script não soubesse distinguir "rodou a fatia toda"
+de "parou antes", qualquer falha nova reintroduzia o problema.
+
+Corrigido de verdade agora. O caçador:
+
+- grava sempre o rabo da saída, para dar para saber por que uma passada acabou;
+- marca a fatia como `completa=sim/NAO` comparando duração medida com a
+  duração esperada;
+- classifica fatia curta como **`TRUNCADA`**, não como `limpo`, e registra em
+  que teste parou;
+- **não soma fatia truncada** no tempo de caça;
+- e quando não acha nada, diz explicitamente que `0 em N min` **não é
+  ausência**, é só o limite inferior do que aquela medição alcança.
+
+Os dois tallies anteriores ficam no repositório —
+`tally-INVALIDO-passadas-truncadas.tsv` e o de formato antigo — em vez de
+apagados.
+
 ### Hipótese sobre o gatilho, não provada
 
 Olhando de onde vieram as duas observações:

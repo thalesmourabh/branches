@@ -44,7 +44,11 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 RUNS="$HERE/runs/cacador"
 mkdir -p "$RUNS"
 TALLY="$RUNS/tally-$LABEL-${TEST##*.}.tsv"
-[ -f "$TALLY" ] || printf 'inicio_utc\tduracao_s\tveredito\tdetalhe\n' > "$TALLY"
+[ -f "$TALLY" ] || printf 'inicio_utc\tduracao_s\tveredito\tfatia_completa\tdetalhe\n' > "$TALLY"
+
+# Duracao da fatia. SUITE usa fatia maior porque uma passada leva 7 min no FT
+# e 17 no TSan; fatia curta cortaria passada no meio.
+if [ "$TEST" = "SUITE" ]; then FATIA=1800; else FATIA=600; fi
 
 cd "$BUILD" || exit 1
 if [ "$LABEL" = "tsan" ]; then
@@ -81,37 +85,63 @@ while [ "$(date +%s)" -lt "$FIM" ]; do
     #
     # test_free_threading.test_generators NAO entra na exclusao: o crash dele
     # e justamente o que se procura, e parar nele e o comportamento correto.
-    OUT=$(timeout 1800s ./python -m test -F -j10 -W --timeout=600 -x test_perf_profiler 2>&1)
+    OUT=$(timeout "${FATIA}s" ./python -m test -F -j10 -W --timeout=600 -x test_perf_profiler 2>&1)
   else
-    OUT=$(timeout 600s ./python -m test "$TEST" -F --parallel-threads="$PTHREADS" -j10 -W 2>&1)
+    OUT=$(timeout "${FATIA}s" ./python -m test "$TEST" -F --parallel-threads="$PTHREADS" -j10 -W 2>&1)
   fi
   T1=$(date -u +%s)
   DUR=$((T1 - T0))
 
+  # Sempre guarda o rabo da saida. Sem isto nao ha como saber POR QUE uma
+  # passada acabou, e passada truncada contada como tempo de caca foi
+  # exatamente o erro que invalidou os primeiros 37 min (ver hunts/005).
+  printf '%s' "$OUT" | tail -40 > "$RUNS/ultima-$LABEL-$RODADA.log"
+
+  # Uma fatia so conta como caca de verdade se rodou o tempo todo. Se saiu
+  # antes, --failfast parou em alguma falha, e o tempo nao foi gasto cacando.
+  if [ "$DUR" -ge "$((FATIA - 5))" ]; then
+    COMPLETA=sim
+  else
+    COMPLETA=NAO
+  fi
+  QUEBROU=$(printf '%s' "$OUT" | grep -oE '^[0-9]+ tests? failed:' -A2 | tail -1 | tr -s ' ' | cut -c1-60)
+  [ -n "$QUEBROU" ] || QUEBROU='-'
+
   if printf '%s' "$OUT" | grep -q 'mimalloc: assertion failed'; then
     ACHOU=$((ACHOU + 1))
     DET=$(printf '%s' "$OUT" | grep -oE 'at "[^"]+":[0-9]+, [a-z_]+' | head -1)
-    printf '%s\t%s\tMIMALLOC\t%s\n' "$INICIO" "$DUR" "$DET" >> "$TALLY"
+    printf '%s\t%s\tMIMALLOC\t%s\t%s\n' "$INICIO" "$DUR" "$COMPLETA" "$DET" >> "$TALLY"
     printf '%s' "$OUT" > "$RUNS/hit-$INICIO-$LABEL-mimalloc.log"
     echo "  rodada $RODADA: MIMALLOC apos ${DUR}s -> $DET"
   elif printf '%s' "$OUT" | grep -qE 'Assertion .* failed|Fatal Python error'; then
     ACHOU=$((ACHOU + 1))
     DET=$(printf '%s' "$OUT" | grep -oE 'Assertion `[^'"'"']+'"'"' failed' | head -1)
-    printf '%s\t%s\tOUTRO\t%s\n' "$INICIO" "$DUR" "$DET" >> "$TALLY"
+    printf '%s\t%s\tOUTRO\t%s\t%s\n' "$INICIO" "$DUR" "$COMPLETA" "$DET" >> "$TALLY"
     printf '%s' "$OUT" > "$RUNS/hit-$INICIO-$LABEL-outro.log"
     echo "  rodada $RODADA: OUTRO CRASH apos ${DUR}s -> $DET"
+  elif [ "$COMPLETA" = "NAO" ]; then
+    # Nao e caca limpa: e fatia truncada. Nao soma como tempo de caca.
+    printf '%s\t%s\tTRUNCADA\tNAO\t%s\n' "$INICIO" "$DUR" "$QUEBROU" >> "$TALLY"
+    echo "  rodada $RODADA: TRUNCADA em ${DUR}s (parou em: $QUEBROU) -- nao conta"
   else
-    printf '%s\t%s\tlimpo\t-\n' "$INICIO" "$DUR" >> "$TALLY"
+    printf '%s\t%s\tlimpo\tsim\t-\n' "$INICIO" "$DUR" >> "$TALLY"
     echo "  rodada $RODADA: limpo (${DUR}s)"
   fi
 done
 
-TOTAL=$(awk -F'\t' 'NR>1 {s+=$2} END {print s+0}' "$TALLY")
-HITS=$(awk -F'\t' 'NR>1 && $3!="limpo" {n++} END {print n+0}' "$TALLY")
+# Tempo de caca conta SO fatia completa e fatia que terminou em achado. Fatia
+# truncada por falha alheia nao e tempo cacando.
+TOTAL=$(awk -F'\t' 'NR>1 && $3!="TRUNCADA" {s+=$2} END {print s+0}' "$TALLY")
+TRUNC=$(awk -F'\t' 'NR>1 && $3=="TRUNCADA" {s+=$2} END {print s+0}' "$TALLY")
+HITS=$(awk -F'\t' 'NR>1 && ($3=="MIMALLOC" || $3=="OUTRO") {n++} END {print n+0}' "$TALLY")
 echo
 echo "=== acumulado em $TALLY ==="
-echo "tempo total: $((TOTAL / 60)) min"
-echo "ocorrencias: $HITS"
+echo "tempo cacando:  $((TOTAL / 60)) min"
+echo "tempo perdido:  $((TRUNC / 60)) min em fatia truncada (nao conta)"
+echo "ocorrencias:    $HITS"
 if [ "$HITS" -gt 0 ]; then
-  echo "taxa:        1 a cada $((TOTAL / HITS / 60)) min de carga"
+  echo "taxa:           1 a cada $((TOTAL / HITS / 60)) min"
+else
+  echo "taxa:           desconhecida -- 0 em $((TOTAL / 60)) min nao e ausencia,"
+  echo "                e so limite inferior do que esta medicao alcanca"
 fi
